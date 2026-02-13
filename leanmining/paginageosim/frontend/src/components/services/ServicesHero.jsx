@@ -11,24 +11,24 @@ const ServicesHero = () => {
         }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/85 to-slate-900/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40" />
+      {/* Overlay consistente con Hero de Inicio */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/90 via-[#123E6A]/75 to-[#0B1F3A]/85" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#060d18]/70 via-transparent to-[#0B1F3A]/25" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1E40AF]/8 via-transparent to-[#0B1F3A]/10" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
-
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-primary-600/10 blur-[150px] pointer-events-none" />
-      <div className="absolute top-1/4 right-0 w-1/4 h-1/3 bg-blue-600/10 blur-[120px] pointer-events-none" />
+      {/* Línea inferior */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent" />
 
       <Container className="relative z-10 py-32">
         <div className="max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-3 mb-10"
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="flex items-center gap-4 mb-10"
           >
-            <div className="w-12 h-px bg-primary-500" />
-            <span className="text-primary-400 text-sm font-medium tracking-widest uppercase">
+            <div className="w-12 h-px bg-gradient-to-r from-primary-400/80 to-primary-300/40" />
+            <span className="text-primary-300 text-xs font-semibold tracking-[0.3em] uppercase">
               Nuestros Servicios
             </span>
           </motion.div>
@@ -36,68 +36,41 @@ const ServicesHero = () => {
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.95] mb-10"
+            transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
+            className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-10"
           >
-            <span className="text-white">Servicios de </span>
-            <span className="relative">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">
-                Consultoría Minera
-              </span>
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-primary-400 origin-left"
-              />
+            <span className="text-white drop-shadow-sm">Servicios de </span>
+            <br />
+            <span className="text-[#3B82F6] drop-shadow-sm">
+              Consultoría Minera
             </span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-2xl"
+            transition={{ duration: 0.7, delay: 0.35, ease: 'easeOut' }}
+            className="text-xl md:text-2xl text-slate-200/90 leading-relaxed mb-12 max-w-2xl"
           >
             Soluciones especializadas en planeación subterránea, optimización operativa
             y maximización de valor para proyectos mineros.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
+            transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
             className="flex flex-wrap gap-8"
           >
-            <div className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-primary-500/20 group-hover:border-primary-500/30 transition-all duration-300">
-                <svg className="w-5 h-5 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+            {['Diseño de minas', 'Análisis de costos', 'KPIs'].map((label, i) => (
+              <div key={i} className="flex items-center gap-3 group">
+                <div className="w-2 h-2 bg-primary-400 rounded-full group-hover:scale-125 transition-transform duration-300" />
+                <span className="text-white/90 font-medium text-sm">{label}</span>
               </div>
-              <span className="text-white font-medium">Diseño de minas</span>
-            </div>
-            <div className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-primary-500/20 group-hover:border-primary-500/30 transition-all duration-300">
-                <svg className="w-5 h-5 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span className="text-white font-medium">Análisis de costos</span>
-            </div>
-            <div className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-primary-500/20 group-hover:border-primary-500/30 transition-all duration-300">
-                <svg className="w-5 h-5 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span className="text-white font-medium">KPIs</span>
-            </div>
+            ))}
           </motion.div>
         </div>
       </Container>
-
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent" />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -105,16 +78,14 @@ const ServicesHero = () => {
         transition={{ delay: 1.2, duration: 0.5 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-slate-400 text-xs tracking-widest uppercase">Descubrir más</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center pt-2"
-          >
-            <div className="w-1 h-2 bg-primary-400 rounded-full" />
-          </motion.div>
-        </div>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+          className="flex flex-col items-center gap-3"
+        >
+          <span className="text-white/25 text-[10px] uppercase tracking-[0.35em]">Descubrir más</span>
+          <div className="w-px h-10 bg-gradient-to-b from-white/25 to-transparent" />
+        </motion.div>
       </motion.div>
     </section>
   );

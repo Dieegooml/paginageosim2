@@ -2,6 +2,7 @@ import ServicesHero from '../components/services/ServicesHero';
 import ServicesIntro from '../components/services/ServicesIntro';
 import ServiceDetail from '../components/services/ServiceDetail';
 import MethodologyBanner from '../components/services/MethodologyBanner';
+import CompaniesExperience from '../components/home/CompaniesExperience';
 import ServicesCTA from '../components/services/ServicesCTA';
 import { services } from '../data/services';
 
@@ -22,6 +23,7 @@ const Services = () => {
       ))}
 
       <MethodologyBanner />
+      <CompaniesExperience />
       <ServicesCTA />
     </>
   );

@@ -1,5 +1,5 @@
-// Datos de Lean Mining Consulting - Perú
-// Nota: Contacto y datos específicos pendientes de confirmación del cliente
+// Datos de Lean Mining Consulting - Peru
+// Nota: Contacto y datos especificos pendientes de confirmacion del cliente
 
 export const company = {
   // Identidad
@@ -7,17 +7,17 @@ export const company = {
   shortName: 'Lean Mining',
   tagline: 'Eficiencia operacional para el sector minero',
   description:
-    'Consultoría especializada en planeación de minas subterráneas, optimización de procesos y metodología Lean aplicada al sector minero.',
+    'Consultoria especializada en planeacion de minas subterraneas, optimizacion de procesos y metodologia Lean aplicada al sector minero.',
 
   // Contacto
   contact: {
-    phone: null, // Pendiente: número de contacto Perú
+    phone: null, // Pendiente: numero de contacto Peru
     email: null, // Pendiente: correo corporativo
     address: {
       street: 'Av. Colonial 601',
-      district: 'Ampliación Paucarpata, Paucarpata',
+      district: 'Ampliacion Paucarpata, Paucarpata',
       city: 'Arequipa',
-      country: 'Perú',
+      country: 'Peru',
     },
     // Redes sociales (pendiente)
     social: {
@@ -26,35 +26,35 @@ export const company = {
     },
   },
 
-  // Estadísticas corporativas
+  // Estadisticas corporativas
   stats: [
-    { value: '15+', label: 'Años de experiencia' },
-    { value: '50+', label: 'Proyectos completados' },
-    { value: '30+', label: 'Clientes satisfechos' },
-    { value: '98%', label: 'Tasa de éxito' },
+    { value: '+20', label: 'Anios de experiencia' },
+    { value: '+32', label: 'Proyectos completados' },
+    { value: 'Presencia', label: 'Internacional' },
+    { value: 'Consultoria', label: 'Especializada' },
   ],
 
   // Sobre nosotros
   about: {
     mission:
-      'Generar diseños y programas mineros que representen el uso más eficaz del capital de la mina, tanto en el corto como en el largo plazo.',
+      'Generar disenos y programas mineros que representen el uso mas eficaz del capital de la mina, tanto en el corto como en el largo plazo.',
     vision:
-      'Ser la consultora líder en eficiencia operacional minera en Latinoamérica, reconocida por maximizar el beneficio económico de cada proyecto.',
+      'Ser la consultora lider en eficiencia operacional minera en Latinoamerica, reconocida por maximizar el beneficio economico de cada proyecto.',
     history:
-      'Lean Mining Consulting aplica metodologías probadas de eficiencia industrial al sector minero. Con presencia en Perú, hemos desarrollado una metodología innovadora y rigurosa para la selección y planificación de métodos mineros.',
+      'Lean Mining Consulting aplica metodologias probadas de eficiencia industrial al sector minero. Con presencia en Peru, hemos desarrollado una metodologia innovadora y rigurosa para la seleccion y planificacion de metodos mineros.',
   },
 
-  // Metodología
+  // Metodologia
   methodology: {
-    title: 'Metodología Lean Mining',
+    title: 'Metodologia Lean Mining',
     description:
-      'Nuestra metodología se centra inicialmente en la comprensión de todo el contexto minero y las características del yacimiento, información fundamental para seleccionar el método de explotación apropiado y establecer un sólido plan minero con bajo costo de explotación.',
+      'Nuestra metodologia se centra inicialmente en la comprension de todo el contexto minero y las caracteristicas del yacimiento, informacion fundamental para seleccionar el metodo de explotacion apropiado y establecer un solido plan minero con bajo costo de explotacion.',
     steps: [
-      'Comprensión del contexto minero completo',
-      'Análisis de características del yacimiento',
-      'Selección rigurosa del método de explotación',
+      'Comprension del contexto minero completo',
+      'Analisis de caracteristicas del yacimiento',
+      'Seleccion rigurosa del metodo de explotacion',
       'Desarrollo de plan minero optimizado',
-      'Implementación y seguimiento continuo',
+      'Implementacion y seguimiento continuo',
     ],
   },
 
@@ -63,7 +63,7 @@ export const company = {
     {
       title: 'Enfoque en Eficiencia del Capital',
       description:
-        'Diseñamos programas mineros que maximizan el retorno de inversión tanto en el corto como en el largo plazo.',
+        'Disenamos programas mineros que maximizan el retorno de inversion tanto en el corto como en el largo plazo.',
     },
     {
       title: 'Soluciones Mecanizadas',
@@ -71,9 +71,9 @@ export const company = {
         'Ofrecemos soluciones altamente mecanizadas y automatizadas para optimizar las operaciones mineras.',
     },
     {
-      title: 'Metodología Probada',
+      title: 'Metodologia Probada',
       description:
-        'Utilizamos una metodología rigurosa de selección y planificación que maximiza el beneficio económico.',
+        'Utilizamos una metodologia rigurosa de seleccion y planificacion que maximiza el beneficio economico.',
     },
   ],
 };

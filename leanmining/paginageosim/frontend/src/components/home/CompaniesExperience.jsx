@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
-import { companies, companiesSection } from '../../data/companies';
+import { companies } from '../../data/companies';
 
 const CompanyLogo = ({ company, index }) => {
   const [imageError, setImageError] = useState(false);
@@ -32,12 +33,12 @@ const CompanyLogo = ({ company, index }) => {
         delay: index * 0.05,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.05 }}
     >
       <div
         className={[
-          'bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl px-6 py-5 flex items-center justify-center h-24 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 hover:border-primary-200',
-          company.url ? 'cursor-pointer' : 'cursor-default opacity-90',
+          'bg-gradient-to-br from-white to-slate-50/80 backdrop-blur-sm border border-slate-200/70 rounded-xl flex items-center justify-center h-28 transition-all duration-300 hover:shadow-md hover:shadow-primary-500/15 hover:border-primary-300/50 hover:bg-white overflow-hidden',
+          company.url ? 'cursor-pointer' : 'cursor-default opacity-80',
         ].join(' ')}
       >
         {!imageError ? (
@@ -45,14 +46,14 @@ const CompanyLogo = ({ company, index }) => {
             src={company.logo}
             alt={`Logo de ${company.name}`}
             onError={() => setImageError(true)}
-            className="h-12 max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+            className="h-14 w-full max-w-[80%] object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
           />
         ) : (
-          <div className="text-center">
-            <span className="text-slate-600 font-semibold text-sm group-hover:text-primary-600 transition-colors">
+          <div className="text-center px-3">
+            <span className="text-slate-600 font-semibold text-xs group-hover:text-primary-600 transition-colors line-clamp-2">
               {company.name}
             </span>
-            <span className="block text-slate-400 text-xs mt-0.5">
+            <span className="block text-slate-400 text-[11px] mt-1">
               {company.country}
             </span>
           </div>
@@ -63,6 +64,7 @@ const CompanyLogo = ({ company, index }) => {
 };
 
 const CompaniesExperience = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
@@ -86,13 +88,13 @@ const CompaniesExperience = () => {
           className="text-center mb-14"
         >
           <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary-600 text-sm font-medium rounded-full mb-4">
-            Trayectoria Comprobada
+            {t('companies.badge')}
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            {companiesSection.title}
+            {t('companies.title')}
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            {companiesSection.subtitle}
+            {t('companies.subtitle')}
           </p>
         </motion.div>
 
@@ -105,10 +107,10 @@ const CompaniesExperience = () => {
             delay: 0.2,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="bg-white/60 backdrop-blur-md border border-slate-200/50 rounded-3xl p-8 md:p-12 shadow-xl shadow-slate-200/50"
+          className="bg-white/50 backdrop-blur-sm border border-slate-100/60 rounded-2xl p-8 md:p-10 lg:p-12 shadow-sm shadow-slate-200/30"
         >
           {/* Logos grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
             {companies.map((company, index) => (
               <CompanyLogo key={company.name} company={company} index={index} />
             ))}
@@ -119,13 +121,9 @@ const CompaniesExperience = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="mt-10 pt-8 border-t border-slate-200/60 text-center"
+            className="mt-12 pt-8 border-t border-slate-200/50 text-center"
           >
-            <p className="text-slate-500 text-sm">
-              Más de{' '}
-              <span className="font-semibold text-primary-600">80 años</span> de
-              experiencia combinada en operaciones mineras de clase mundial
-            </p>
+            <p className="text-slate-500 text-sm" dangerouslySetInnerHTML={{ __html: t('companies.bottomNote') }} />
           </motion.div>
         </motion.div>
       </Container>

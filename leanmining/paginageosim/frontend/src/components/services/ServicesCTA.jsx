@@ -18,13 +18,11 @@ const ServicesCTA = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
+          <div className="relative bg-gradient-to-br from-[#0B1F3A] via-[#102F52] to-[#0E243F] rounded-[2.5rem] overflow-hidden shadow-2xl">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-500/15 rounded-full blur-[120px]" />
-              <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px]" />
+              <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[120px]" />
+              <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#1E40AF]/8 rounded-full blur-[100px]" />
             </div>
-
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
 
             <div className="relative px-10 md:px-20 py-20 md:py-24 text-center">
               <motion.div
@@ -45,10 +43,10 @@ const ServicesCTA = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
+                className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
               >
                 <span className="text-white">¿Listo para optimizar su </span>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">
+                <span className="text-[#3B82F6]">
                   operación?
                 </span>
               </motion.h2>
@@ -58,7 +56,7 @@ const ServicesCTA = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl text-slate-300 mb-14 max-w-2xl mx-auto leading-relaxed"
+                className="text-xl text-slate-300/90 mb-14 max-w-2xl mx-auto leading-relaxed"
               >
                 Nuestro equipo de especialistas está preparado para analizar su proyecto
                 y desarrollar soluciones a la medida de sus objetivos.
@@ -73,20 +71,20 @@ const ServicesCTA = () => {
               >
                 <Link
                   to="/contacto"
-                  className="group inline-flex items-center px-10 py-5 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-2xl hover:from-primary-600 hover:to-primary-700 transition-all shadow-xl shadow-primary-500/30 hover:shadow-2xl hover:shadow-primary-500/40"
+                  className="group inline-flex items-center px-10 py-5 bg-gradient-to-r from-[#1E40AF] to-[#2563EB] text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-700/25 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-blue-900/30"
                 >
                   Solicitar consultoría
-                  <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
 
                 <Link
                   to="/equipo"
-                  className="group inline-flex items-center px-10 py-5 bg-white/5 backdrop-blur-sm text-white font-semibold rounded-2xl hover:bg-white/10 transition-all border border-white/20 hover:border-white/40"
+                  className="group inline-flex items-center px-10 py-5 bg-white/5 backdrop-blur-sm text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-300 border border-white/15 hover:border-white/30"
                 >
                   Conocer al equipo
-                  <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>

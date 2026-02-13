@@ -60,23 +60,21 @@ const ServiceDetail = ({ service, index, isReversed }) => {
               {service.description}
             </p>
 
-            <div className="space-y-5">
+            <div className="space-y-4">
               {service.features.map((feature, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
                   className="group"
                 >
                   <div className="flex items-start gap-4 p-4 bg-slate-50/80 rounded-xl border border-slate-100 hover:bg-white hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300">
-                    <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary-500/20">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
+                    <div className="mt-2 flex-shrink-0">
+                      <span className="block w-2 h-2 bg-primary-400 rounded-full group-hover:scale-125 transition-transform duration-300" />
                     </div>
-                    <span className="text-slate-700 font-medium pt-1">{feature}</span>
+                    <span className="text-slate-700 font-medium pt-0.5">{feature}</span>
                   </div>
                 </motion.div>
               ))}

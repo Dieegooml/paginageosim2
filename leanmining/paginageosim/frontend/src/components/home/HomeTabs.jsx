@@ -1,23 +1,27 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { homeTabs } from '../../data/tabs';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 
+const tabKeys = ['planning', 'optimization', 'consulting'];
+
 const HomeTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const { t } = useTranslation();
 
   return (
-    <section className="py-0 bg-gradient-to-b from-white to-slate-50/50">
-      {/* Premium Tab Navigation */}
-      <div className="border-b border-slate-200/80 bg-white/80 backdrop-blur-sm sticky top-0 z-10">
+    <section className="py-0 bg-white">
+      {/* Tab Navigation */}
+      <div className="border-b border-slate-200/80 bg-white sticky top-0 z-10">
         <Container>
           <nav className="flex justify-center md:justify-start -mb-px">
             {homeTabs.map((tab, index) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
-                className="relative px-6 md:px-10 py-6 text-sm md:text-base font-medium transition-all duration-300 group"
+                className="relative px-6 md:px-10 py-5 text-sm md:text-base font-medium transition-all duration-300 group"
               >
                 <span
                   className={`relative z-10 transition-colors duration-300 ${
@@ -26,27 +30,23 @@ const HomeTabs = () => {
                       : 'text-slate-500 hover:text-slate-800'
                   }`}
                 >
-                  {tab.label}
+                  {t(`homeTabs.${tabKeys[index]}.label`)}
                 </span>
 
-                {/* Active indicator with premium styling */}
                 {activeTab === index && (
                   <motion.div
                     layoutId="activeTabIndicator"
-                    className="absolute bottom-0 left-2 right-2 h-0.5 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"
+                    className="absolute bottom-0 left-2 right-2 h-0.5 bg-primary-500 rounded-full"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
-
-                {/* Hover background */}
-                <div className="absolute inset-x-2 inset-y-2 bg-slate-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity -z-0" />
               </button>
             ))}
           </nav>
         </Container>
       </div>
 
-      {/* Tab Content with premium styling */}
+      {/* Tab Content */}
       <div className="relative overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
@@ -57,60 +57,49 @@ const HomeTabs = () => {
             transition={{ duration: 0.4 }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-5">
-              {/* Image Section (3/5 on desktop) */}
-              <div className="lg:col-span-3 relative h-[350px] md:h-[450px] lg:h-[550px] overflow-hidden">
+              {/* Image Section */}
+              <div className="lg:col-span-3 relative h-[320px] md:h-[420px] lg:h-[500px] overflow-hidden">
                 <motion.img
                   key={`img-${activeTab}`}
-                  initial={{ scale: 1.1, opacity: 0 }}
+                  initial={{ scale: 1.05, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  transition={{ duration: 0.6 }}
                   src={homeTabs[activeTab].image}
                   alt={homeTabs[activeTab].title}
                   className="w-full h-full object-cover"
                 />
-
-                {/* Premium overlay gradients */}
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/10 via-transparent to-white/60 lg:to-white/80" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent lg:hidden" />
-
-                {/* Decorative corner accent */}
-                <div className="hidden lg:block absolute bottom-0 right-0 w-32 h-32">
-                  <div className="absolute bottom-4 right-4 w-20 h-20 border-r-2 border-b-2 border-primary-500/30" />
-                </div>
               </div>
 
-              {/* Content Section (2/5 on desktop) */}
-              <div className="lg:col-span-2 flex items-center bg-gradient-to-br from-white to-slate-50/80">
-                <div className="p-8 md:p-12 lg:p-14 xl:p-16">
+              {/* Content Section */}
+              <div className="lg:col-span-2 flex items-center bg-white">
+                <div className="p-8 md:p-12 lg:p-14">
                   <motion.div
                     key={`content-${activeTab}`}
-                    initial={{ opacity: 0, x: 30 }}
+                    initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.15 }}
+                    transition={{ duration: 0.4, delay: 0.1 }}
                   >
-                    {/* Premium section tag */}
-                    <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-50 text-primary-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-6 border border-primary-100">
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-50 text-primary-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-5 border border-primary-100">
                       <span className="w-1.5 h-1.5 bg-primary-500 rounded-full" />
-                      {homeTabs[activeTab].label}
+                      {t(`homeTabs.${tabKeys[activeTab]}.label`)}
                     </span>
 
-                    {/* Title with gradient accent */}
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight mb-5">
-                      {homeTabs[activeTab].title}
+                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight mb-4">
+                      {t(`homeTabs.${tabKeys[activeTab]}.title`)}
                     </h3>
 
-                    {/* Description */}
-                    <p className="text-slate-600 leading-relaxed mb-8 text-base lg:text-lg">
-                      {homeTabs[activeTab].description}
+                    <p className="text-slate-600 leading-relaxed mb-7 text-base">
+                      {t(`homeTabs.${tabKeys[activeTab]}.description`)}
                     </p>
 
-                    {/* Premium CTA button */}
                     <Button
                       to={homeTabs[activeTab].link}
                       variant="primary"
-                      className="group shadow-lg shadow-primary-500/20 hover:shadow-xl hover:shadow-primary-500/30 transition-all"
+                      className="group shadow-md transition-all"
                     >
-                      {homeTabs[activeTab].linkText}
+                      {t(`homeTabs.${tabKeys[activeTab]}.linkText`)}
                       <svg
                         className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
                         fill="none"
@@ -133,8 +122,8 @@ const HomeTabs = () => {
         </AnimatePresence>
       </div>
 
-      {/* Premium mobile dots indicator */}
-      <div className="flex justify-center gap-3 py-8 lg:hidden bg-gradient-to-b from-slate-50/80 to-white">
+      {/* Mobile dots */}
+      <div className="flex justify-center gap-3 py-6 lg:hidden bg-white">
         {homeTabs.map((_, index) => (
           <button
             key={index}

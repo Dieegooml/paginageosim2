@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { news, formatDate } from '../../data/news';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { Link } from 'react-router-dom';
 
 const NewsEvents = () => {
+  const { t } = useTranslation();
+
   // Separar noticia destacada del resto
   const featuredNews = news.find((n) => n.featured);
   const otherNews = news.filter((n) => !n.featured).slice(0, 4);
@@ -22,10 +25,10 @@ const NewsEvents = () => {
         >
           <div>
             <span className="inline-block px-3 py-1 bg-accent-100 text-accent-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
-              Actualidad
+              {t('news.badge')}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Noticias y Eventos
+              {t('news.title')}
             </h2>
           </div>
           <Button
@@ -33,7 +36,7 @@ const NewsEvents = () => {
             variant="ghost"
             className="mt-4 md:mt-0 text-slate-600 hover:text-primary-600"
           >
-            Ver todas las noticias
+            {t('common.viewAllNews')}
             <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

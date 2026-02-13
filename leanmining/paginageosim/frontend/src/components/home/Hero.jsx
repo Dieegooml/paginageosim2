@@ -1,105 +1,106 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen overflow-hidden">
+      {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
           src="/images/home/hero-main.jpg"
-          alt="Operación minera subterránea"
-          className="w-full h-full object-cover"
+          alt="Operación minera"
+          className="w-full h-full object-cover scale-105"
         />
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-slate-900/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/30" />
+      {/* Overlay degradado premium: azul corporativo profundo con vida */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/90 via-[#123E6A]/75 to-[#0B1F3A]/85" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#060d18]/70 via-transparent to-[#0B1F3A]/25" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1E40AF]/8 via-transparent to-[#0B1F3A]/10" />
 
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-primary-600/10 blur-[150px] pointer-events-none" />
+      {/* Línea inferior decorativa */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent" />
 
-      <Container className="relative h-screen flex items-center">
-        <div className="max-w-3xl py-20">
+      <Container className="relative min-h-screen flex items-center">
+        <div className="max-w-4xl py-24 md:py-28">
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-3 mb-10"
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="flex items-center gap-4 mb-10"
           >
-            <div className="w-12 h-px bg-primary-500" />
-            <span className="text-primary-400 text-sm font-medium tracking-widest uppercase">
-              Consultoría Minera Especializada
+            <div className="w-12 h-px bg-gradient-to-r from-primary-400/80 to-primary-300/40" />
+            <span className="text-primary-300 text-xs font-semibold tracking-[0.3em] uppercase">
+              Lean Mining Consulting
             </span>
           </motion.div>
 
+          {/* Título impactante */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tight leading-[0.95]"
+            transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight mb-8"
           >
-            Planeación minera con{' '}
-            <span className="relative">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">
-                metodología Lean
-              </span>
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-primary-400 origin-left"
-              />
+            <span className="text-white drop-shadow-sm">Consultoría minera</span>
+            <br />
+            <span className="text-[#3B82F6] drop-shadow-sm">
+              de alto impacto
             </span>
           </motion.h1>
 
+          {/* Subtítulo */}
           <motion.p
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-10 text-xl md:text-2xl text-slate-300 leading-relaxed max-w-2xl font-light"
+            transition={{ duration: 0.7, delay: 0.35, ease: 'easeOut' }}
+            className="mt-6 text-lg md:text-xl text-slate-200/90 leading-relaxed max-w-xl"
           >
-            Generamos diseños y programas mineros que representan el uso más
-            eficaz del capital, maximizando el beneficio económico de cada proyecto.
+            Diseñamos estrategias técnicas para operaciones subterráneas y open pit, con foco en eficiencia, seguridad y rentabilidad sostenible.
           </motion.p>
 
+          {/* CTA: Conocer más → /nosotros */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
-            className="mt-12 flex flex-wrap gap-5"
+            transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
+            className="mt-12"
           >
             <Button
-              to="/contacto"
+              to="/nosotros"
               size="large"
-              className="bg-primary-500 text-white hover:bg-primary-600 border-0 px-10 py-4 text-base shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 transition-all"
+              className="group bg-gradient-to-r from-[#1E40AF] to-[#2563EB] text-white border-0 px-12 py-5 text-sm font-semibold uppercase tracking-widest rounded-xl shadow-lg shadow-blue-900/30 hover:shadow-2xl hover:shadow-blue-700/25 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300"
             >
-              Solicitar consultoría
-            </Button>
-            <Button
-              to="/servicios"
-              variant="ghost"
-              size="large"
-              className="text-white border-white/30 hover:bg-white/10 hover:border-white/50 px-10 py-4 text-base backdrop-blur-sm"
-            >
-              Conocer servicios
+              Conocer más
+              <svg className="w-4 h-4 ml-3 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Button>
           </motion.div>
         </div>
       </Container>
 
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
           className="flex flex-col items-center gap-3"
         >
-          <span className="text-white/50 text-xs uppercase tracking-[0.3em]">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent" />
+          <span className="text-white/25 text-[10px] uppercase tracking-[0.35em]">
+            {t('common.scroll')}
+          </span>
+          <div className="w-px h-10 bg-gradient-to-b from-white/25 to-transparent" />
         </motion.div>
       </motion.div>
     </section>
