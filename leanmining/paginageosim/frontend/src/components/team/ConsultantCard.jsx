@@ -17,7 +17,7 @@ const ConsultantCard = ({ member, onClick }) => {
             <img
               src={member.image}
               alt={displayName}
-              className="absolute inset-0 w-full h-full object-contain object-center bg-slate-100"
+              className="absolute inset-0 w-full h-full object-cover object-top"
               loading="lazy"
             />
           ) : (

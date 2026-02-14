@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
+import { premiumHeroOverlayStyle } from '../ui/heroOverlay';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -20,10 +21,7 @@ const Hero = () => {
       {/* Overlay degradado direccional oscuro */}
       <div
         className="absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(90deg, rgba(2,6,23,0.85) 0%, rgba(15,23,42,0.75) 35%, rgba(15,23,42,0.55) 55%, rgba(15,23,42,0.25) 75%, rgba(15,23,42,0.05) 100%)',
-        }}
+        style={premiumHeroOverlayStyle}
       />
 
       {/* Línea inferior decorativa */}
@@ -49,15 +47,22 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight mb-8"
+            className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight mb-8"
             style={{ textShadow: '0 2px 18px rgba(0,0,0,0.45)' }}
           >
-            <span className="text-white drop-shadow-sm">Consultoría minera</span>
+            <span className="hero-title-main">Consultoría minera</span>
             <br />
-            <span className="text-[#60A5FA] drop-shadow-sm">
+            <span className="hero-title-accent">
               de alto impacto
             </span>
           </motion.h1>
+
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0.9 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.75, ease: 'easeOut' }}
+            className="origin-left h-1 w-64 md:w-72 bg-gradient-to-r from-primary-300 via-primary-400 to-accent-400 rounded-full mb-8"
+          />
 
           {/* Subtítulo */}
           <motion.p
@@ -113,3 +118,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+

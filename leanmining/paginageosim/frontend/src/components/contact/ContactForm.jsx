@@ -100,7 +100,7 @@ const ContactForm = () => {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
+            <div className="md:col-span-2">
               <label htmlFor="name" className={labelClasses}>
                 Nombre completo <span className="text-red-500">*</span>
               </label>
@@ -161,7 +161,7 @@ const ContactForm = () => {
                 placeholder="+51 999 000 000"
               />
             </div>
-            <div>
+            <div className="md:col-span-2">
               <label htmlFor="recipient" className={labelClasses}>
                 Persona a contactar
               </label>
@@ -170,7 +170,7 @@ const ContactForm = () => {
                 name="recipient"
                 value={formData.recipient}
                 onChange={handleChange}
-                className={`${inputClasses} cursor-pointer`}
+                className={`${inputClasses} cursor-pointer text-sm md:text-[15px]`}
               >
                 <option value="persona1">Luis Enrique Zevallos Paredes</option>
                 <option value="persona2">Wilber Martín Manrique Valdivia</option>
@@ -196,6 +196,8 @@ const ContactForm = () => {
               <option value="costos">Análisis de Costos</option>
               <option value="kpis">Implementación de KPIs</option>
               <option value="planeacion">Planeación de Mina</option>
+              <option value="metalurgia">Procesos de Planta Concentradora y Metalurgia Aplicada</option>
+              <option value="hidrogeologia">Hidrogeología Aplicada y Gestión Hídrica Minera</option>
               <option value="otro">Otro</option>
             </select>
           </div>
@@ -251,3 +253,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+

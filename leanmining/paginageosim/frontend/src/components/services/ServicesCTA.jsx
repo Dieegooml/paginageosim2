@@ -2,13 +2,17 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Container from '../ui/Container';
 
+// Coloca tu imagen en: public/images/cta/services-cta-bg.jpg
+const SERVICES_CTA_BG = '/images/cta/services-cta-bg.jpg';
+
 const ServicesCTA = () => {
   return (
-    <section className="relative py-28 md:py-36 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary-50/50 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-50/40 rounded-full blur-3xl" />
-      </div>
+    <section className="relative py-28 md:py-36 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${SERVICES_CTA_BG}')` }}
+      />
+      <div className="absolute inset-0 bg-[#0f2742]/74" />
 
       <Container className="relative">
         <motion.div
@@ -18,12 +22,7 @@ const ServicesCTA = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="relative bg-gradient-to-br from-[#0B1F3A] via-[#102F52] to-[#0E243F] rounded-[2.5rem] overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[120px]" />
-              <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#1E40AF]/8 rounded-full blur-[100px]" />
-            </div>
-
+          <div className="relative rounded-[2.5rem] overflow-hidden border border-white/25 bg-white/10 backdrop-blur-sm">
             <div className="relative px-10 md:px-20 py-20 md:py-24 text-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -32,8 +31,8 @@ const ServicesCTA = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="mb-10"
               >
-                <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-500/10 text-primary-300 text-sm font-medium rounded-full border border-primary-500/20 backdrop-blur-sm">
-                  <span className="w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
+                <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white text-sm font-medium rounded-full border border-white/25 backdrop-blur-sm">
+                  <span className="w-2 h-2 bg-accent-300 rounded-full animate-pulse" />
                   Comienza ahora
                 </span>
               </motion.div>
@@ -45,9 +44,9 @@ const ServicesCTA = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
               >
-                <span className="text-white">¿Listo para optimizar su </span>
-                <span className="text-[#3B82F6]">
-                  operación?
+                <span className="text-white">Listo para optimizar su </span>
+                <span className="text-white">
+                  operacion?
                 </span>
               </motion.h2>
 
@@ -56,9 +55,9 @@ const ServicesCTA = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl text-slate-300/90 mb-14 max-w-2xl mx-auto leading-relaxed"
+                className="text-xl text-white/90 mb-14 max-w-2xl mx-auto leading-relaxed"
               >
-                Nuestro equipo de especialistas está preparado para analizar su proyecto
+                Nuestro equipo de especialistas esta preparado para analizar su proyecto
                 y desarrollar soluciones a la medida de sus objetivos.
               </motion.p>
 
@@ -71,9 +70,9 @@ const ServicesCTA = () => {
               >
                 <Link
                   to="/contacto"
-                  className="group inline-flex items-center px-10 py-5 bg-gradient-to-r from-[#1E40AF] to-[#2563EB] text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-700/25 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-blue-900/30"
+                  className="group inline-flex items-center px-10 py-5 bg-[#123B70] text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-[#123B70]/25 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-[#123B70]/30"
                 >
-                  Solicitar consultoría
+                  Solicitar consultoria
                   <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

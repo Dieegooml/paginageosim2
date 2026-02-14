@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Container from '../ui/Container';
+import { premiumHeroOverlayStyle } from '../ui/heroOverlay';
 
 const stats = [
   {
@@ -41,10 +42,7 @@ const AboutHero = () => {
 
       <div
         className="absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(90deg, rgba(2,6,23,0.85) 0%, rgba(15,23,42,0.75) 35%, rgba(15,23,42,0.55) 55%, rgba(15,23,42,0.25) 75%, rgba(15,23,42,0.05) 100%)',
-        }}
+        style={premiumHeroOverlayStyle}
       />
       
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent" />
@@ -67,13 +65,20 @@ const AboutHero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
-            className="font-display text-5xl md:text-[3.5rem] lg:text-[3.75rem] font-bold tracking-tight leading-[1.02] mb-8"
+            className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-8"
             style={{ textShadow: '0 2px 18px rgba(0,0,0,0.45)' }}
           >
-            <span className="text-white drop-shadow-sm">Somos Lean Mining</span>
+            <span className="hero-title-main">Somos Lean Mining</span>
             <br />
-            <span className="text-[#60A5FA] drop-shadow-sm">Consulting</span>
+            <span className="hero-title-accent">Consulting</span>
           </motion.h1>
+
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0.9 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.75, ease: 'easeOut' }}
+            className="origin-left h-1 w-64 md:w-72 bg-gradient-to-r from-primary-300 via-primary-400 to-accent-400 rounded-full mb-8"
+          />
 
           <div className="max-w-[680px] mt-4">
             <motion.p
@@ -97,39 +102,8 @@ const AboutHero = () => {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.55, ease: 'easeOut' }}
-            className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl"
-          >
-            <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">
-              <div className="w-9 h-9 rounded-lg bg-primary-500/20 border border-primary-400/30 flex items-center justify-center">
-                <svg className="w-5 h-5 text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm">Latinoamérica</p>
-                <p className="text-slate-300 text-xs">Alcance regional</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">
-              <div className="w-9 h-9 rounded-lg bg-primary-500/20 border border-primary-400/30 flex items-center justify-center">
-                <svg className="w-5 h-5 text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm">Excelencia</p>
-                <p className="text-slate-300 text-xs">Metodología probada</p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.65, ease: 'easeOut' }}
-            className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5"
+            transition={{ duration: 0.7, delay: 0.58, ease: 'easeOut' }}
+            className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 max-w-4xl"
           >
             {stats.map((stat) => (
               <div
@@ -169,3 +143,7 @@ const AboutHero = () => {
 };
 
 export default AboutHero;
+
+
+
+

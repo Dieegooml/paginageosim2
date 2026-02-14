@@ -22,17 +22,16 @@ const Navbar = () => {
   return (
     <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
       <Container>
-        <nav className="flex justify-between items-center h-20">
+        <nav className="flex justify-between items-center h-24">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center" onClick={closeMenu}>
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded overflow-hidden flex items-center justify-center bg-white">
-              <img
-                src="/images/logo-leanmining-consulting.png"
-                alt="Lean Mining Consulting"
-                className="w-full h-full object-contain"
-                loading="lazy"
-              />
-            </div>
+          <NavLink to="/" className="relative flex items-center group" onClick={closeMenu}>
+            <span className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary-500/12 via-primary-400/8 to-accent-400/15 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <img
+              src="/images/logo-leanmining-consulting.png"
+              alt="Lean Mining Consulting"
+              className="relative h-14 md:h-16 w-auto object-contain drop-shadow-[0_8px_18px_rgba(16,46,87,0.24)] transition-transform duration-300 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
           </NavLink>
 
           {/* Navegación Desktop */}
@@ -44,8 +43,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive
-                      ? 'text-slate-900 bg-slate-100'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                      ? 'text-primary-800 bg-primary-50'
+                      : 'text-slate-700 hover:text-primary-700 hover:bg-primary-50/70'
                   }`
                 }
               >

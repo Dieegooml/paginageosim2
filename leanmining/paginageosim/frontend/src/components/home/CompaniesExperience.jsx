@@ -63,10 +63,12 @@ const CompanyLogo = ({ company, index }) => {
   );
 };
 
-const CompaniesExperience = () => {
+const CompaniesExperience = ({ mode = 'grid' }) => {
   const { t } = useTranslation();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isCarousel = mode === 'carousel';
+  const carouselItems = [...companies, ...companies];
 
   return (
     <section
@@ -109,12 +111,35 @@ const CompaniesExperience = () => {
           }}
           className="bg-white/50 backdrop-blur-sm border border-slate-100/60 rounded-2xl p-8 md:p-10 lg:p-12 shadow-sm shadow-slate-200/30"
         >
-          {/* Logos grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
-            {companies.map((company, index) => (
-              <CompanyLogo key={company.name} company={company} index={index} />
-            ))}
-          </div>
+          {/* Logos */}
+          {isCarousel ? (
+            <div className="relative overflow-hidden">
+              <motion.div
+                className="flex gap-3 md:gap-4 lg:gap-5 w-max"
+                animate={{ x: ['0%', '-50%'] }}
+                transition={{
+                  duration: 38,
+                  ease: 'linear',
+                  repeat: Infinity,
+                }}
+              >
+                {carouselItems.map((company, index) => (
+                  <div
+                    key={`${company.name}-${index}`}
+                    className="w-[170px] sm:w-[190px] md:w-[210px] flex-shrink-0"
+                  >
+                    <CompanyLogo company={company} index={index % companies.length} />
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
+              {companies.map((company, index) => (
+                <CompanyLogo key={company.name} company={company} index={index} />
+              ))}
+            </div>
+          )}
 
           {/* Bottom note */}
           <motion.div

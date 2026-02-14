@@ -23,7 +23,7 @@ const Services = () => {
       ))}
 
       <MethodologyBanner />
-      <CompaniesExperience />
+      <CompaniesExperience mode="carousel" />
       <ServicesCTA />
     </>
   );

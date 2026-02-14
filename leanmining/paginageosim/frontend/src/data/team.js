@@ -42,7 +42,7 @@ export const team = [
 
     // Contacto y redes
     linkedin: 'https://www.linkedin.com/in/luis-talaverano/',
-    email: 'luis.talaverano@lean-miningg.com',
+    email: 'luis.talaverano@leanmining-consulting.com',
     image: '/images/team/luis-talaverano.jpg',
   },
   {
@@ -85,7 +85,7 @@ export const team = [
 
     // Contacto y redes
     linkedin: 'https://www.linkedin.com/in/wilber-martinmanrique-valdivia-342a5168',
-    email: 'wilber.manrique@lean-miningg.com',
+    email: 'wilber.manrique@leanmining-consulting.com',
     image: '/images/team/wilber-manrique.jpg',
   },
   {
@@ -127,7 +127,7 @@ export const team = [
 
     // Contacto y redes
     linkedin: 'https://www.linkedin.com/in/luisenrique-zevallos-paredes/',
-    email: 'luis.zevallos@lean-miningg.com',
+    email: 'luis.zevallos@leanmining-consulting.com',
     image: '/images/team/luis-zevallos.jpg',
   },
   {
@@ -169,7 +169,7 @@ export const team = [
 
     // Contacto y redes
     linkedin: null,
-    email: 'antonio.gonzales@lean-miningg.com',
+    email: 'antonio.gonzales@leanmining.com',
     image: '/images/team/antonio-gonzalez.jpg',
   },
 ];

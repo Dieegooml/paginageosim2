@@ -3,29 +3,32 @@ import Container from '../components/ui/Container';
 import ContactForm from '../components/contact/ContactForm';
 import ContactInfo from '../components/contact/ContactInfo';
 import { company } from '../data/company';
+import { premiumHeroOverlayStyle } from '../components/ui/heroOverlay';
+
+// Coloca tu imagen de hero en: public/images/contact/hero-contacto.jpg
+const CONTACT_HERO_IMAGE = '/images/contact/hero-contacto.jpg';
+const CONTACT_EXPERIENCE_BG = '/images/contact/contact-experience-bg.jpg';
+const OFFICE_LAT = -16.42745554;
+const OFFICE_LNG = -71.50242861;
 
 const Contact = () => {
   const { address } = company.contact;
   const fullAddress = [address.street, address.district, address.city, address.country].filter(Boolean).join(', ');
-  const mapsQuery = encodeURIComponent(fullAddress);
-  const mapsEmbedUrl = `https://www.google.com/maps?q=${mapsQuery}&z=16&output=embed`;
-  const mapsLinkUrl = `https://maps.google.com/?q=${mapsQuery}`;
+  const mapsEmbedUrl = `https://www.google.com/maps?q=${OFFICE_LAT},${OFFICE_LNG}&z=17&output=embed`;
+  const mapsLinkUrl = `https://maps.google.com/?q=${OFFICE_LAT},${OFFICE_LNG}`;
   return (
     <>
       <section className="relative min-h-screen overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/images/contact/contact-hero.jpg')`,
+            backgroundImage: `url('${CONTACT_HERO_IMAGE}')`,
           }}
         />
 
         <div
           className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(90deg, rgba(2,6,23,0.85) 0%, rgba(15,23,42,0.75) 35%, rgba(15,23,42,0.55) 55%, rgba(15,23,42,0.25) 75%, rgba(15,23,42,0.05) 100%)',
-          }}
+          style={premiumHeroOverlayStyle}
         />
         
 
@@ -53,19 +56,19 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] mb-8"
+                className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-8"
                 style={{ textShadow: '0 2px 18px rgba(0,0,0,0.45)' }}
               >
-                <span className="text-white">Hablemos de su </span>
+                <span className="hero-title-main">Hablemos de su </span>
                 <span className="relative">
-                  <span className="text-[#60A5FA]">
+                  <span className="hero-title-accent">
                     próximo proyecto
                   </span>
                   <motion.div
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#60A5FA] to-[#60A5FA] origin-left"
+                    className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-300 via-primary-400 to-accent-400 origin-left"
                   />
                 </span>
               </motion.h1>
@@ -115,8 +118,7 @@ const Contact = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-12 h-px bg-primary-500" />
-              <span className="text-primary-600 text-sm font-medium tracking-widest uppercase">
-                Nuestra Ubicación
+              <span className="text-primary-600 text-sm font-medium tracking-widest uppercase">Nuestra Ubicación
               </span>
               <div className="w-12 h-px bg-primary-500" />
             </div>
@@ -169,11 +171,12 @@ const Contact = () => {
         </Container>
       </section>
 
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary-50/50 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-50/40 rounded-full blur-3xl" />
-        </div>
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('${CONTACT_EXPERIENCE_BG}')` }}
+        />
+        <div className="absolute inset-0 bg-[#0b2240]/45" />
 
         <Container className="relative">
           <motion.div
@@ -183,61 +186,59 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="max-w-5xl mx-auto"
           >
-            <div className="relative bg-white border border-slate-200/80 rounded-[2rem] p-12 md:p-16 shadow-2xl shadow-slate-200/50 overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary-50/50 rounded-full blur-3xl" />
-
+            <div className="relative bg-white/12 backdrop-blur-xl border border-white/25 rounded-[2rem] p-12 md:p-16 shadow-2xl shadow-slate-900/20 overflow-hidden">
               <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-px bg-primary-500" />
-                    <span className="text-primary-600 text-sm font-medium tracking-widest uppercase">
+                    <span className="text-primary-200 text-sm font-medium tracking-widest uppercase">
                       Nuestra experiencia
                     </span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
                     Transformamos la eficiencia de tu operación minera
                   </h2>
-                  <p className="text-lg text-slate-600 leading-relaxed">
-                    Con más de 15 años de experiencia, nuestro equipo de consultores
+                  <p className="text-lg text-slate-100/90 leading-relaxed">
+                    Con más de 20 años de experiencia, nuestro equipo de consultores
                     especializados está listo para llevar tu proyecto al siguiente nivel.
                   </p>
                 </div>
 
                 <div className="flex flex-col gap-5">
-                  <div className="flex items-center gap-5 p-5 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-100 hover:shadow-lg hover:border-primary-200/50 transition-all duration-300 group">
+                  <div className="flex items-center gap-5 p-5 bg-white/12 backdrop-blur-sm rounded-2xl border border-white/25 hover:bg-white/18 transition-all duration-300 group">
                     <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
                       <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-slate-900">7 países</p>
-                      <p className="text-slate-500">de operación</p>
+                      <p className="text-2xl font-bold text-white">7 países</p>
+                      <p className="text-slate-200/90">de operación</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-5 p-5 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-100 hover:shadow-lg hover:border-primary-200/50 transition-all duration-300 group">
+                  <div className="flex items-center gap-5 p-5 bg-white/12 backdrop-blur-sm rounded-2xl border border-white/25 hover:bg-white/18 transition-all duration-300 group">
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
                       <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-slate-900">+50 proyectos</p>
-                      <p className="text-slate-500">completados</p>
+                      <p className="text-2xl font-bold text-white">+30 proyectos</p>
+                      <p className="text-slate-200/90">completados</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-5 p-5 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-100 hover:shadow-lg hover:border-primary-200/50 transition-all duration-300 group">
+                  <div className="flex items-center gap-5 p-5 bg-white/12 backdrop-blur-sm rounded-2xl border border-white/25 hover:bg-white/18 transition-all duration-300 group">
                     <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
                       <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-slate-900">+20 años</p>
-                      <p className="text-slate-500">experiencia combinada</p>
+                      <p className="text-2xl font-bold text-white">+20 años</p>
+                      <p className="text-slate-200/90">experiencia combinada</p>
                     </div>
                   </div>
                 </div>
@@ -251,3 +252,10 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+
+
+
+

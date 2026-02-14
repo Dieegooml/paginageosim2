@@ -6,6 +6,9 @@ import TeamGrid from '../components/team/TeamGrid';
 import ConsultantModal from '../components/team/ConsultantModal';
 import { team } from '../data/team';
 
+// Coloca tu imagen en: public/images/cta/team-cta-bg.jpg
+const TEAM_CTA_BG = '/images/cta/team-cta-bg.jpg';
+
 const Team = () => {
   const [selectedMember, setSelectedMember] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,25 +52,31 @@ const Team = () => {
         </Container>
       </section>
 
-      <section className="py-16 md:py-20 bg-slate-50">
-        <Container>
+      <section className="relative py-16 md:py-20 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('${TEAM_CTA_BG}')` }}
+        />
+        <div className="absolute inset-0 bg-[#0f2742]/74" />
+
+        <Container className="relative">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center"
+            className="rounded-[2rem] border border-white/25 bg-white/10 backdrop-blur-sm p-8 md:p-12 text-center"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               ¿Necesita asesoría especializada?
             </h2>
-            <p className="text-slate-300 mb-8 max-w-xl mx-auto">
+            <p className="text-white/90 mb-8 max-w-xl mx-auto">
               Nuestro equipo está listo para analizar sus desafíos y desarrollar
               soluciones a la medida de su operación.
             </p>
             <a
               href="/contacto"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-medium rounded-lg hover:bg-primary-600 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#123B70] text-white font-medium rounded-lg hover:bg-[#1a4f90] transition-colors"
             >
               Contactar al equipo
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -9,28 +9,28 @@ export default {
       colors: {
         // Paleta corporativa premium (azul profundo + oro)
         primary: {
-          50:  '#F0F5FF',
-          100: '#DCE8FF',
-          200: '#B9D0FF',
-          300: '#8FB6FF',
-          400: '#60A5FA', // azul vibrante
-          500: '#3B82F6', // azul corporativo
-          600: '#1E3A8A', // navy intenso
-          700: '#162C5B',
-          800: '#0F1E3A',
-          900: '#0B1528',
+          50:  '#EAF5FF',
+          100: '#D5EBFF',
+          200: '#AED7FF',
+          300: '#7FC1FF',
+          400: '#45A8FF', // azul vibrante
+          500: '#1D8CFF', // azul corporativo vivo
+          600: '#145FC4', // navy-azul intenso
+          700: '#124B94',
+          800: '#123B70',
+          900: '#102E57',
         },
         accent: {
-          50:  '#FFF9E6',
-          100: '#FFF1CC',
-          200: '#FFE39F',
-          300: '#FFD36D',
-          400: '#FBCB54',
-          500: '#D4AF37', // oro premium
-          600: '#B38F1F',
-          700: '#8A6F15',
-          800: '#6B5610',
-          900: '#4D3D0B',
+          50:  '#F8FCEB',
+          100: '#EFF8CF',
+          200: '#E0F0A5',
+          300: '#CDE373',
+          400: '#B7D95A',
+          500: '#9BCB3C', // verde-oliva premium
+          600: '#7EAB2E',
+          700: '#638723',
+          800: '#4D6A1C',
+          900: '#3B5117',
         },
         // Neutros de alto contraste
         ink: {
@@ -40,9 +40,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        heading: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['Manrope', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"DM Serif Display"', 'Georgia', 'serif'],
+        heading: ['"DM Serif Display"', 'Georgia', 'serif'],
       },
     },
   },

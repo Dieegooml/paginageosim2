@@ -7,7 +7,7 @@ const ServiceDetail = ({ service, index, isReversed }) => {
     : 'bg-gradient-to-br from-slate-50 via-white to-slate-50';
 
   return (
-    <section className={`relative py-24 md:py-32 ${bgClass} overflow-hidden`}>
+    <section id={service.id} className={`relative py-24 md:py-32 ${bgClass} overflow-hidden`}>
       <div className="absolute inset-0 pointer-events-none">
         {index % 2 !== 0 && (
           <>

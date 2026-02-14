@@ -36,7 +36,7 @@ const steps = [
 
 const MethodologySection = () => {
   return (
-    <section className="relative py-16">
+    <section className="relative pt-24 pb-16 md:pt-28">
       <Container>
         <div className="max-w-4xl mb-10">
           <motion.div

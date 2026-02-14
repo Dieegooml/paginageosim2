@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import Container from '../ui/Container';
+import { premiumHeroOverlayStyle } from '../ui/heroOverlay';
 
 const TeamHero = () => {
   return (
-    <section className="relative bg-slate-900 py-24 md:py-32 overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/images/team/hero-equipo.jpg')`,
         }}
@@ -13,27 +14,20 @@ const TeamHero = () => {
 
       <div
         className="absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(90deg, rgba(2,6,23,0.85) 0%, rgba(15,23,42,0.75) 35%, rgba(15,23,42,0.55) 55%, rgba(15,23,42,0.25) 75%, rgba(15,23,42,0.05) 100%)',
-        }}
+        style={premiumHeroOverlayStyle}
       />
-      
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent" />
 
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary-500 rounded-full blur-[120px]" />
-      </div>
-
-      <Container className="relative">
-        <div className="max-w-3xl mx-auto text-center">
+      <Container className="relative z-10 py-32">
+        <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6"
+            className="flex items-center gap-4 mb-10"
           >
-            <div className="w-1.5 h-1.5 bg-primary-400 rounded-full" />
-            <span className="text-primary-300 text-sm font-medium">
+            <div className="w-12 h-px bg-gradient-to-r from-primary-400/80 to-primary-300/40" />
+            <span className="text-primary-300 text-xs font-semibold tracking-[0.3em] uppercase">
               Nuestro Equipo
             </span>
           </motion.div>
@@ -42,18 +36,25 @@ const TeamHero = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-8 leading-[1.05]"
             style={{ textShadow: '0 2px 18px rgba(0,0,0,0.45)' }}
           >
             Expertos que{' '}
-            <span className="text-[#60A5FA]">impulsan resultados</span>
+            <span className="hero-title-accent">impulsan resultados</span>
           </motion.h1>
+
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0.9 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.75, ease: 'easeOut' }}
+            className="origin-left h-1 w-64 md:w-72 bg-gradient-to-r from-primary-300 via-primary-400 to-accent-400 rounded-full mb-8"
+          />
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-slate-200/90 leading-relaxed max-w-2xl"
           >
             Profesionales con décadas de experiencia en operaciones mineras de clase mundial,
             comprometidos con la excelencia y la mejora continua de cada proyecto.
@@ -65,3 +66,5 @@ const TeamHero = () => {
 };
 
 export default TeamHero;
+
+

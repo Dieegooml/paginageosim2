@@ -65,7 +65,7 @@ const ServicesPreview = () => {
                     {service.shortDescription}
                   </p>
                   <Button
-                    to="/servicios"
+                    to={`/servicios#${service.id}`}
                     variant="secondary"
                     className="w-full justify-center rounded-xl border-slate-300 hover:border-slate-900 hover:bg-slate-900 hover:text-white"
                   >

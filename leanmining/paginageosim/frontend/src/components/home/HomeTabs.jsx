@@ -1,15 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import { homeTabs } from '../../data/tabs';
 import Container from '../ui/Container';
-import Button from '../ui/Button';
-
-const tabKeys = ['planning', 'optimization', 'consulting'];
 
 const HomeTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const { t } = useTranslation();
 
   return (
     <section className="py-0 bg-white">
@@ -30,7 +25,7 @@ const HomeTabs = () => {
                       : 'text-slate-500 hover:text-slate-800'
                   }`}
                 >
-                  {t(`homeTabs.${tabKeys[index]}.label`)}
+                  {tab.label}
                 </span>
 
                 {activeTab === index && (
@@ -83,37 +78,16 @@ const HomeTabs = () => {
                   >
                     <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-50 text-primary-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-5 border border-primary-100">
                       <span className="w-1.5 h-1.5 bg-primary-500 rounded-full" />
-                      {t(`homeTabs.${tabKeys[activeTab]}.label`)}
+                      {homeTabs[activeTab].label}
                     </span>
 
                     <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight mb-4">
-                      {t(`homeTabs.${tabKeys[activeTab]}.title`)}
+                      {homeTabs[activeTab].title}
                     </h3>
 
-                    <p className="text-slate-600 leading-relaxed mb-7 text-base">
-                      {t(`homeTabs.${tabKeys[activeTab]}.description`)}
+                    <p className="text-slate-600 leading-relaxed text-base">
+                      {homeTabs[activeTab].description}
                     </p>
-
-                    <Button
-                      to={homeTabs[activeTab].link}
-                      variant="primary"
-                      className="group shadow-md transition-all"
-                    >
-                      {t(`homeTabs.${tabKeys[activeTab]}.linkText`)}
-                      <svg
-                        className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </Button>
                   </motion.div>
                 </div>
               </div>
