@@ -1,0 +1,363 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "team": "Team",
+    "contact": "Contact",
+    "cta": "Request consultation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "language": {
+    "es": "ES",
+    "en": "EN",
+    "spanish": "Español",
+    "english": "English"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "contactUs": "Contact us",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Success",
+    "error": "Error",
+    "loading": "Loading...",
+    "scroll": "Scroll",
+    "discoverMore": "Discover more",
+    "requestConsultation": "Request consultation",
+    "meetTeam": "Meet the team",
+    "contactNow": "Contact now",
+    "startNow": "Get started",
+    "startToday": "Start today",
+    "viewAllServices": "View all services",
+    "viewServices": "View services",
+    "viewAllNews": "View all news",
+    "openGoogleMaps": "Open in Google Maps",
+    "service": "Service"
+  },
+  "footer": {
+    "description": "Specialized consulting in operational efficiency and underground mine planning for the mining industry.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "location": "Lima, Peru",
+    "contactSoon": "Contact details coming soon",
+    "rights": "All rights reserved",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use"
+  },
+  "hero": {
+    "subtitle": "Specialized Mining Consulting",
+    "titlePart1": "Mine planning with",
+    "titleHighlight": "Lean methodology",
+    "description": "We create mine designs and programs that represent the most efficient use of capital, maximizing the economic benefit of every project.",
+    "ctaPrimary": "Request consultation",
+    "ctaSecondary": "Explore services"
+  },
+  "homeTabs": {
+    "planning": {
+      "label": "Planning",
+      "title": "Strategic Mine Planning",
+      "description": "We develop comprehensive mine plans that optimize resource extraction. Our methodology considers the geological context, deposit characteristics, and economic objectives to maximize the value of each project.",
+      "linkText": "View services"
+    },
+    "optimization": {
+      "label": "Optimization",
+      "title": "Operations Optimization",
+      "description": "We implement continuous improvement solutions that increase productivity and reduce operating costs. We apply Lean methodology to eliminate waste and maximize efficiency at every stage of the mining process.",
+      "linkText": "Learn more"
+    },
+    "consulting": {
+      "label": "Consulting",
+      "title": "Specialized Consulting",
+      "description": "We provide high-level technical advisory for open-pit to underground transition projects, exploitation method selection, mechanization, and automation of mining operations.",
+      "linkText": "Request consultation"
+    }
+  },
+  "trustIndicators": {
+    "yearsExperience": "Years of experience",
+    "projectsCompleted": "Projects completed",
+    "satisfiedClients": "Satisfied clients",
+    "successRate": "Success rate"
+  },
+  "servicesPreview": {
+    "badge": "Specialized Services",
+    "title": "Our Services",
+    "description": "Specialized solutions in underground mine planning and operational optimization"
+  },
+  "whyUs": {
+    "badge": "Our Strengths",
+    "title": "Why choose us?",
+    "subtitle": "Rigorous methodology and proven experience in the mining sector",
+    "diff1Title": "Capital Efficiency Focus",
+    "diff1Desc": "We design mining programs that maximize return on investment in both the short and long term.",
+    "diff2Title": "Mechanized Solutions",
+    "diff2Desc": "We offer highly mechanized and automated solutions to optimize mining operations.",
+    "diff3Title": "Proven Methodology",
+    "diff3Desc": "We use a rigorous selection and planning methodology that maximizes economic benefit.",
+    "methodologyTitle": "Lean Mining Methodology",
+    "methodologyDesc": "Our methodology initially focuses on understanding the entire mining context and deposit characteristics — fundamental information for selecting the appropriate exploitation method and establishing a solid mine plan with low extraction costs.",
+    "step1": "Comprehensive mining context assessment",
+    "step2": "Deposit characteristics analysis",
+    "step3": "Rigorous exploitation method selection",
+    "step4": "Optimized mine plan development",
+    "step5": "Implementation and continuous monitoring"
+  },
+  "companies": {
+    "badge": "Proven Track Record",
+    "title": "Backed by Experience",
+    "subtitle": "Our consultants have worked at the most important mining operations across Latin America",
+    "bottomNote": "<strong>20 years</strong> of combined experience in world-class mining operations"
+  },
+  "news": {
+    "badge": "Latest News",
+    "title": "News & Events"
+  },
+  "cta": {
+    "badge": "Specialized Consulting",
+    "titlePart1": "Ready to optimize your",
+    "titleHighlight": "mining operation?",
+    "description": "Let's discuss how we can help you maximize the economic benefit of your project with our proven methodology.",
+    "stat1": "+50 successful projects",
+    "stat2": "7 countries",
+    "stat3": "Specialized team"
+  },
+  "locationMap": {
+    "badge": "Our Location",
+    "title": "Find us in",
+    "titleHighlight": "Arequipa",
+    "description": "Visit us at our offices or contact us to schedule a meeting",
+    "mainOffice": "Main Office",
+    "address": "Address",
+    "easyAccess": "Easy access",
+    "easyAccessDesc": "Central area with parking"
+  },
+  "servicesPage": {
+    "hero": {
+      "subtitle": "Our Services",
+      "titlePart1": "Mining",
+      "titleHighlight": "Consulting Services",
+      "description": "Specialized solutions in underground planning, operational optimization, and value maximization for mining projects.",
+      "feature1": "Mine design",
+      "feature2": "Cost analysis",
+      "feature3": "KPIs"
+    },
+    "intro": {
+      "badge": "Our Approach",
+      "textPart1": "We develop mining strategies that transform technical complexity into tangible economic results. Our approach combines",
+      "textHighlight": "methodological rigor",
+      "textPart2": "with decades of operational experience to deliver plans that maximize the return on every project."
+    },
+    "services": {
+      "mineDesign": {
+        "title": "Underground & Open Pit Mine Design",
+        "shortDescription": "Design engineering for underground and open-pit operations.",
+        "description": "We develop comprehensive mine designs that optimize extraction geometry, access infrastructure, and support systems. Our approach considers the geological and geomechanical characteristics of the deposit to maximize resource recovery with the highest safety standards.",
+        "feature1": "Open pit design and bench sequencing",
+        "feature2": "Underground mine design and method selection",
+        "feature3": "Access infrastructure, ramps, and galleries",
+        "feature4": "Ventilation, drainage, and ground support systems"
+      },
+      "costAnalysis": {
+        "title": "Cost Analysis",
+        "shortDescription": "Detailed assessment of operating and capital costs.",
+        "description": "We perform exhaustive analyses of mining cost structures, identifying optimization opportunities and establishing benchmarks against comparable operations. Our approach enables informed decisions on investments, exploitation methods, and operational strategies.",
+        "feature1": "Unit cost analysis by process",
+        "feature2": "Benchmarking with similar operations",
+        "feature3": "Cost driver identification",
+        "feature4": "Cost reduction and control strategies"
+      },
+      "kpiImplementation": {
+        "title": "KPI Implementation",
+        "shortDescription": "Performance indicator systems for high-performance operations management.",
+        "description": "We design and implement key performance indicator systems tailored to the specific needs of each operation. We establish clear metrics, reliable measurement systems, and dashboards that enable data-driven decision making for continuous improvement.",
+        "feature1": "Operational and strategic KPI definition",
+        "feature2": "Automated measurement and reporting systems",
+        "feature3": "Management and operational dashboards",
+        "feature4": "Data-driven continuous improvement programs"
+      },
+      "minePlanning": {
+        "title": "General Mine Planning",
+        "shortDescription": "Comprehensive short, medium, and long-term planning.",
+        "description": "We develop mine plans that align technical objectives with business financial goals. From daily planning to Life of Mine, we create programs that maximize asset value considering operational, market, and capital constraints.",
+        "feature1": "Short-term plans (daily, weekly, monthly)",
+        "feature2": "Medium-term planning (quarterly, annual)",
+        "feature3": "Life of Mine plans and strategic sequencing",
+        "feature4": "Cut-off grade optimization and scheduling"
+      }
+    },
+    "methodology": {
+      "badge": "Our Process",
+      "titlePart1": "Proven",
+      "titleHighlight": "Methodology",
+      "description": "Our methodology starts with a deep understanding of the mining context and deposit characteristics — fundamental information for selecting the appropriate exploitation method and establishing a solid mine plan.",
+      "step1Title": "Diagnosis",
+      "step1Desc": "Comprehensive deposit and operational context analysis",
+      "step2Title": "Evaluation",
+      "step2Desc": "Technical-economic selection of the optimal method",
+      "step3Title": "Design",
+      "step3Desc": "Detailed mine plan development",
+      "step4Title": "Implementation",
+      "step4Desc": "Technical support during execution and adjustments"
+    },
+    "cta": {
+      "badge": "Get started",
+      "titlePart1": "Ready to optimize your",
+      "titleHighlight": "operation?",
+      "description": "Our team of specialists is prepared to analyze your project and develop tailored solutions to meet your objectives."
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "subtitle": "About Us",
+      "titlePart1": "We are",
+      "titleHighlight": "Lean Mining",
+      "titlePart2": "Consulting",
+      "description": "Specialized consulting in underground mine planning with a focus on optimization, sustainability, and operational excellence.",
+      "latinAmerica": "Latin America",
+      "regionalReach": "Regional reach",
+      "excellence": "Excellence",
+      "provenMethodology": "Proven methodology",
+      "yearsExperience": "Years of experience",
+      "combinedTeam": "Combined team experience",
+      "countries": "Countries",
+      "ofOperation": "Of operation",
+      "projects": "Projects",
+      "completed": "Completed",
+      "certified": "Certified",
+      "qualitySafety": "In quality and safety"
+    },
+    "methodology": {
+      "badge": "Our Methodology",
+      "titlePart1": "A rigorous approach for",
+      "titleHighlight": "exceptional results",
+      "description": "Our proven methodology ensures that every project receives the attention and detailed analysis needed to achieve its objectives.",
+      "step1Title": "Deposit Analysis",
+      "step1Desc": "We deeply understand the geological context, mineral deposit characteristics, and specific operational conditions of each project.",
+      "step2Title": "Optimal Method Selection",
+      "step2Desc": "We evaluate and select the most appropriate exploitation method considering technical, economic, and safety aspects to maximize project value.",
+      "step3Title": "Implementation & Optimization",
+      "step3Desc": "We develop detailed mine plans and support implementation with a focus on operational efficiency, cost reduction, and continuous improvement."
+    },
+    "sustainability": {
+      "badge": "Sustainability",
+      "titlePart1": "Environment and",
+      "titleHighlight": "responsibility",
+      "description": "We believe in the balance between operational efficiency and environmental stewardship. Our solutions integrate sustainable practices that ensure the long-term viability of every mining operation.",
+      "feature1Title": "Operational Balance",
+      "feature1Desc": "We balance prices and costs with flexible and efficient operational responses.",
+      "feature2Title": "Resource Efficiency",
+      "feature2Desc": "We optimize natural resource usage while minimizing environmental impact.",
+      "feature3Title": "Long-Term Vision",
+      "feature3Desc": "We design plans that ensure future economic and environmental viability.",
+      "commitment": "Environmental Commitment",
+      "responsibleOps": "Responsible operations"
+    },
+    "expertise": {
+      "badge": "Areas of Expertise",
+      "titlePart1": "Specialized services for",
+      "titleHighlight": "the mining industry",
+      "description": "We offer comprehensive solutions covering the entire lifecycle of mining operations, from planning to optimization.",
+      "area1Title": "Mine Design & Planning",
+      "area1Desc": "We develop efficient mine designs and programs that maximize value extraction while optimizing operating costs.",
+      "area2Title": "Open Pit to Underground Transition",
+      "area2Desc": "Expertise in transitioning open-pit operations to underground mining, optimizing sequencing and minimizing risks.",
+      "area3Title": "Mechanization & Automation",
+      "area3Desc": "We implement mechanization and automation solutions that increase productivity and operational safety.",
+      "area4Title": "Concentrator Plant",
+      "area4Desc": "Specialized consulting in plant processes and metal extraction optimization to maximize recovery."
+    },
+    "cta": {
+      "badge": "Start today",
+      "titlePart1": "Ready to optimize your",
+      "titleHighlight": "mining operation?",
+      "description": "Our team of experts is ready to help you achieve your production and profitability goals.",
+      "stat1": "+50 projects",
+      "stat2": "7 countries",
+      "stat3": "+70 years experience"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "subtitle": "Contact",
+      "titlePart1": "Let's discuss your",
+      "titleHighlight": "next project",
+      "description": "We are ready to help you optimize your mining operations"
+    },
+    "map": {
+      "badge": "Our Location",
+      "titlePart1": "Find us in",
+      "titleHighlight": "Arequipa"
+    },
+    "experience": {
+      "badge": "Our experience",
+      "title": "We transform the efficiency of your mining operation",
+      "description": "With over 15 years of experience, our team of specialized consultants is ready to take your project to the next level.",
+      "stat1Value": "7 countries",
+      "stat1Label": "of operation",
+      "stat2Value": "+50 projects",
+      "stat2Label": "completed",
+      "stat3Value": "20 years",
+      "stat3Label": "combined experience"
+    },
+    "form": {
+      "title": "Send us a message",
+      "subtitle": "Fill out the form and we will get in touch with you.",
+      "name": "Full name",
+      "email": "Corporate email",
+      "company": "Company",
+      "phone": "Contact phone",
+      "recipient": "Contact person",
+      "service": "Service of interest",
+      "message": "Message",
+      "selectService": "Select a service",
+      "mineDesign": "Mine Design",
+      "costAnalysis": "Cost Analysis",
+      "kpiImplementation": "KPI Implementation",
+      "minePlanning": "Mine Planning",
+      "other": "Other",
+      "namePlaceholder": "Enter your name",
+      "emailPlaceholder": "email@company.com",
+      "companyPlaceholder": "Your company name",
+      "phonePlaceholder": "+51 999 000 000",
+      "messagePlaceholder": "Briefly describe your project or inquiry...",
+      "submitButton": "Send message",
+      "submitting": "Sending message...",
+      "successTitle": "Message sent",
+      "successMessage": "Thank you for contacting us. We will respond shortly.",
+      "sendAnother": "Send another message",
+      "privacyNotice": "By submitting this form, you accept our privacy policy.",
+      "errorSending": "Error sending message",
+      "connectionError": "Connection error while sending message"
+    },
+    "info": {
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "locationLabel": "Location",
+      "locationSoon": "Location coming soon",
+      "businessHours": "Business hours",
+      "weekdays": "Monday - Friday",
+      "saturday": "Saturday",
+      "timezone": "Peru Time (GMT-5)"
+    }
+  },
+  "teamPage": {
+    "hero": {
+      "badge": "Our Team",
+      "titlePart1": "Experts who",
+      "titleHighlight": "drive results",
+      "description": "Professionals with decades of experience in world-class mining operations, committed to excellence and continuous improvement in every project."
+    },
+    "grid": {
+      "title": "Specialized Consultants",
+      "description": "A multidisciplinary team with proven experience in the leading mining operations across Latin America."
+    },
+    "cta": {
+      "title": "Need specialized advisory?",
+      "description": "Our team is ready to analyze your challenges and develop tailored solutions for your operation.",
+      "button": "Contact the team"
+    }
+  }
+}
