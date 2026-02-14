@@ -43,40 +43,37 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden"
+              className="bg-white rounded-2xl shadow-2xl w-[min(900px,92vw)] max-h-[80vh] overflow-hidden grid grid-cols-1 md:grid-cols-[360px_1fr]"
             >
-              <div className="flex flex-col md:flex-row h-full max-h-[90vh]">
-                <div className="md:w-2/5 bg-slate-50 flex-shrink-0">
-                  <div className="relative w-full h-64 md:h-full overflow-hidden">
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={displayName}
-                        className="absolute inset-0 w-full h-full object-cover object-center"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
-                        <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-sm">
-                          <svg
-                            className="w-16 h-16 text-slate-300"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={1}
-                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    )}
+              <div className="bg-[#f5f7fb] md:h-[80vh] h-[40vh] flex items-center justify-center overflow-hidden">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={displayName}
+                    className="block w-full h-full object-cover object-center"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+                    <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-sm">
+                      <svg
+                        className="w-16 h-16 text-slate-300"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1}
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                )}
+              </div>
 
-                <div className="md:w-3/5 flex flex-col overflow-hidden">
+              <div className="min-w-0 flex flex-col overflow-hidden">
                   <div className="flex items-start justify-between p-6 pb-0 border-b border-slate-100">
                     <div className="pb-4">
                       <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-1">
@@ -219,7 +216,6 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                     </div>
                   </div>
                 </div>
-              </div>
             </motion.div>
           </div>
         </>
