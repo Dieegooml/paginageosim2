@@ -1,21 +1,43 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Container from '../components/ui/Container';
 import ContactForm from '../components/contact/ContactForm';
 import ContactInfo from '../components/contact/ContactInfo';
-import { company } from '../data/company';
 import { premiumHeroOverlayStyle } from '../components/ui/heroOverlay';
 
 // Coloca tu imagen de hero en: public/images/contact/hero-contacto.jpg
 const CONTACT_HERO_IMAGE = '/images/contact/hero-contacto.jpg';
 const CONTACT_EXPERIENCE_BG = '/images/contact/contact-experience-bg.jpg';
-const OFFICE_LAT = -16.42745554;
-const OFFICE_LNG = -71.50242861;
+
+const OFFICES = [
+  {
+    id: 'peru',
+    label: 'Perú',
+    city: 'Arequipa',
+    country: 'Perú',
+    address: 'Av. Colonial 601, Ampliación Paucarpata',
+    fullAddress: 'Arequipa, Perú',
+    embedUrl: 'https://maps.google.com/maps?q=-16.42745554,-71.50242861&z=17&output=embed',
+    linkUrl: 'https://maps.google.com/?q=-16.42745554,-71.50242861',
+    color: 'from-primary-600 to-primary-700',
+    accent: 'bg-primary-500',
+  },
+  {
+    id: 'mexico',
+    label: 'México',
+    city: 'Chihuahua',
+    country: 'México',
+    address: 'Privada José María Morelos y Pavón 1820',
+    fullAddress: 'Chihuahua, Chihuahua 31020, México',
+    embedUrl: 'https://maps.google.com/maps?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico&z=16&output=embed',
+    linkUrl: 'https://maps.google.com/?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico',
+    color: 'from-blue-600 to-blue-700',
+    accent: 'bg-blue-500',
+  },
+];
 
 const Contact = () => {
-  const { address } = company.contact;
-  const fullAddress = [address.street, address.district, address.city, address.country].filter(Boolean).join(', ');
-  const mapsEmbedUrl = `https://www.google.com/maps?q=${OFFICE_LAT},${OFFICE_LNG}&z=17&output=embed`;
-  const mapsLinkUrl = `https://maps.google.com/?q=${OFFICE_LAT},${OFFICE_LNG}`;
+  const [activeOffice, setActiveOffice] = useState(0);
   return (
     <>
       <section className="relative min-h-screen overflow-hidden">
@@ -31,8 +53,6 @@ const Contact = () => {
           style={premiumHeroOverlayStyle}
         />
         
-
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
 
         <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-primary-600/10 blur-[150px] pointer-events-none" />
         <div className="absolute top-1/4 right-0 w-1/4 h-1/3 bg-blue-600/10 blur-[120px] pointer-events-none" />
@@ -107,65 +127,120 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="relative py-20 md:py-28 bg-white overflow-hidden">
-        <Container>
+      <section className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-50/40 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[120px] pointer-events-none" />
+
+        <Container className="relative">
+          {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-12 h-px bg-primary-500" />
-              <span className="text-primary-600 text-sm font-medium tracking-widest uppercase">Nuestra Ubicación
-              </span>
-              <div className="w-12 h-px bg-primary-500" />
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-px bg-primary-500" />
+              <span className="text-primary-600 text-xs font-bold tracking-[0.3em] uppercase">Nuestras Oficinas</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Encuéntranos en{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-500">
-                Arequipa
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+              Presencia en{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
+                Latinoamérica
               </span>
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">{fullAddress}</p>
+            <p className="text-slate-500 mt-3 max-w-lg">
+              Selecciona una oficina para ver su ubicación en el mapa.
+            </p>
           </motion.div>
 
+          {/* Layout: selector left + map right */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="relative"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch"
           >
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary-500/10 to-blue-500/5 rounded-[2rem] blur-2xl" />
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/80">
-              <iframe
-                src={mapsEmbedUrl}
-                className="w-full h-[400px] md:h-[500px]"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación Lean Mining Consulting"
-              />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 md:left-auto md:right-6 md:w-auto">
+            {/* Office selector */}
+            <div className="flex flex-col gap-4">
+              {OFFICES.map((office, index) => (
+                <button
+                  key={office.id}
+                  onClick={() => setActiveOffice(index)}
+                  className={`text-left w-full rounded-2xl p-5 border-2 transition-all duration-300 ${
+                    activeOffice === index
+                      ? 'bg-white border-primary-500 shadow-lg shadow-primary-500/10'
+                      : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-md'
+                  }`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${office.color} flex items-center justify-center flex-shrink-0 shadow-md`}>
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="font-bold text-slate-900 text-sm">{office.city}</p>
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full text-white bg-gradient-to-r ${office.color}`}>
+                          {office.label}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-500 leading-relaxed">{office.address}</p>
+                      <p className="text-xs text-slate-400 mt-0.5">{office.fullAddress}</p>
+                    </div>
+                    <div className={`w-2 h-2 rounded-full mt-1 flex-shrink-0 transition-all duration-300 ${
+                      activeOffice === index ? `${office.accent}` : 'bg-slate-200'
+                    }`} />
+                  </div>
+                </button>
+              ))}
+
+              {/* Link to maps */}
               <a
-                href={mapsLinkUrl}
+                href={OFFICES[activeOffice].linkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/95 backdrop-blur-sm text-slate-900 font-medium rounded-xl shadow-lg hover:bg-white transition-all"
+                className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300"
               >
-                <svg className="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                Abrir en Google Maps
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
+                Abrir en Google Maps
               </a>
+            </div>
+
+            {/* Map */}
+            <div className="lg:col-span-2">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/60 border border-slate-200/80 h-[360px] md:h-[440px] lg:h-full min-h-[360px]">
+                <AnimatePresence mode="wait">
+                  <motion.iframe
+                    key={OFFICES[activeOffice].id}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    src={OFFICES[activeOffice].embedUrl}
+                    className="w-full h-full absolute inset-0"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Oficina ${OFFICES[activeOffice].city}`}
+                  />
+                </AnimatePresence>
+                {/* Badge overlay */}
+                <div className="absolute top-4 left-4 pointer-events-none">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-lg shadow-md text-sm font-semibold text-slate-800">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className={`w-4 h-4 ${activeOffice === 0 ? 'text-primary-600' : 'text-blue-600'}`}>
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    {OFFICES[activeOffice].city}, {OFFICES[activeOffice].country}
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </Container>

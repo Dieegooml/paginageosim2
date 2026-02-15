@@ -12,12 +12,12 @@ const ConsultantCard = ({ member, onClick }) => {
       className="group cursor-pointer h-full"
     >
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col border border-slate-100 hover:border-slate-200">
-        <div className="relative bg-slate-100 h-64 md:h-72 overflow-hidden">
+        <div className="relative bg-white w-full aspect-[3/4] overflow-hidden">
           {member.image ? (
             <img
               src={member.image}
               alt={displayName}
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-center"
               loading="lazy"
             />
           ) : (

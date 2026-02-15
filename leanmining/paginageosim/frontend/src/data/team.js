@@ -4,53 +4,53 @@
 
 export const team = [
   {
-    id: 'luis-talaverano',
-    name: 'Luis Felipe Talaverano Cárdenas',
-    role: 'Consultor Senior',
-    position: 'Especialista en Metalurgia y Procesos',
-    location: 'Lima, Perú',
-    yearsExperience: 15,
+    id: 'luis-zevallos',
+    name: 'Luis Enrique Zevallos Paredes',
+    role: 'Director',
+    position: 'Director de Operaciones y Planeamiento Minero',
+    location: 'Arequipa, Perú',
+    yearsExperience: 25,
 
     // Biografías
-    shortBio: 'Ingeniero Metalúrgico con más de 15 años de experiencia en plantas de procesamiento de minerales de oro, cobre y polimetálicos.',
-    bio: 'Ingeniero Metalúrgico con amplia experiencia en operaciones de plantas de procesamiento de minerales. Especialista en lixiviación (CIL, CIP, Heap Leaching), flotación e hidrometalurgia. Ha liderado proyectos de optimización y mejora continua en operaciones de clase mundial en Perú, Nicaragua y Brasil.',
+    shortBio: 'Ingeniero Geólogo con MBA y más de 25 años de experiencia en dirección y gerencia de operaciones mineras en Perú, México y Bolivia.',
+    bio: 'Profesional con amplia experiencia en dirección y gerencia de proyectos mineros, especializado en planeamiento estratégico, optimización de procesos y gestión de equipos multidisciplinarios. Experto en análisis financiero y control de costos operativos. Ha liderado operaciones en empresas como Grupo México, Minera Frisco, First Majestic, Hochschild Mining y Fortuna Silver.',
 
     // Para filtrado y tags
     specialties: [
-      'Lixiviación (CIL, CIP, Heap Leaching)',
-      'Flotación',
-      'Hidrometalurgia',
-      'Optimización de Procesos',
-      'Gestión de Operaciones',
-      'Mejora Continua',
+      'Dirección de Operaciones Mineras',
+      'Planeamiento Estratégico',
+      'Control de Costos',
+      'Gestión de Proyectos',
+      'Recursos y Reservas',
+      'Ingeniería de Minas',
     ],
 
     // Detalles para modal
-    education: 'Ingeniero Metalúrgico - Universidad Nacional de Ingeniería (UNI)',
+    education: 'MBA - Tecnológico de Monterrey, México | Maestría en Ingeniería de Minas - Universidad de Antofagasta, Chile | Ingeniero Geólogo - Universidad Nacional San Agustín de Arequipa',
     certifications: [
-      'Lean Six Sigma',
-      'Gestión de Proyectos',
-      'Seguridad Minera',
+      'Diplomado en Planeamiento y Diseño de Minas - CAMIPER',
+      'MineSight, Datamine, Deswik',
+      'Gestión Empresarial y Finanzas',
     ],
     highlights: [
-      'Experiencia en Newmont, Glencore, Nexa Resources y Rio Tinto',
-      'Gestión de plantas de procesamiento en Perú, Nicaragua y Brasil',
-      'Especialista en optimización de circuitos de lixiviación y flotación',
-      'Liderazgo de equipos multidisciplinarios en operaciones de clase mundial',
-      'Implementación de programas de mejora continua y reducción de costos',
+      'Gerente Regional de Planeación en Grupo México',
+      'Director de Mina en Minera Frisco (Unidad San Felipe)',
+      'Reducción de costos operativos hasta 10% mediante procesos innovadores',
+      'Incremento de productividad minera en 18% con estrategias de planeación',
+      'Liderazgo de operaciones en Perú, México y Bolivia',
     ],
 
     // Contacto y redes
-    linkedin: 'https://www.linkedin.com/in/luis-talaverano/',
-    email: 'luis.talaverano@leanmining-consulting.com',
-    image: '/images/team/luis-talaverano.jpg',
+    linkedin: 'https://www.linkedin.com/in/luisenrique-zevallos-paredes/',
+    email: 'luis.zevallos@leanmining-consulting.com',
+    image: '/images/team/luis-zevallos.jpg',
   },
   {
     id: 'wilber-manrique',
     name: 'Wilber Martín Manrique Valdivia',
     role: 'Consultor Senior',
     position: 'Especialista en Hidrogeología',
-    location: 'Lima, Perú',
+    location: 'Arequipa, Perú',
     yearsExperience: 20,
 
     // Biografías
@@ -89,53 +89,11 @@ export const team = [
     image: '/images/team/wilber-manrique.jpg',
   },
   {
-    id: 'luis-zevallos',
-    name: 'Luis Enrique Zevallos Paredes',
-    role: 'Director',
-    position: 'Director de Operaciones y Planeamiento Minero',
-    location: 'Chihuahua, México',
-    yearsExperience: 25,
-
-    // Biografías
-    shortBio: 'Ingeniero Geólogo con MBA y más de 25 años de experiencia en dirección y gerencia de operaciones mineras en Perú, México y Bolivia.',
-    bio: 'Profesional con amplia experiencia en dirección y gerencia de proyectos mineros, especializado en planeamiento estratégico, optimización de procesos y gestión de equipos multidisciplinarios. Experto en análisis financiero y control de costos operativos. Ha liderado operaciones en empresas como Grupo México, Minera Frisco, First Majestic, Hochschild Mining y Fortuna Silver.',
-
-    // Para filtrado y tags
-    specialties: [
-      'Dirección de Operaciones Mineras',
-      'Planeamiento Estratégico',
-      'Control de Costos',
-      'Gestión de Proyectos',
-      'Recursos y Reservas',
-      'Ingeniería de Minas',
-    ],
-
-    // Detalles para modal
-    education: 'MBA - Tecnológico de Monterrey, México | Maestría en Ingeniería de Minas - Universidad de Antofagasta, Chile | Ingeniero Geólogo - Universidad Nacional San Agustín de Arequipa',
-    certifications: [
-      'Diplomado en Planeamiento y Diseño de Minas - CAMIPER',
-      'MineSight, Datamine, Deswik',
-      'Gestión Empresarial y Finanzas',
-    ],
-    highlights: [
-      'Gerente Regional de Planeación en Grupo México',
-      'Director de Mina en Minera Frisco (Unidad San Felipe)',
-      'Reducción de costos operativos hasta 10% mediante procesos innovadores',
-      'Incremento de productividad minera en 18% con estrategias de planeación',
-      'Liderazgo de operaciones en Perú, México y Bolivia',
-    ],
-
-    // Contacto y redes
-    linkedin: 'https://www.linkedin.com/in/luisenrique-zevallos-paredes/',
-    email: 'luis.zevallos@leanmining-consulting.com',
-    image: '/images/team/luis-zevallos.jpg',
-  },
-  {
     id: 'antonio-gonzalez',
     name: 'Antonio González Reyes',
     role: 'Consultor Senior',
     position: 'Especialista en Planeamiento y Servicios Técnicos',
-    location: 'Hidalgo, México',
+    location: 'Arequipa, Perú',
     yearsExperience: 12,
 
     // Biografías
@@ -171,6 +129,49 @@ export const team = [
     linkedin: null,
     email: 'antonio.gonzales@leanmining.com',
     image: '/images/team/antonio-gonzalez.jpg',
+  },
+  {
+    id: 'luis-talaverano',
+    name: 'Luis Felipe Talaverano Cárdenas',
+    role: 'Consultor Senior',
+    position: 'Especialista en Metalurgia y Procesos',
+    location: 'Arequipa, Perú',
+    yearsExperience: 15,
+
+    // Biografías
+    shortBio: 'Ingeniero Metalúrgico con más de 15 años de experiencia en plantas de procesamiento de minerales de oro, cobre y polimetálicos.',
+    bio: 'Ingeniero Metalúrgico con amplia experiencia en operaciones de plantas de procesamiento de minerales. Especialista en lixiviación (CIL, CIP, Heap Leaching), flotación e hidrometalurgia. Ha liderado proyectos de optimización y mejora continua en operaciones de clase mundial en Perú, Colombia, México, Argentina, Nicaragua y Brasil.',
+
+    // Para filtrado y tags
+    specialties: [
+      'Lixiviación (CIL, CIP, Heap Leaching)',
+      'Flotación',
+      'Hidrometalurgia',
+      'Optimización de Procesos',
+      'Gestión de Operaciones',
+      'Mejora Continua',
+    ],
+
+    // Detalles para modal
+    education: 'Ingeniero Metalúrgico - Universidad Nacional de Ingeniería (UNI)',
+    certifications: [
+      'Lean Six Sigma',
+      'Gestión de Proyectos',
+      'Seguridad Minera',
+    ],
+    highlights: [
+      'Experiencia en Newmont, Glencore, Nexa Resources y Rio Tinto',
+      'Gestión de plantas de procesamiento en Perú, Colombia, México y Argentina',
+      'Proyectos de optimización en Nicaragua y Brasil',
+      'Especialista en optimización de circuitos de lixiviación y flotación',
+      'Liderazgo de equipos multidisciplinarios en operaciones de clase mundial',
+      'Implementación de programas de mejora continua y reducción de costos',
+    ],
+
+    // Contacto y redes
+    linkedin: 'https://www.linkedin.com/in/luis-talaverano/',
+    email: 'luis.talaverano@leanmining-consulting.com',
+    image: '/images/team/luis-talaverano.jpg',
   },
 ];
 

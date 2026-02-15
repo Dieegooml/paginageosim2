@@ -36,10 +36,13 @@ const Team = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-              Consultores Especializados
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-6">
+              <span className="text-slate-900">Consultores </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-500">
+                Especializados
+              </span>
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Un equipo multidisciplinario con experiencia comprobada en las principales
               operaciones mineras de Latinoamérica.
             </p>
