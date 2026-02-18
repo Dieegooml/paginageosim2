@@ -1,38 +1,41 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import { premiumHeroOverlayStyle } from '../ui/heroOverlay';
 
-const stats = [
-  {
-    value: '+20',
-    label: 'Años de experiencia',
-    sublabel: 'En la industria minera',
-  },
-  {
-    value: '7',
-    label: 'Países',
-    sublabel: 'De operación activa',
-  },
-  {
-    value: '+30',
-    label: 'Proyectos',
-    sublabel: 'Ejecutados con éxito',
-  },
-  {
-    value: null,
-    label: 'Certificados',
-    sublabel: 'En calidad y seguridad',
-    isIcon: true,
-  },
-];
-
 const AboutHero = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    {
+      value: '+20',
+      label: t('aboutPage.hero.stats.yearsLabel'),
+      sublabel: t('aboutPage.hero.stats.yearsSubLabel'),
+    },
+    {
+      value: '7',
+      label: t('aboutPage.hero.stats.countriesLabel'),
+      sublabel: t('aboutPage.hero.stats.countriesSubLabel'),
+    },
+    {
+      value: '+30',
+      label: t('aboutPage.hero.stats.projectsLabel'),
+      sublabel: t('aboutPage.hero.stats.projectsSubLabel'),
+    },
+    {
+      value: null,
+      label: t('aboutPage.hero.stats.certifiedLabel'),
+      sublabel: t('aboutPage.hero.stats.certifiedSubLabel'),
+      isIcon: true,
+    },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/about/hero-mining.jpg"
-          alt="Operación minera subterránea"
+          alt={t('aboutPage.hero.imageAlt', { defaultValue: 'Underground mining operation' })}
           className="w-full h-full object-cover"
           onError={(e) => {
             e.target.style.display = 'none';
@@ -40,11 +43,8 @@ const AboutHero = () => {
         />
       </div>
 
-      <div
-        className="absolute inset-0"
-        style={premiumHeroOverlayStyle}
-      />
-      
+      <div className="absolute inset-0" style={premiumHeroOverlayStyle} />
+
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent" />
 
       <Container className="relative z-10 py-32">
@@ -57,7 +57,7 @@ const AboutHero = () => {
           >
             <div className="w-12 h-px bg-gradient-to-r from-primary-400/80 to-primary-300/40" />
             <span className="text-primary-300 text-xs font-semibold tracking-[0.3em] uppercase">
-              Sobre Nosotros
+              {t('aboutPage.hero.subtitle')}
             </span>
           </motion.div>
 
@@ -68,9 +68,11 @@ const AboutHero = () => {
             className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-8"
             style={{ textShadow: '0 2px 18px rgba(0,0,0,0.45)' }}
           >
-            <span className="hero-title-main">Somos Lean Mining</span>
+            <span className="hero-title-main">
+              {t('aboutPage.hero.titlePart1')} {t('aboutPage.hero.titleHighlight')}
+            </span>
             <br />
-            <span className="hero-title-accent">Consulting</span>
+            <span className="hero-title-accent">{t('aboutPage.hero.titlePart2')}</span>
           </motion.h1>
 
           <motion.div
@@ -87,7 +89,7 @@ const AboutHero = () => {
               transition={{ duration: 0.7, delay: 0.35, ease: 'easeOut' }}
               className="text-lg text-white/90 leading-[1.6]"
             >
-              Consultoría técnica de alto nivel en planeación minera, procesos metalúrgicos e hidrogeología.
+              {t('aboutPage.hero.descriptionLine1')}
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 28 }}
@@ -95,7 +97,7 @@ const AboutHero = () => {
               transition={{ duration: 0.7, delay: 0.42, ease: 'easeOut' }}
               className="mt-2 text-lg text-white/90 leading-[1.6]"
             >
-              Impulsamos la optimización operativa, la sostenibilidad y la excelencia técnica en cada etapa del ciclo minero.
+              {t('aboutPage.hero.descriptionLine2')}
             </motion.p>
           </div>
 
@@ -134,7 +136,9 @@ const AboutHero = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
         <div className="flex flex-col items-center gap-3">
-          <span className="text-white/25 text-[10px] uppercase tracking-[0.35em]">Descubrir más</span>
+          <span className="text-white/25 text-[10px] uppercase tracking-[0.35em]">
+            {t('common.discoverMore')}
+          </span>
           <div className="w-px h-10 bg-gradient-to-b from-white/25 to-transparent" />
         </div>
       </motion.div>
@@ -143,7 +147,3 @@ const AboutHero = () => {
 };
 
 export default AboutHero;
-
-
-
-

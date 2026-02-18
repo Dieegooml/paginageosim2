@@ -15,7 +15,7 @@ export const news = [
     id: 2,
     title: 'Participación en PERUMIN 36 - Convención Minera',
     excerpt:
-      'Estaremos presentes en la convención minera más importante de Latinoamérica presentando nuestras soluciones.',
+      'Estaremos presentes en la convención minera más importante de America presentando nuestras soluciones.',
     date: '2025-02-20',
     category: 'Evento',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',

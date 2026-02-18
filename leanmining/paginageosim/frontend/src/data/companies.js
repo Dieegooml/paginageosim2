@@ -107,7 +107,7 @@ export const companies = [
 
 export const companiesSection = {
   title: 'Respaldados por la Experiencia',
-  subtitle: 'Nuestros consultores han trabajado en las operaciones mineras más importantes de Latinoamérica',
+  subtitle: 'Nuestros consultores han trabajado en las operaciones mineras más importantes de America',
   url:'#',
 };
 

@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
-const trustStats = [
-  { value: '+20', label: 'años de experiencia' },
-  { value: '+32', label: 'proyectos completados' },
-  { value: 'Presencia', label: 'internacional' },
-  { value: 'Consultoría', label: 'especializada' },
-];
-
 const TrustIndicators = () => {
+  const { t } = useTranslation();
+  const trustStats = [
+    { value: '+20', label: t('trustIndicators.yearsExperience') },
+    { value: '+32', label: t('trustIndicators.projectsCompleted') },
+    { value: t('trustIndicators.globalValue', { defaultValue: 'Global' }), label: t('trustIndicators.globalPresence', { defaultValue: 'International presence' }) },
+    { value: t('trustIndicators.specializedValue', { defaultValue: 'Consulting' }), label: t('trustIndicators.specializedLabel', { defaultValue: 'specialized' }) },
+  ];
+
   return (
     <section className="relative bg-[#123B70] overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/40 to-transparent" />

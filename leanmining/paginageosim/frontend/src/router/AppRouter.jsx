@@ -9,6 +9,7 @@ import Team from "../pages/Team";
 import Contact from "../pages/Contact";
 import Terms from "../pages/Terms";
 import Privacy from "../pages/Privacy";
+import CentroContenido from "../pages/CentroContenido";
 
 const AppRouter = () => {
   return (
@@ -16,13 +17,14 @@ const AppRouter = () => {
       <ScrollManager />
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/nosotros" element={<About />} />
-          <Route path="/servicios" element={<Services />} />
-          <Route path="/equipo" element={<Team />} />
-          <Route path="/contacto" element={<Contact />} />
-          <Route path="/terminos" element={<Terms />} />
-          <Route path="/privacidad" element={<Privacy />} />
+          <Route path="/"                   element={<Home />}            />
+          <Route path="/nosotros"           element={<About />}           />
+          <Route path="/servicios"          element={<Services />}        />
+          <Route path="/equipo"             element={<Team />}            />
+          <Route path="/contacto"           element={<Contact />}         />
+          <Route path="/centro-contenido"   element={<CentroContenido />} />
+          <Route path="/terminos"           element={<Terms />}           />
+          <Route path="/privacidad"         element={<Privacy />}         />
         </Routes>
       </Layout>
     </BrowserRouter>

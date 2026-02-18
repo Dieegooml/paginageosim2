@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
 const PinIcon = () => (
@@ -10,32 +11,35 @@ const PinIcon = () => (
 
 const offices = [
   {
-    country: 'Perú',
+    country: 'Peru',
     city: 'Arequipa',
     address: 'Av. Colonial 601, Paucarpata',
     linkUrl: 'https://maps.google.com/?q=-16.42745554,-71.50242861',
   },
   {
-    country: 'México',
+    country: 'Mexico',
     city: 'Chihuahua',
-    address: 'Privada José María Morelos y Pavón 1820',
-    linkUrl: 'https://maps.google.com/?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico',
+    address: 'Privada Jose Maria Morelos y Pavon 1820',
+    linkUrl:
+      'https://maps.google.com/?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico',
   },
 ];
 
-const footerLinks = [
-  { path: '/nosotros', label: 'Nosotros' },
-  { path: '/servicios', label: 'Servicios' },
-  { path: '/equipo', label: 'Equipo' },
-  { path: '/contacto', label: 'Contacto' },
-];
-
 const whatsappNumber = '526142088019';
-const whatsappMessage = 'Buen dia, me gustaria recibir asesoria especializada para mi proyecto minero.';
+const whatsappMessage =
+  'Buen dia, me gustaria recibir asesoria especializada para mi proyecto minero.';
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const footerLinks = [
+    { path: '/nosotros', label: t('nav.about') },
+    { path: '/servicios', label: t('nav.services') },
+    { path: '/equipo', label: t('nav.team') },
+    { path: '/contacto', label: t('nav.contact') },
+    { path: '/centro-contenido', label: t('nav.contentHub') },
+  ];
 
   return (
     <footer className="relative overflow-hidden">
@@ -51,8 +55,6 @@ const Footer = () => {
           className="py-16 md:py-20"
         >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 lg:gap-12 items-start">
-
-            {/* Logo + tagline */}
             <div className="md:col-span-4">
               <img
                 src="/images/logo-leanmining-consulting-footer.png"
@@ -61,10 +63,9 @@ const Footer = () => {
                 loading="lazy"
               />
               <p className="text-slate-300/70 text-sm leading-relaxed max-w-xs">
-                Consultoría especializada en minería para proyectos en toda Latinoamérica.
+                {t('footer.description')}
               </p>
 
-              {/* WhatsApp */}
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -78,10 +79,9 @@ const Footer = () => {
               </a>
             </div>
 
-            {/* Navigation */}
             <div className="md:col-span-3">
               <h4 className="text-[12px] font-bold text-slate-100 uppercase tracking-[0.18em] mb-6 pb-3 border-b border-white/10">
-                Navegación
+                {t('footer.navigation')}
               </h4>
               <ul className="space-y-3.5">
                 {footerLinks.map((link) => (
@@ -98,15 +98,14 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Offices */}
             <div className="md:col-span-5">
               <h4 className="text-[12px] font-bold text-slate-100 uppercase tracking-[0.18em] mb-6 pb-3 border-b border-white/10">
-                Nuestras Oficinas
+                {t('footer.offices')}
               </h4>
 
               <div className="space-y-5">
                 {offices.map((office) => (
-                  <div key={office.country} className="flex items-start gap-3 group">
+                  <div key={`${office.country}-${office.city}`} className="flex items-start gap-3 group">
                     <div className="w-8 h-8 bg-[#1A4468]/60 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 border border-white/10 text-[#A6CC6A]">
                       <PinIcon />
                     </div>
@@ -115,16 +114,14 @@ const Footer = () => {
                         {office.city},&nbsp;
                         <span className="text-[#A6CC6A]">{office.country}</span>
                       </p>
-                      <p className="text-slate-400 text-xs leading-relaxed mt-0.5">
-                        {office.address}
-                      </p>
+                      <p className="text-slate-400 text-xs leading-relaxed mt-0.5">{office.address}</p>
                       <a
                         href={office.linkUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 mt-1 text-xs text-slate-400 hover:text-[#A6CC6A] transition-colors duration-200"
                       >
-                        Ver en Maps
+                        {t('common.openGoogleMaps')}
                         <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
@@ -137,18 +134,17 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Bottom bar */}
         <div className="border-t border-white/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-slate-400/80 font-medium tracking-wide text-center sm:text-left">
-            &copy; {currentYear} Lean Mining Consulting. Todos los derechos reservados.
+            &copy; {currentYear} Lean Mining Consulting. {t('footer.rights')}
           </p>
           <div className="flex items-center gap-4 text-xs">
             <Link to="/terminos" className="text-slate-400 hover:text-white transition-colors">
-              Términos y Condiciones
+              {t('footer.terms')}
             </Link>
             <span className="text-white/20">|</span>
             <Link to="/privacidad" className="text-slate-400 hover:text-white transition-colors">
-              Política de Privacidad
+              {t('footer.privacy')}
             </Link>
           </div>
         </div>

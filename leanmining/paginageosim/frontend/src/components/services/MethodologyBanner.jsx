@@ -1,38 +1,35 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
-const steps = [
-  {
-    number: '01',
-    title: 'Diagnóstico',
-    description: 'Evaluación integral del yacimiento, contexto operativo y variables técnico-económicas',
-  },
-  {
-    number: '02',
-    title: 'Evaluación',
-    description: 'Análisis técnico-económico y selección del método óptimo de explotación',
-  },
-  {
-    number: '03',
-    title: 'Diseño',
-    description: 'Desarrollo del Plan Minero Diseñado y Detallado con integración técnica-financiera',
-  },
-  {
-    number: '04',
-    title: 'Implementación',
-    description: 'Acompañamiento especializado en ejecución, control y ajustes operativos',
-  },
-];
-
 const MethodologyBanner = () => {
+  const { t } = useTranslation();
+  const steps = [
+    {
+      number: '01',
+      title: t('servicesPage.methodology.step1Title'),
+      description: t('servicesPage.methodology.step1Desc'),
+    },
+    {
+      number: '02',
+      title: t('servicesPage.methodology.step2Title'),
+      description: t('servicesPage.methodology.step2Desc'),
+    },
+    {
+      number: '03',
+      title: t('servicesPage.methodology.step3Title'),
+      description: t('servicesPage.methodology.step3Desc'),
+    },
+    {
+      number: '04',
+      title: t('servicesPage.methodology.step4Title'),
+      description: t('servicesPage.methodology.step4Desc'),
+    },
+  ];
+
   return (
     <section className="relative py-28 md:py-36 overflow-hidden">
-      {/* Fondo degradado premium */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0f2a4d] to-[#123b6b]" />
-
-      {/* Imagen de fondo para metodología: */}
-      {/* <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/methodology-bg.jpg')" }} /> */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0f2a4d]/90 to-[#123b6b]/85" /> */}
 
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary-500/8 rounded-full blur-[150px]" />
@@ -52,22 +49,18 @@ const MethodologyBanner = () => {
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-primary-400/60" />
             <span className="text-primary-300 text-xs font-semibold tracking-[0.3em] uppercase">
-              Nuestro Proceso
+              {t('servicesPage.methodology.badge')}
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-primary-400/60" />
           </div>
 
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-            <span className="text-white">Metodología </span>
-            <span className="text-[#3B82F6]">
-              Probada
-            </span>
+            <span className="text-white">{t('servicesPage.methodology.titlePart1')} </span>
+            <span className="text-[#3B82F6]">{t('servicesPage.methodology.titleHighlight')}</span>
           </h2>
 
           <p className="text-xl text-slate-300/90 max-w-3xl mx-auto leading-relaxed">
-            Nuestra metodología inicia con la comprensión profunda del contexto minero
-            y las características del yacimiento, información fundamental para seleccionar
-            el método de explotación apropiado y establecer un plan minero sólido.
+            {t('servicesPage.methodology.description')}
           </p>
         </motion.div>
 
@@ -89,9 +82,7 @@ const MethodologyBanner = () => {
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary-300 transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="text-slate-400 leading-relaxed text-sm">
-                  {step.description}
-                </p>
+                <p className="text-slate-400 leading-relaxed text-sm">{step.description}</p>
               </div>
 
               {index < steps.length - 1 && (

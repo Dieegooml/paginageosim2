@@ -1,22 +1,27 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
 const offices = [
   {
-    country: 'Perú',
+    id: 'peru',
+    country: 'Peru',
     city: 'Arequipa',
-    address: 'Av. Colonial 601, Ampliación Paucarpata',
-    fullAddress: 'Arequipa, Perú',
+    address: 'Av. Colonial 601, Ampliacion Paucarpata',
+    fullAddress: 'Arequipa, Peru',
     embedUrl: 'https://maps.google.com/maps?q=-16.42745554,-71.50242861&z=17&output=embed',
     linkUrl: 'https://maps.google.com/?q=-16.42745554,-71.50242861',
   },
   {
-    country: 'México',
+    id: 'mexico',
+    country: 'Mexico',
     city: 'Chihuahua',
-    address: 'Calle Privada José María Morelos y Pavón 1820',
-    fullAddress: 'Chihuahua, Chihuahua 31020, México',
-    embedUrl: 'https://maps.google.com/maps?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico&z=16&output=embed',
-    linkUrl: 'https://maps.google.com/?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico',
+    address: 'Calle Privada Jose Maria Morelos y Pavon 1820',
+    fullAddress: 'Chihuahua, Chihuahua 31020, Mexico',
+    embedUrl:
+      'https://maps.google.com/maps?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico&z=16&output=embed',
+    linkUrl:
+      'https://maps.google.com/?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico',
   },
 ];
 
@@ -27,15 +32,24 @@ const PinIcon = () => (
 );
 
 const LocationMap = () => {
+  const { t } = useTranslation();
+
+  const localizedOffices = offices.map((office) => ({
+    ...office,
+    country: t(`homeLocation.offices.${office.id}.country`, { defaultValue: office.country }),
+    city: t(`homeLocation.offices.${office.id}.city`, { defaultValue: office.city }),
+    address: t(`homeLocation.offices.${office.id}.address`, { defaultValue: office.address }),
+    fullAddress: t(`homeLocation.offices.${office.id}.fullAddress`, {
+      defaultValue: office.fullAddress,
+    }),
+  }));
+
   return (
     <section className="relative py-28 md:py-36 bg-gradient-to-b from-white to-slate-50/80 overflow-hidden">
-      {/* Fondos decorativos */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary-50/30 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-20 left-0 w-[350px] h-[350px] bg-blue-50/20 rounded-full blur-[100px] pointer-events-none" />
 
       <Container className="relative">
-
-        {/* ── ENCABEZADO ANIMADO ── */}
         <div className="text-center mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -46,7 +60,7 @@ const LocationMap = () => {
           >
             <div className="h-px w-10 bg-gradient-to-r from-transparent to-primary-400" />
             <span className="text-primary-600 text-xs font-bold tracking-[0.3em] uppercase">
-              Presencia Internacional
+              {t('homeLocation.badge')}
             </span>
             <div className="h-px w-10 bg-gradient-to-l from-transparent to-primary-400" />
           </motion.div>
@@ -58,9 +72,9 @@ const LocationMap = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.08] tracking-tight mb-5"
           >
-            <span className="text-slate-900">Nuestras </span>
+            <span className="text-slate-900">{t('homeLocation.titleMain')} </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
-              oficinas
+              {t('homeLocation.titleAccent')}
             </span>
           </motion.h2>
 
@@ -79,10 +93,9 @@ const LocationMap = () => {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="text-lg text-slate-500 max-w-xl mx-auto leading-relaxed"
           >
-            Operamos desde Perú y México para atender proyectos en toda Latinoamérica.
+            {t('homeLocation.description')}
           </motion.p>
 
-          {/* Badges de países */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -90,57 +103,48 @@ const LocationMap = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex justify-center gap-4 mt-8"
           >
-            {offices.map((o) => (
+            {localizedOffices.map((office) => (
               <div
-                key={o.country}
+                key={office.id}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full shadow-sm text-sm font-semibold text-slate-700"
               >
                 <span className="text-primary-500">
                   <PinIcon />
                 </span>
-                {o.city}, {o.country}
+                {office.city}, {office.country}
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* ── GRID DE MAPAS ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {offices.map((office, index) => (
+          {localizedOffices.map((office, index) => (
             <motion.div
-              key={office.country}
+              key={office.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.15 }}
             >
-              {/* Card */}
               <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-900/8 overflow-hidden hover:shadow-2xl hover:shadow-slate-900/12 transition-shadow duration-500">
-
-                {/* Header del card */}
                 <div className="flex items-center gap-4 px-6 py-5 border-b border-slate-100">
                   <div className="w-10 h-10 rounded-xl bg-primary-600 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-primary-500/30">
                     <PinIcon />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-primary-500 uppercase tracking-[0.2em] leading-none mb-1">
-                      Oficina
+                      {t('homeLocation.officeLabel')}
                     </p>
                     <h3 className="text-base font-bold text-slate-900 leading-snug">
                       {office.city}, {office.country}
                     </h3>
                   </div>
                   <div className="ml-auto text-right">
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      {office.address}
-                    </p>
-                    <p className="text-xs text-slate-400">
-                      {office.fullAddress}
-                    </p>
+                    <p className="text-xs text-slate-400 leading-relaxed">{office.address}</p>
+                    <p className="text-xs text-slate-400">{office.fullAddress}</p>
                   </div>
                 </div>
 
-                {/* Mapa */}
                 <div className="relative">
                   <iframe
                     src={office.embedUrl}
@@ -149,11 +153,13 @@ const LocationMap = () => {
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title={`Oficina Lean Mining Consulting - ${office.country}`}
+                    title={t('homeLocation.mapTitle', {
+                      country: office.country,
+                      defaultValue: `Lean Mining office - ${office.country}`,
+                    })}
                   />
                 </div>
 
-                {/* Footer del card */}
                 <div className="px-6 py-4 border-t border-slate-100 flex justify-end">
                   <a
                     href={office.linkUrl}
@@ -164,7 +170,7 @@ const LocationMap = () => {
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                    Ver en Google Maps
+                    {t('common.openGoogleMaps')}
                   </a>
                 </div>
               </div>

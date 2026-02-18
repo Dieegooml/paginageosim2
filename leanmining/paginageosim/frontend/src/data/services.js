@@ -5,7 +5,8 @@ export const services = [
     id: 'mine-design',
     title: 'Diseño de Minas Subterráneas y Open Pit',
     shortDescription: 'Ingeniería de diseño para operaciones subterráneas y a cielo abierto.',
-    description: 'Desarrollamos diseños mineros optimizados económica y técnicamente, integrando modelamiento geológico, geomecánico e hidrogeológico para definir la geometría de extracción óptima. Nuestro enfoque prioriza la maximización del valor del activo minero con los más altos estándares de seguridad y sostenibilidad operativa.',
+    description:
+      'Desarrollamos diseños mineros optimizados económica y técnicamente, integrando modelamiento geológico, geomecánico e hidrogeológico para definir la geometría de extracción óptima. Nuestro enfoque prioriza la maximización del valor del activo minero con los más altos estándares de seguridad y sostenibilidad operativa.',
     icon: 'planning',
     image: '/images/services/planeacion-subterranea.jpg',
     features: [
@@ -19,7 +20,8 @@ export const services = [
     id: 'cost-analysis',
     title: 'Análisis de Costos',
     shortDescription: 'Evaluación estratégica de costos operativos, planta de procesos y capital.',
-    description: 'Realizamos análisis estratégicos de la estructura de costos en mina y planta de procesos, identificando los principales drivers de costo y brechas operativas. Evaluamos OPEX y CAPEX con enfoque en oportunidades de mejora y optimización, estableciendo benchmarks contra operaciones comparables para maximizar la eficiencia económica de cada etapa del proceso productivo.',
+    description:
+      'Realizamos análisis estratégicos de la estructura de costos en mina y planta de procesos, identificando los principales drivers de costo y brechas operativas. Evaluamos OPEX y CAPEX con enfoque en oportunidades de mejora y optimización, estableciendo benchmarks contra operaciones comparables para maximizar la eficiencia económica de cada etapa del proceso productivo.',
     icon: 'cost',
     image: '/images/services/optimizacion-costos.jpg',
     features: [
@@ -33,7 +35,8 @@ export const services = [
     id: 'kpi-implementation',
     title: 'Implementación de KPIs',
     shortDescription: 'Gestión integral de desempeño operativo en mina, planta y recursos hídricos.',
-    description: 'Diseñamos e implementamos sistemas de indicadores clave de desempeño para la gestión integral de operaciones mineras. Nuestro equipo incluye especialistas en Metalurgia, Hidrogeología, Planeación Minera y Dirección de Operaciones, lo que permite establecer métricas técnicas y financieras precisas en mina, planta de procesos y gestión de recursos hídricos, habilitando la toma de decisiones basada en datos para la mejora continua.',
+    description:
+      'Diseñamos e implementamos sistemas de indicadores clave de desempeño para la gestión integral de operaciones mineras. Nuestro equipo incluye especialistas en Metalurgia, Hidrogeología, Planeación Minera y Dirección de Operaciones, lo que permite establecer métricas técnicas y financieras precisas en mina, planta de procesos y gestión de recursos hídricos, habilitando la toma de decisiones basada en datos para la mejora continua.',
     icon: 'method',
     image: '/images/services/metodos-explotacion.jpg',
     features: [
@@ -47,7 +50,8 @@ export const services = [
     id: 'mine-planning',
     title: 'Planeación de Mina en General',
     shortDescription: 'Planeación estratégica del negocio minero con integración técnica-financiera.',
-    description: 'Desarrollamos planes mineros con metodología aprobada que integran la visión técnica con los objetivos financieros del negocio. Desde la planificación de corto plazo hasta el Life of Mine, diseñamos y detallamos programas que optimizan el valor del activo minero considerando restricciones operativas, de mercado y de capital, asegurando una integración técnica-financiera completa.',
+    description:
+      'Desarrollamos planes mineros con metodología aprobada que integran la visión técnica con los objetivos financieros del negocio. Desde la planificación de corto plazo hasta el Life of Mine, diseñamos y detallamos programas que optimizan el valor del activo minero considerando restricciones operativas, de mercado y de capital, asegurando una integración técnica-financiera completa.',
     icon: 'transition',
     image: '/images/services/transicion-minera.jpg',
     features: [

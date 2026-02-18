@@ -39,7 +39,7 @@ export const company = {
     mission:
       'Generar disenos y programas mineros que representen el uso mas eficaz del capital de la mina, tanto en el corto como en el largo plazo.',
     vision:
-      'Ser la consultora lider en eficiencia operacional minera en Latinoamerica, reconocida por maximizar el beneficio economico de cada proyecto.',
+      'Ser la consultora lider en eficiencia operacional minera en America, reconocida por maximizar el beneficio economico de cada proyecto.',
     history:
       'Lean Mining Consulting aplica metodologias probadas de eficiencia industrial al sector minero. Con presencia en Peru, hemos desarrollado una metodologia innovadora y rigurosa para la seleccion y planificacion de metodos mineros.',
   },

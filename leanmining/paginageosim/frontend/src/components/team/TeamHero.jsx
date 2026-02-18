@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import { premiumHeroOverlayStyle } from '../ui/heroOverlay';
 
 const TeamHero = () => {
+  const { t, i18n } = useTranslation();
+  const isEnglish = i18n.language?.startsWith('en');
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div
@@ -12,10 +16,7 @@ const TeamHero = () => {
         }}
       />
 
-      <div
-        className="absolute inset-0"
-        style={premiumHeroOverlayStyle}
-      />
+      <div className="absolute inset-0" style={premiumHeroOverlayStyle} />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent" />
 
       <Container className="relative z-10 py-32">
@@ -28,7 +29,7 @@ const TeamHero = () => {
           >
             <div className="w-12 h-px bg-gradient-to-r from-primary-400/80 to-primary-300/40" />
             <span className="text-primary-300 text-xs font-semibold tracking-[0.3em] uppercase">
-              Nuestro Equipo
+              {isEnglish ? t('teamPage.hero.badge') : 'Nuestro Equipo'}
             </span>
           </motion.div>
 
@@ -39,8 +40,10 @@ const TeamHero = () => {
             className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-8 leading-[1.05]"
             style={{ textShadow: '0 2px 18px rgba(0,0,0,0.45)' }}
           >
-            Expertos que{' '}
-            <span className="hero-title-accent">impulsan resultados</span>
+            {isEnglish ? t('teamPage.hero.titlePart1') : 'Expertos que'}{' '}
+            <span className="hero-title-accent">
+              {isEnglish ? t('teamPage.hero.titleHighlight') : 'impulsan resultados'}
+            </span>
           </motion.h1>
 
           <motion.div
@@ -56,8 +59,9 @@ const TeamHero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-slate-200/90 leading-relaxed max-w-2xl"
           >
-            Profesionales con décadas de experiencia en operaciones mineras de clase mundial,
-            comprometidos con la excelencia y la mejora continua de cada proyecto.
+            {isEnglish
+              ? t('teamPage.hero.description')
+              : 'Profesionales con décadas de experiencia en operaciones mineras de clase mundial, comprometidos con la excelencia y la mejora continua de cada proyecto.'}
           </motion.p>
         </div>
       </Container>
@@ -66,5 +70,3 @@ const TeamHero = () => {
 };
 
 export default TeamHero;
-
-

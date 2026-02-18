@@ -5,7 +5,7 @@ export const homeTabs = [
     label: 'Planeación',
     title: 'Planeación Estratégica',
     description:
-      'Diseñamos estrategias técnicas integrales para el desarrollo y crecimiento de proyectos mineros, desde etapas conceptuales hasta su consolidación operativa. Integramos análisis geológicos, metalúrgicos e hidrogeológicos para construir hojas de ruta claras, reducir incertidumbre y respaldar decisiones críticas con fundamentos técnicos sólidos y visión de largo plazo.',
+      'Diseñamos estrategias técnicas integrales para el desarrollo y crecimiento de proyectos mineros, desde etapas conceptuales hasta su consolidación operativa. Integramos análisis geológicos, metalúrgicos e hidrogeológicos, incluyendo estudios geomecánicos para construir hojas de ruta claras, reducir incertidumbre y respaldar decisiones críticas con fundamentos técnicos sólidos y visión de largo plazo.',
     image: '/images/home/tab-planeacion.jpg',
     link: '/servicios',
     linkText: 'Ver servicios',

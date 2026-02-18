@@ -1,8 +1,12 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const ConsultantModal = ({ member, isOpen, onClose }) => {
+  const { i18n } = useTranslation();
+  const isEnglish = i18n.language?.startsWith('en');
+
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key === 'Escape') onClose();
@@ -49,26 +53,12 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                 <div className="md:w-2/5 bg-slate-50 flex-shrink-0">
                   <div className="relative w-full h-64 md:h-full overflow-hidden">
                     {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={displayName}
-                        className="absolute inset-0 w-full h-full object-cover object-center"
-                      />
+                      <img src={member.image} alt={displayName} className="absolute inset-0 w-full h-full object-cover object-center" />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
                         <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-sm">
-                          <svg
-                            className="w-16 h-16 text-slate-300"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={1}
-                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                            />
+                          <svg className="w-16 h-16 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                         </div>
                       </div>
@@ -79,12 +69,8 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                 <div className="md:w-3/5 flex flex-col overflow-hidden">
                   <div className="flex items-start justify-between p-6 pb-0 border-b border-slate-100">
                     <div className="pb-4">
-                      <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-1">
-                        {displayName}
-                      </h2>
-                      <p className="text-primary-600 font-medium">
-                        {member.position || member.role}
-                      </p>
+                      <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-1">{displayName}</h2>
+                      <p className="text-primary-600 font-medium">{member.position || member.role}</p>
                       {member.location && (
                         <p className="text-sm text-slate-500 mt-1 flex items-center gap-1.5">
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,7 +93,7 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                     <button
                       onClick={onClose}
                       className="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-500 hover:text-slate-700 transition-colors flex-shrink-0"
-                      aria-label="Cerrar"
+                      aria-label={isEnglish ? 'Close' : 'Cerrar'}
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -119,10 +105,7 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                     {member.specialties && member.specialties.length > 0 && (
                       <div className="flex flex-wrap gap-2">
                         {member.specialties.map((specialty, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-primary-50 text-primary-700 text-sm font-medium rounded-full"
-                          >
+                          <span key={index} className="px-3 py-1 bg-primary-50 text-primary-700 text-sm font-medium rounded-full">
                             {specialty}
                           </span>
                         ))}
@@ -132,7 +115,7 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                     {displayBio && (
                       <div>
                         <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                          Sobre
+                          {isEnglish ? 'About' : 'Sobre'}
                         </h3>
                         <p className="text-slate-600 leading-relaxed">{displayBio}</p>
                       </div>
@@ -141,23 +124,13 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                     {member.highlights && member.highlights.length > 0 && (
                       <div>
                         <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
-                          Logros destacados
+                          {isEnglish ? 'Highlights' : 'Logros destacados'}
                         </h3>
                         <ul className="space-y-2">
                           {member.highlights.map((highlight, index) => (
                             <li key={index} className="flex items-start gap-2 text-slate-600 text-sm">
-                              <svg
-                                className="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M5 13l4 4L19 7"
-                                />
+                              <svg className="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                               </svg>
                               {highlight}
                             </li>
@@ -169,7 +142,7 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                     {member.education && (
                       <div>
                         <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                          Formación
+                          {isEnglish ? 'Education' : 'Formación'}
                         </h3>
                         <p className="text-slate-600 text-sm">{member.education}</p>
                       </div>
@@ -178,14 +151,11 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                     {member.certifications && member.certifications.length > 0 && (
                       <div>
                         <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                          Certificaciones
+                          {isEnglish ? 'Certifications' : 'Certificaciones'}
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           {member.certifications.map((cert, index) => (
-                            <span
-                              key={index}
-                              className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full"
-                            >
+                            <span key={index} className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">
                               {cert}
                             </span>
                           ))}
@@ -214,7 +184,7 @@ const ConsultantModal = ({ member, isOpen, onClose }) => {
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
-                        Contactar
+                        {isEnglish ? 'Contact' : 'Contactar'}
                       </Link>
                     </div>
                   </div>

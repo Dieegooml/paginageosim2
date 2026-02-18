@@ -1,10 +1,12 @@
+import { useTranslation } from 'react-i18next';
+
 const ContactInfo = () => {
+  const { t } = useTranslation();
+  const whatsappMessage = t('contactPage.info.whatsappMessage');
+
   return (
     <div className="space-y-3">
-
-      {/* Oficinas */}
       <div className="space-y-3">
-        {/* Perú */}
         <a
           href="https://maps.google.com/?q=-16.42745554,-71.50242861"
           target="_blank"
@@ -18,13 +20,15 @@ const ContactInfo = () => {
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-0.5">
-              <p className="text-xs font-bold text-primary-300 uppercase tracking-widest">Perú</p>
+              <p className="text-xs font-bold text-primary-300 uppercase tracking-widest">
+                {t('contactPage.map.offices.peru.country')}
+              </p>
             </div>
             <p className="text-white font-semibold text-sm leading-snug group-hover:text-primary-200 transition-colors">
-              Arequipa
+              {t('contactPage.map.offices.peru.city')}
             </p>
             <p className="text-slate-400 text-xs mt-0.5 leading-relaxed">
-              Av. Colonial 601, Ampliación Paucarpata
+              {t('contactPage.map.offices.peru.address')}
             </p>
           </div>
           <svg className="w-4 h-4 text-slate-500 group-hover:text-primary-400 transition-colors mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -32,7 +36,6 @@ const ContactInfo = () => {
           </svg>
         </a>
 
-        {/* México */}
         <a
           href="https://maps.google.com/?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico"
           target="_blank"
@@ -46,13 +49,15 @@ const ContactInfo = () => {
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-0.5">
-              <p className="text-xs font-bold text-blue-300 uppercase tracking-widest">México</p>
+              <p className="text-xs font-bold text-blue-300 uppercase tracking-widest">
+                {t('contactPage.map.offices.mexico.country')}
+              </p>
             </div>
             <p className="text-white font-semibold text-sm leading-snug group-hover:text-blue-200 transition-colors">
-              Chihuahua
+              {t('contactPage.map.offices.mexico.city')}
             </p>
             <p className="text-slate-400 text-xs mt-0.5 leading-relaxed">
-              Privada José María Morelos y Pavón 1820
+              {t('contactPage.map.offices.mexico.address')}
             </p>
           </div>
           <svg className="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition-colors mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,9 +66,8 @@ const ContactInfo = () => {
         </a>
       </div>
 
-      {/* WhatsApp */}
       <a
-        href={`https://wa.me/526142088019?text=${encodeURIComponent('Buen dia, me gustaria recibir asesoria especializada para mi proyecto minero.')}`}
+        href={`https://wa.me/526142088019?text=${encodeURIComponent(whatsappMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-4 p-4 bg-white/6 backdrop-blur-sm rounded-2xl border border-white/10 group hover:bg-emerald-500/10 hover:border-emerald-400/40 transition-all duration-300"
@@ -75,13 +79,10 @@ const ContactInfo = () => {
         </div>
         <div>
           <p className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-0.5">WhatsApp</p>
-          <p className="text-white font-semibold text-sm group-hover:text-emerald-200 transition-colors">
-            +52 614 208 8019
-          </p>
+          <p className="text-white font-semibold text-sm group-hover:text-emerald-200 transition-colors">+52 614 208 8019</p>
         </div>
       </a>
 
-      {/* Horario */}
       <div className="p-4 bg-white/6 backdrop-blur-sm rounded-2xl border border-white/10">
         <div className="flex items-center gap-3 mb-3">
           <div className="w-8 h-8 bg-gradient-to-br from-amber-500/20 to-amber-600/20 rounded-lg flex items-center justify-center">
@@ -89,21 +90,20 @@ const ContactInfo = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <p className="text-xs font-bold text-amber-400 uppercase tracking-widest">Horario de atención</p>
+          <p className="text-xs font-bold text-amber-400 uppercase tracking-widest">{t('contactPage.info.businessHours')}</p>
         </div>
         <div className="space-y-1.5 text-sm">
           <div className="flex justify-between items-center">
-            <span className="text-slate-400">Lunes – Viernes</span>
-            <span className="font-semibold text-white">9:00 AM – 6:00 PM</span>
+            <span className="text-slate-400">{t('contactPage.info.weekdays')}</span>
+            <span className="font-semibold text-white">9:00 AM - 6:00 PM</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-slate-400">Sábado</span>
-            <span className="font-semibold text-white">9:00 AM – 1:00 PM</span>
+            <span className="text-slate-400">{t('contactPage.info.saturday')}</span>
+            <span className="font-semibold text-white">9:00 AM - 1:00 PM</span>
           </div>
-          <p className="text-xs text-slate-500 pt-2 border-t border-white/8 mt-2">Hora de Perú (GMT-5)</p>
+          <p className="text-xs text-slate-500 pt-2 border-t border-white/8 mt-2">{t('contactPage.info.timezone')}</p>
         </div>
       </div>
-
     </div>
   );
 };

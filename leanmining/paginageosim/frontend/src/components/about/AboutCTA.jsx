@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
-// Coloca tu imagen en: public/images/cta/about-cta-bg.jpg
 const ABOUT_CTA_BG = '/images/cta/about-cta-bg.jpg';
 
 const AboutCTA = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative py-24 md:py-28 overflow-hidden">
       <div
@@ -30,10 +32,8 @@ const AboutCTA = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-6"
             >
-              <span className="text-white">Listo para optimizar tu </span>
-              <span className="text-white">
-                operacion minera?
-              </span>
+              <span className="text-white">{t('aboutPage.cta.titlePart1')} </span>
+              <span className="text-white">{t('aboutPage.cta.titleHighlight')}</span>
             </motion.h2>
 
             <motion.p
@@ -43,8 +43,7 @@ const AboutCTA = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
             >
-              Nuestro equipo de expertos esta listo para ayudarte a alcanzar
-              tus objetivos de produccion y rentabilidad.
+              {t('aboutPage.cta.description')}
             </motion.p>
 
             <motion.div
@@ -58,7 +57,7 @@ const AboutCTA = () => {
                 to="/servicios"
                 className="group inline-flex items-center rounded-xl bg-[#123B70] px-10 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-[#123B70]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
               >
-                Ver Servicios
+                {t('aboutPage.cta.button')}
                 <svg className="w-4 h-4 ml-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

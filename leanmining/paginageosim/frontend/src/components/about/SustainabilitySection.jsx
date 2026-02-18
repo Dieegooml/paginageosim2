@@ -1,22 +1,25 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
-const features = [
-  {
-    title: 'Equilibrio Operativo',
-    description: 'Balanceamos precios y costos con respuestas operativas flexibles y eficientes.',
-  },
-  {
-    title: 'Eficiencia de Recursos',
-    description: 'Optimizamos el uso de recursos naturales minimizando el impacto ambiental.',
-  },
-  {
-    title: 'Visión a Largo Plazo',
-    description: 'Diseñamos planes que aseguran la viabilidad económica y ambiental futura.',
-  },
-];
-
 const SustainabilitySection = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      title: t('aboutPage.sustainability.feature1Title'),
+      description: t('aboutPage.sustainability.feature1Desc'),
+    },
+    {
+      title: t('aboutPage.sustainability.feature2Title'),
+      description: t('aboutPage.sustainability.feature2Desc'),
+    },
+    {
+      title: t('aboutPage.sustainability.feature3Title'),
+      description: t('aboutPage.sustainability.feature3Desc'),
+    },
+  ];
+
   return (
     <section className="relative py-24 md:py-28">
       <Container>
@@ -38,7 +41,7 @@ const SustainabilitySection = () => {
               <div className="relative flex-1 min-h-[360px]">
                 <img
                   src="/images/about/sustainability.jpg"
-                  alt="Minería sostenible"
+                  alt={t('aboutPage.sustainability.imageAlt', { defaultValue: 'Sustainable mining' })}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.parentElement.innerHTML = `
@@ -61,8 +64,8 @@ const SustainabilitySection = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900">Compromiso Ambiental</p>
-                    <p className="text-sm text-slate-600">Operaciones responsables</p>
+                    <p className="font-semibold text-slate-900">{t('aboutPage.sustainability.commitment')}</p>
+                    <p className="text-sm text-slate-600">{t('aboutPage.sustainability.responsibleOps')}</p>
                   </div>
                 </div>
               </div>
@@ -80,19 +83,17 @@ const SustainabilitySection = () => {
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-px bg-gradient-to-r from-emerald-600/80 to-emerald-500/40" />
                 <span className="text-emerald-700 text-xs font-semibold tracking-[0.3em] uppercase">
-                  Sostenibilidad
+                  {t('aboutPage.sustainability.badge')}
                 </span>
               </div>
 
               <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.08] mb-6">
-                <span>Medio ambiente y </span>
-                <span className="text-emerald-700">responsabilidad</span>
+                <span>{t('aboutPage.sustainability.titlePart1')} </span>
+                <span className="text-emerald-700">{t('aboutPage.sustainability.titleHighlight')}</span>
               </h2>
 
               <p className="text-lg md:text-xl text-slate-600 mb-9 leading-relaxed">
-                Creemos en el equilibrio entre la eficiencia operativa y el respeto por el medio ambiente.
-                Nuestras soluciones integran prácticas sostenibles que aseguran la viabilidad
-                de largo plazo de cada operación minera.
+                {t('aboutPage.sustainability.description')}
               </p>
             </div>
 

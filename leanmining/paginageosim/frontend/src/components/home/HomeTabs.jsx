@@ -1,18 +1,38 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { homeTabs } from '../../data/tabs';
 import Container from '../ui/Container';
 
+const HOME_TAB_KEY_BY_ID = {
+  planeacion: 'planning',
+  optimizacion: 'optimization',
+  consultoria: 'consulting',
+};
+
 const HomeTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const { t, i18n } = useTranslation();
+  const isEnglish = i18n.language?.startsWith('en');
+
+  const localizedTabs = homeTabs.map((tab) => {
+    if (!isEnglish) return tab;
+    const key = HOME_TAB_KEY_BY_ID[tab.id];
+    return {
+      ...tab,
+      label: t(`homeTabs.${key}.label`, { defaultValue: tab.label }),
+      title: t(`homeTabs.${key}.title`, { defaultValue: tab.title }),
+      description: t(`homeTabs.${key}.description`, { defaultValue: tab.description }),
+      linkText: t(`homeTabs.${key}.linkText`, { defaultValue: tab.linkText }),
+    };
+  });
 
   return (
     <section className="py-0 bg-white">
-      {/* Tab Navigation */}
       <div className="border-b border-slate-200/80 bg-white sticky top-0 z-10">
         <Container>
           <nav className="flex justify-center md:justify-start -mb-px">
-            {homeTabs.map((tab, index) => (
+            {localizedTabs.map((tab, index) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
@@ -41,7 +61,6 @@ const HomeTabs = () => {
         </Container>
       </div>
 
-      {/* Tab Content */}
       <div className="relative overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
@@ -52,22 +71,20 @@ const HomeTabs = () => {
             transition={{ duration: 0.4 }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-5">
-              {/* Image Section */}
               <div className="lg:col-span-3 relative h-[320px] md:h-[420px] lg:h-[500px] overflow-hidden">
                 <motion.img
                   key={`img-${activeTab}`}
                   initial={{ scale: 1.05, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.6 }}
-                  src={homeTabs[activeTab].image}
-                  alt={homeTabs[activeTab].title}
+                  src={localizedTabs[activeTab].image}
+                  alt={localizedTabs[activeTab].title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/10 via-transparent to-white/60 lg:to-white/80" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent lg:hidden" />
               </div>
 
-              {/* Content Section */}
               <div className="lg:col-span-2 flex items-center bg-white">
                 <div className="p-8 md:p-12 lg:p-14">
                   <motion.div
@@ -78,15 +95,15 @@ const HomeTabs = () => {
                   >
                     <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-50 text-primary-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-5 border border-primary-100">
                       <span className="w-1.5 h-1.5 bg-primary-500 rounded-full" />
-                      {homeTabs[activeTab].label}
+                      {localizedTabs[activeTab].label}
                     </span>
 
                     <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight mb-4">
-                      {homeTabs[activeTab].title}
+                      {localizedTabs[activeTab].title}
                     </h3>
 
                     <p className="text-slate-600 leading-relaxed text-base">
-                      {homeTabs[activeTab].description}
+                      {localizedTabs[activeTab].description}
                     </p>
                   </motion.div>
                 </div>
@@ -96,18 +113,20 @@ const HomeTabs = () => {
         </AnimatePresence>
       </div>
 
-      {/* Mobile dots */}
       <div className="flex justify-center gap-3 py-6 lg:hidden bg-white">
-        {homeTabs.map((_, index) => (
+        {localizedTabs.map((tab, index) => (
           <button
-            key={index}
+            key={tab.id}
             onClick={() => setActiveTab(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
               activeTab === index
                 ? 'bg-primary-600 w-8'
                 : 'bg-slate-300 hover:bg-slate-400 w-2'
             }`}
-            aria-label={`Tab ${index + 1}`}
+            aria-label={t('homeTabs.mobileAria', {
+              number: index + 1,
+              defaultValue: `Tab ${index + 1}`,
+            })}
           />
         ))}
       </div>

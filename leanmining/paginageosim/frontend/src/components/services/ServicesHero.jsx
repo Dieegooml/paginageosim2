@@ -1,8 +1,16 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import { premiumHeroOverlayStyle } from '../ui/heroOverlay';
 
 const ServicesHero = () => {
+  const { t } = useTranslation();
+  const serviceHighlights = [
+    t('servicesPage.hero.feature1'),
+    t('servicesPage.hero.feature2'),
+    t('servicesPage.hero.feature3'),
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div
@@ -12,14 +20,8 @@ const ServicesHero = () => {
         }}
       />
 
-      {/* Overlay degradado direccional oscuro */}
-      <div
-        className="absolute inset-0"
-        style={premiumHeroOverlayStyle}
-      />
-      
+      <div className="absolute inset-0" style={premiumHeroOverlayStyle} />
 
-      {/* Línea inferior */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent" />
 
       <Container className="relative z-10 py-32">
@@ -32,7 +34,7 @@ const ServicesHero = () => {
           >
             <div className="w-12 h-px bg-gradient-to-r from-primary-400/80 to-primary-300/40" />
             <span className="text-primary-300 text-xs font-semibold tracking-[0.3em] uppercase">
-              Nuestros Servicios
+              {t('servicesPage.hero.subtitle')}
             </span>
           </motion.div>
 
@@ -43,11 +45,9 @@ const ServicesHero = () => {
             className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-10"
             style={{ textShadow: '0 2px 18px rgba(0,0,0,0.45)' }}
           >
-            <span className="hero-title-main">Servicios de </span>
+            <span className="hero-title-main">{t('servicesPage.hero.titlePart1')} </span>
             <br />
-            <span className="hero-title-accent">
-              Consultoría Minera
-            </span>
+            <span className="hero-title-accent">{t('servicesPage.hero.titleHighlight')}</span>
           </motion.h1>
 
           <motion.div
@@ -63,8 +63,7 @@ const ServicesHero = () => {
             transition={{ duration: 0.7, delay: 0.35, ease: 'easeOut' }}
             className="text-xl md:text-2xl text-slate-200/90 leading-relaxed mb-12 max-w-2xl"
           >
-            Soluciones especializadas en planeación subterránea, optimización operativa
-            y maximización de valor para proyectos mineros.
+            {t('servicesPage.hero.description')}
           </motion.p>
 
           <motion.div
@@ -73,8 +72,8 @@ const ServicesHero = () => {
             transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
             className="flex flex-wrap gap-8"
           >
-            {['Diseño de minas', 'Análisis de costos', 'KPIs'].map((label, i) => (
-              <div key={i} className="flex items-center gap-3 group">
+            {serviceHighlights.map((label, i) => (
+              <div key={`${label}-${i}`} className="flex items-center gap-3 group">
                 <div className="w-2 h-2 bg-primary-400 rounded-full group-hover:scale-125 transition-transform duration-300" />
                 <span className="text-white/90 font-medium text-sm">{label}</span>
               </div>
@@ -94,7 +93,9 @@ const ServicesHero = () => {
           transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
           className="flex flex-col items-center gap-3"
         >
-          <span className="text-white/25 text-[10px] uppercase tracking-[0.35em]">Descubrir más</span>
+          <span className="text-white/25 text-[10px] uppercase tracking-[0.35em]">
+            {t('common.discoverMore')}
+          </span>
           <div className="w-px h-10 bg-gradient-to-b from-white/25 to-transparent" />
         </motion.div>
       </motion.div>
@@ -103,7 +104,3 @@ const ServicesHero = () => {
 };
 
 export default ServicesHero;
-
-
-
-

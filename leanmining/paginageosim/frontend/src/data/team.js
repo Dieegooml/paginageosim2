@@ -77,7 +77,7 @@ export const team = [
     ],
     highlights: [
       'Experiencia en Gold Fields, Xstrata Tintaya y Milpo',
-      'Proyectos hidrogeológicos en 7 países de Latinoamérica',
+      'Proyectos hidrogeológicos en 7 países de America',
       'Especialista en modelamiento numérico con ModFlow y FeFlow',
       'Consultor para BID/JICA en proyectos de gestión hídrica',
       'Experto en planificación de desaguado y manejo de aguas en minería',

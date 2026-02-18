@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
 const ServicesIntro = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative py-24 md:py-32 bg-gradient-to-b from-white to-slate-50/50 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
@@ -20,17 +23,17 @@ const ServicesIntro = () => {
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="w-12 h-px bg-primary-500" />
             <span className="text-primary-600 text-sm font-medium tracking-widest uppercase">
-              Nuestro Enfoque
+              {t('servicesPage.intro.badge')}
             </span>
             <div className="w-12 h-px bg-primary-500" />
           </div>
 
           <p className="text-2xl md:text-3xl lg:text-4xl text-slate-800 leading-relaxed font-light">
-            Desarrollamos estrategias mineras que transforman la complejidad técnica
-            en resultados económicos tangibles. Nuestro enfoque combina{' '}
-            <span className="text-primary-600 font-semibold">rigor metodológico</span>{' '}
-            con décadas de experiencia operativa para entregar planes que maximizan
-            el retorno de cada proyecto.
+            {t('servicesPage.intro.textPart1')}{' '}
+            <span className="text-primary-600 font-semibold">
+              {t('servicesPage.intro.textHighlight')}
+            </span>{' '}
+            {t('servicesPage.intro.textPart2')}
           </p>
         </motion.div>
       </Container>

@@ -1,40 +1,43 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
-const steps = [
-  {
-    number: '01',
-    title: 'Análisis del Yacimiento',
-    description: 'Comprendemos profundamente el contexto geológico, las características del depósito mineral y las condiciones operativas específicas de cada proyecto.',
-    image: '/images/about/enfoque-1.jpg',
-  },
-  {
-    number: '02',
-    title: 'Selección del Método Óptimo',
-    description: 'Evaluamos y seleccionamos el método de explotación más adecuado considerando aspectos técnicos, económicos y de seguridad para maximizar el valor del proyecto.',
-    image: '/images/about/enfoque-2.jpg',
-  },
-  {
-    number: '03',
-    title: 'Implementación y Optimización',
-    description: 'Desarrollamos planes mineros detallados y acompañamos la implementación con enfoque en eficiencia operativa, reducción de costos y mejora continua.',
-    image: '/images/about/enfoque-3.jpg',
-  },
-  {
-    number: '04',
-    title: 'Procesos Metalúrgicos',
-    description: 'Maximizamos recuperación y reducimos costos mediante diagnósticos rápidos, auditorías independientes y optimización de circuitos con impacto económico medible.Soportamos decisiones estratégicas (CAPEX/OPEX) y mejora continua en operaciones de oro, cobre y flotación.',
-    image: '/images/about/enfoque-4.jpg',
-  },
-  {
-    number: '05',
-    title: 'Hidrogeología Aplicada y Gestión Hídrica Minera',
-    description: 'Desarrollamos estudios, modelamiento y soluciones de dewatering para caracterizar acuíferos y gestionar riesgos hídricos. Diseñamos sistemas de monitoreo y captación que aseguran eficiencia, sostenibilidad y cumplimiento regulatorio.',
-    image: '/images/about/enfoque-5.jpg',
-  },
-];
-
 const MethodologySection = () => {
+  const { t } = useTranslation();
+
+  const steps = [
+    {
+      number: '01',
+      title: t('aboutPage.methodology.step1Title'),
+      description: t('aboutPage.methodology.step1Desc'),
+      image: '/images/about/enfoque-1.jpg',
+    },
+    {
+      number: '02',
+      title: t('aboutPage.methodology.step2Title'),
+      description: t('aboutPage.methodology.step2Desc'),
+      image: '/images/about/enfoque-2.jpg',
+    },
+    {
+      number: '03',
+      title: t('aboutPage.methodology.step3Title'),
+      description: t('aboutPage.methodology.step3Desc'),
+      image: '/images/about/enfoque-3.jpg',
+    },
+    {
+      number: '04',
+      title: t('aboutPage.methodology.step4Title'),
+      description: t('aboutPage.methodology.step4Desc'),
+      image: '/images/about/enfoque-4.jpg',
+    },
+    {
+      number: '05',
+      title: t('aboutPage.methodology.step5Title'),
+      description: t('aboutPage.methodology.step5Desc'),
+      image: '/images/about/enfoque-5.jpg',
+    },
+  ];
+
   return (
     <section className="relative pt-24 pb-16 md:pt-28">
       <Container>
@@ -48,7 +51,7 @@ const MethodologySection = () => {
           >
             <div className="w-12 h-px bg-gradient-to-r from-primary-500/80 to-primary-400/40" />
             <span className="text-primary-600 text-xs font-semibold tracking-[0.3em] uppercase">
-              Nuestra Metodología
+              {t('aboutPage.methodology.badge')}
             </span>
           </motion.div>
 
@@ -59,9 +62,9 @@ const MethodologySection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.08] mb-6"
           >
-            Un enfoque riguroso para{' '}
+            {t('aboutPage.methodology.titlePart1')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-700 to-primary-500">
-              resultados excepcionales
+              {t('aboutPage.methodology.titleHighlight')}
             </span>
           </motion.h2>
 
@@ -72,10 +75,10 @@ const MethodologySection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl"
           >
-            Nuestra metodología probada garantiza que cada proyecto reciba la atención
-            y el análisis detallado necesarios para alcanzar sus objetivos.
+            {t('aboutPage.methodology.description')}
           </motion.p>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.slice(0, 3).map((step, index) => (
             <motion.article
@@ -105,9 +108,7 @@ const MethodologySection = () => {
                   <h3 className="text-xl font-semibold text-slate-900 leading-tight mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed text-base">
-                    {step.description}
-                  </p>
+                  <p className="text-slate-600 leading-relaxed text-base">{step.description}</p>
                 </div>
               </div>
             </motion.article>
@@ -143,9 +144,7 @@ const MethodologySection = () => {
                   <h3 className="text-xl font-semibold text-slate-900 leading-tight mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed text-base">
-                    {step.description}
-                  </p>
+                  <p className="text-slate-600 leading-relaxed text-base">{step.description}</p>
                 </div>
               </div>
             </motion.article>

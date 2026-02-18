@@ -1,43 +1,49 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../components/ui/Container';
 import ContactForm from '../components/contact/ContactForm';
 import ContactInfo from '../components/contact/ContactInfo';
 import { premiumHeroOverlayStyle } from '../components/ui/heroOverlay';
 
-// Coloca tu imagen de hero en: public/images/contact/hero-contacto.jpg
 const CONTACT_HERO_IMAGE = '/images/contact/hero-contacto.jpg';
 const CONTACT_EXPERIENCE_BG = '/images/contact/contact-experience-bg.jpg';
 
-const OFFICES = [
-  {
-    id: 'peru',
-    label: 'Perú',
-    city: 'Arequipa',
-    country: 'Perú',
-    address: 'Av. Colonial 601, Ampliación Paucarpata',
-    fullAddress: 'Arequipa, Perú',
-    embedUrl: 'https://maps.google.com/maps?q=-16.42745554,-71.50242861&z=17&output=embed',
-    linkUrl: 'https://maps.google.com/?q=-16.42745554,-71.50242861',
-    color: 'from-primary-600 to-primary-700',
-    accent: 'bg-primary-500',
-  },
-  {
-    id: 'mexico',
-    label: 'México',
-    city: 'Chihuahua',
-    country: 'México',
-    address: 'Privada José María Morelos y Pavón 1820',
-    fullAddress: 'Chihuahua, Chihuahua 31020, México',
-    embedUrl: 'https://maps.google.com/maps?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico&z=16&output=embed',
-    linkUrl: 'https://maps.google.com/?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico',
-    color: 'from-blue-600 to-blue-700',
-    accent: 'bg-blue-500',
-  },
-];
-
 const Contact = () => {
+  const { t } = useTranslation();
   const [activeOffice, setActiveOffice] = useState(0);
+
+  const offices = useMemo(
+    () => [
+      {
+        id: 'peru',
+        label: t('contactPage.map.offices.peru.country'),
+        city: t('contactPage.map.offices.peru.city'),
+        country: t('contactPage.map.offices.peru.country'),
+        address: t('contactPage.map.offices.peru.address'),
+        fullAddress: t('contactPage.map.offices.peru.fullAddress'),
+        embedUrl: 'https://maps.google.com/maps?q=-16.42745554,-71.50242861&z=17&output=embed',
+        linkUrl: 'https://maps.google.com/?q=-16.42745554,-71.50242861',
+        color: 'from-primary-600 to-primary-700',
+        accent: 'bg-primary-500',
+      },
+      {
+        id: 'mexico',
+        label: t('contactPage.map.offices.mexico.country'),
+        city: t('contactPage.map.offices.mexico.city'),
+        country: t('contactPage.map.offices.mexico.country'),
+        address: t('contactPage.map.offices.mexico.address'),
+        fullAddress: t('contactPage.map.offices.mexico.fullAddress'),
+        embedUrl:
+          'https://maps.google.com/maps?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico&z=16&output=embed',
+        linkUrl: 'https://maps.google.com/?q=Privada+Jose+Maria+Morelos+y+Pavon+1820,+Chihuahua,+Chihuahua,+31020,+Mexico',
+        color: 'from-blue-600 to-blue-700',
+        accent: 'bg-blue-500',
+      },
+    ],
+    [t]
+  );
+
   return (
     <>
       <section className="relative min-h-screen overflow-hidden">
@@ -48,11 +54,7 @@ const Contact = () => {
           }}
         />
 
-        <div
-          className="absolute inset-0"
-          style={premiumHeroOverlayStyle}
-        />
-        
+        <div className="absolute inset-0" style={premiumHeroOverlayStyle} />
 
         <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-primary-600/10 blur-[150px] pointer-events-none" />
         <div className="absolute top-1/4 right-0 w-1/4 h-1/3 bg-blue-600/10 blur-[120px] pointer-events-none" />
@@ -67,9 +69,7 @@ const Contact = () => {
                 className="flex items-center gap-3 mb-10"
               >
                 <div className="w-12 h-px bg-primary-500" />
-                <span className="text-primary-400 text-sm font-medium tracking-widest uppercase">
-                  Contacto
-                </span>
+                <span className="text-primary-400 text-sm font-medium tracking-widest uppercase">{t('contactPage.hero.subtitle')}</span>
               </motion.div>
 
               <motion.h1
@@ -79,11 +79,9 @@ const Contact = () => {
                 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-8"
                 style={{ textShadow: '0 2px 18px rgba(0,0,0,0.45)' }}
               >
-                <span className="hero-title-main">Hablemos de su </span>
+                <span className="hero-title-main">{t('contactPage.hero.titlePart1')} </span>
                 <span className="relative">
-                  <span className="hero-title-accent">
-                    próximo proyecto
-                  </span>
+                  <span className="hero-title-accent">{t('contactPage.hero.titleHighlight')}</span>
                   <motion.div
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -99,7 +97,7 @@ const Contact = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-xl"
               >
-                Estamos listos para ayudarte a optimizar tus operaciones mineras
+                {t('contactPage.hero.description')}
               </motion.p>
 
               <motion.div
@@ -126,13 +124,11 @@ const Contact = () => {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent" />
       </section>
 
-      {/* Map Section */}
       <section className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-50/40 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[120px] pointer-events-none" />
 
         <Container className="relative">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -142,20 +138,17 @@ const Contact = () => {
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-px bg-primary-500" />
-              <span className="text-primary-600 text-xs font-bold tracking-[0.3em] uppercase">Nuestras Oficinas</span>
+              <span className="text-primary-600 text-xs font-bold tracking-[0.3em] uppercase">{t('contactPage.map.badge')}</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
-              Presencia en{' '}
+              {t('contactPage.map.titlePart1')}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
-                Latinoamérica
+                {t('contactPage.map.titleHighlight')}
               </span>
             </h2>
-            <p className="text-slate-500 mt-3 max-w-lg">
-              Selecciona una oficina para ver su ubicación en el mapa.
-            </p>
+            <p className="text-slate-500 mt-3 max-w-lg">{t('contactPage.map.description')}</p>
           </motion.div>
 
-          {/* Layout: selector left + map right */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -163,9 +156,8 @@ const Contact = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch"
           >
-            {/* Office selector */}
             <div className="flex flex-col gap-4">
-              {OFFICES.map((office, index) => (
+              {offices.map((office, index) => (
                 <button
                   key={office.id}
                   onClick={() => setActiveOffice(index)}
@@ -191,16 +183,17 @@ const Contact = () => {
                       <p className="text-xs text-slate-500 leading-relaxed">{office.address}</p>
                       <p className="text-xs text-slate-400 mt-0.5">{office.fullAddress}</p>
                     </div>
-                    <div className={`w-2 h-2 rounded-full mt-1 flex-shrink-0 transition-all duration-300 ${
-                      activeOffice === index ? `${office.accent}` : 'bg-slate-200'
-                    }`} />
+                    <div
+                      className={`w-2 h-2 rounded-full mt-1 flex-shrink-0 transition-all duration-300 ${
+                        activeOffice === index ? `${office.accent}` : 'bg-slate-200'
+                      }`}
+                    />
                   </div>
                 </button>
               ))}
 
-              {/* Link to maps */}
               <a
-                href={OFFICES[activeOffice].linkUrl}
+                href={offices[activeOffice].linkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300"
@@ -208,36 +201,34 @@ const Contact = () => {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-                Abrir en Google Maps
+                {t('common.openGoogleMaps')}
               </a>
             </div>
 
-            {/* Map */}
             <div className="lg:col-span-2">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/60 border border-slate-200/80 h-[360px] md:h-[440px] lg:h-full min-h-[360px]">
                 <AnimatePresence mode="wait">
                   <motion.iframe
-                    key={OFFICES[activeOffice].id}
+                    key={offices[activeOffice].id}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.4 }}
-                    src={OFFICES[activeOffice].embedUrl}
+                    src={offices[activeOffice].embedUrl}
                     className="w-full h-full absolute inset-0"
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title={`Oficina ${OFFICES[activeOffice].city}`}
+                    title={t('homeLocation.mapTitle', { country: offices[activeOffice].city })}
                   />
                 </AnimatePresence>
-                {/* Badge overlay */}
                 <div className="absolute top-4 left-4 pointer-events-none">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-lg shadow-md text-sm font-semibold text-slate-800">
                     <svg viewBox="0 0 24 24" fill="currentColor" className={`w-4 h-4 ${activeOffice === 0 ? 'text-primary-600' : 'text-blue-600'}`}>
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
-                    {OFFICES[activeOffice].city}, {OFFICES[activeOffice].country}
+                    {offices[activeOffice].city}, {offices[activeOffice].country}
                   </div>
                 </div>
               </div>
@@ -267,17 +258,12 @@ const Contact = () => {
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-px bg-primary-500" />
                     <span className="text-primary-200 text-sm font-medium tracking-widest uppercase">
-                      Nuestra experiencia
+                      {t('contactPage.experience.badge')}
                     </span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                    Transformamos la eficiencia de tu operación minera
-                  </h2>
-                  <p className="text-lg text-slate-100/90 leading-relaxed">
-                    Con más de 20 años de experiencia, nuestro equipo de consultores
-                    especializados está listo para llevar tu proyecto al siguiente nivel.
-                  </p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">{t('contactPage.experience.title')}</h2>
+                  <p className="text-lg text-slate-100/90 leading-relaxed">{t('contactPage.experience.description')}</p>
                 </div>
 
                 <div className="flex flex-col gap-5">
@@ -288,8 +274,8 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-white">7 países</p>
-                      <p className="text-slate-200/90">de operación</p>
+                      <p className="text-2xl font-bold text-white">{t('contactPage.experience.stat1Value')}</p>
+                      <p className="text-slate-200/90">{t('contactPage.experience.stat1Label')}</p>
                     </div>
                   </div>
 
@@ -300,8 +286,8 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-white">+30 proyectos</p>
-                      <p className="text-slate-200/90">completados</p>
+                      <p className="text-2xl font-bold text-white">{t('contactPage.experience.stat2Value')}</p>
+                      <p className="text-slate-200/90">{t('contactPage.experience.stat2Label')}</p>
                     </div>
                   </div>
 
@@ -312,8 +298,8 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-white">+20 años</p>
-                      <p className="text-slate-200/90">experiencia combinada</p>
+                      <p className="text-2xl font-bold text-white">{t('contactPage.experience.stat3Value')}</p>
+                      <p className="text-slate-200/90">{t('contactPage.experience.stat3Label')}</p>
                     </div>
                   </div>
                 </div>
@@ -327,10 +313,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-
-
-
-
-
-

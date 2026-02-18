@@ -4,10 +4,8 @@ import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import { companies } from '../../data/companies';
 
-const CompanyLogo = ({ company, index }) => {
+const CompanyLogo = ({ company, index, t }) => {
   const [imageError, setImageError] = useState(false);
-
-  // Si no hay url, se renderiza como div normal (no clickeable)
   const Wrapper = company.url ? motion.a : motion.div;
 
   return (
@@ -17,7 +15,10 @@ const CompanyLogo = ({ company, index }) => {
             href: company.url,
             target: '_blank',
             rel: 'noopener noreferrer',
-            'aria-label': `Abrir sitio de ${company.name}`,
+            'aria-label': t('companies.openSite', {
+              company: company.name,
+              defaultValue: `Open ${company.name} website`,
+            }),
             title: company.name,
             className: 'group block relative z-10',
             style: { textDecoration: 'none' },
@@ -44,7 +45,10 @@ const CompanyLogo = ({ company, index }) => {
         {!imageError ? (
           <img
             src={company.logo}
-            alt={`Logo de ${company.name}`}
+            alt={t('companies.logoAlt', {
+              company: company.name,
+              defaultValue: `Logo of ${company.name}`,
+            })}
             onError={() => setImageError(true)}
             className="h-14 w-full max-w-[80%] object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
           />
@@ -53,9 +57,7 @@ const CompanyLogo = ({ company, index }) => {
             <span className="text-slate-600 font-semibold text-xs group-hover:text-primary-600 transition-colors line-clamp-2">
               {company.name}
             </span>
-            <span className="block text-slate-400 text-[11px] mt-1">
-              {company.country}
-            </span>
+            <span className="block text-slate-400 text-[11px] mt-1">{company.country}</span>
           </div>
         )}
       </div>
@@ -75,14 +77,12 @@ const CompaniesExperience = ({ mode = 'grid' }) => {
       ref={sectionRef}
       className="py-20 md:py-28 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden"
     >
-      {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-100/30 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-slate-100/50 rounded-full blur-3xl" />
       </div>
 
       <Container className="relative">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -95,12 +95,9 @@ const CompaniesExperience = ({ mode = 'grid' }) => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             {t('companies.title')}
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            {t('companies.subtitle')}
-          </p>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">{t('companies.subtitle')}</p>
         </motion.div>
 
-        {/* Premium card container */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -111,7 +108,6 @@ const CompaniesExperience = ({ mode = 'grid' }) => {
           }}
           className="bg-white/50 backdrop-blur-sm border border-slate-100/60 rounded-2xl p-8 md:p-10 lg:p-12 shadow-sm shadow-slate-200/30"
         >
-          {/* Logos */}
           {isCarousel ? (
             <div className="relative overflow-hidden">
               <motion.div
@@ -128,7 +124,7 @@ const CompaniesExperience = ({ mode = 'grid' }) => {
                     key={`${company.name}-${index}`}
                     className="w-[170px] sm:w-[190px] md:w-[210px] flex-shrink-0"
                   >
-                    <CompanyLogo company={company} index={index % companies.length} />
+                    <CompanyLogo company={company} index={index % companies.length} t={t} />
                   </div>
                 ))}
               </motion.div>
@@ -136,19 +132,21 @@ const CompaniesExperience = ({ mode = 'grid' }) => {
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
               {companies.map((company, index) => (
-                <CompanyLogo key={company.name} company={company} index={index} />
+                <CompanyLogo key={company.name} company={company} index={index} t={t} />
               ))}
             </div>
           )}
 
-          {/* Bottom note */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.8 }}
             className="mt-12 pt-8 border-t border-slate-200/50 text-center"
           >
-            <p className="text-slate-500 text-sm" dangerouslySetInnerHTML={{ __html: t('companies.bottomNote') }} />
+            <p
+              className="text-slate-500 text-sm"
+              dangerouslySetInnerHTML={{ __html: t('companies.bottomNote') }}
+            />
           </motion.div>
         </motion.div>
       </Container>

@@ -5,15 +5,20 @@ import MethodologyBanner from '../components/services/MethodologyBanner';
 import CompaniesExperience from '../components/home/CompaniesExperience';
 import ServicesCTA from '../components/services/ServicesCTA';
 import { services } from '../data/services';
+import { useTranslation } from 'react-i18next';
+import { localizeService } from '../i18n/serviceI18n';
 
 const Services = () => {
+  const { t, i18n } = useTranslation();
+  const localizedServices = services.map((service) => localizeService(t, service, i18n.language));
+
   return (
     <>
       <ServicesHero />
       <ServicesIntro />
 
       {/* Services with alternating layout */}
-      {services.map((service, index) => (
+      {localizedServices.map((service, index) => (
         <ServiceDetail
           key={service.id}
           service={service}

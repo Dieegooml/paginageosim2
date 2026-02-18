@@ -1,15 +1,20 @@
 import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../components/ui/Container';
 import TeamHero from '../components/team/TeamHero';
 import TeamGrid from '../components/team/TeamGrid';
 import ConsultantModal from '../components/team/ConsultantModal';
 import { team } from '../data/team';
+import { applyEnglishTeamProfile } from '../data/team.en';
 
-// Coloca tu imagen en: public/images/cta/team-cta-bg.jpg
 const TEAM_CTA_BG = '/images/cta/team-cta-bg.jpg';
 
 const Team = () => {
+  const { t, i18n } = useTranslation();
+  const isEnglish = i18n.language?.startsWith('en');
+  const localizedTeam = team.map((member) => applyEnglishTeamProfile(member, isEnglish));
+
   const [selectedMember, setSelectedMember] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -37,21 +42,17 @@ const Team = () => {
             className="text-center mb-16"
           >
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-6">
-              <span className="text-slate-900">Consultores </span>
+              <span className="text-slate-900">{t('teamPage.grid.titleMain')} </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-500">
-                Especializados
+                {t('teamPage.grid.titleAccent')}
               </span>
             </h2>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Un equipo multidisciplinario con experiencia comprobada en las principales
-              operaciones mineras de Latinoamérica.
+              {t('teamPage.grid.description')}
             </p>
           </motion.div>
 
-          <TeamGrid
-            members={team}
-            onSelectMember={handleSelectMember}
-          />
+          <TeamGrid members={localizedTeam} onSelectMember={handleSelectMember} />
         </Container>
       </section>
 
@@ -70,18 +71,13 @@ const Team = () => {
             transition={{ duration: 0.5 }}
             className="rounded-[2rem] border border-white/25 bg-white/10 backdrop-blur-sm p-8 md:p-12 text-center"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              ¿Necesita asesoría especializada?
-            </h2>
-            <p className="text-white/90 mb-8 max-w-xl mx-auto">
-              Nuestro equipo está listo para analizar sus desafíos y desarrollar
-              soluciones a la medida de su operación.
-            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t('teamPage.cta.title')}</h2>
+            <p className="text-white/90 mb-8 max-w-xl mx-auto">{t('teamPage.cta.description')}</p>
             <a
               href="/contacto"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#123B70] text-white font-medium rounded-lg hover:bg-[#1a4f90] transition-colors"
             >
-              Contactar al equipo
+              {t('teamPage.cta.button')}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -90,11 +86,7 @@ const Team = () => {
         </Container>
       </section>
 
-      <ConsultantModal
-        member={selectedMember}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
+      <ConsultantModal member={selectedMember} isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 };

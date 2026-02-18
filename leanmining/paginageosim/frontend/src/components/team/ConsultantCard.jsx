@@ -1,40 +1,23 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const ConsultantCard = ({ member, onClick }) => {
+  const { i18n } = useTranslation();
+  const isEnglish = i18n.language?.startsWith('en');
   const displayName = member.name || member.role;
 
   return (
-    <motion.article
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
-      onClick={onClick}
-      className="group cursor-pointer h-full"
-    >
+    <motion.article whileHover={{ y: -8 }} transition={{ duration: 0.3, ease: 'easeOut' }} onClick={onClick} className="group cursor-pointer h-full">
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col border border-slate-100 hover:border-slate-200">
-        <div className="relative bg-white w-full aspect-[3/4] overflow-hidden">
+        <div className="relative bg-slate-50 w-full aspect-[3/4] overflow-hidden">
           {member.image ? (
-            <img
-              src={member.image}
-              alt={displayName}
-              className="w-full h-full object-cover object-center"
-              loading="lazy"
-            />
+            <img src={member.image} alt={displayName} className="w-full h-full object-cover object-top" loading="lazy" />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <svg
-                  className="w-10 h-10 text-slate-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
+                <svg className="w-10 h-10 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
             </div>
@@ -44,7 +27,7 @@ const ConsultantCard = ({ member, onClick }) => {
 
           <div className="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-all duration-400">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/95 backdrop-blur-sm rounded-lg text-sm font-medium text-slate-900 shadow-lg">
-              Ver perfil
+              {isEnglish ? 'View profile' : 'Ver perfil'}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -82,10 +65,7 @@ const ConsultantCard = ({ member, onClick }) => {
           {member.specialties && member.specialties.length > 0 && (
             <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100">
               {member.specialties.slice(0, 2).map((specialty, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-0.5 bg-slate-50 text-slate-600 text-xs rounded"
-                >
+                <span key={index} className="px-2 py-0.5 bg-slate-50 text-slate-600 text-xs rounded">
                   {specialty}
                 </span>
               ))}
@@ -105,7 +85,7 @@ const ConsultantCard = ({ member, onClick }) => {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
-            Contactar
+            {isEnglish ? 'Contact' : 'Contactar'}
           </Link>
         </div>
       </div>

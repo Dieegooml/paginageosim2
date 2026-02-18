@@ -1,12 +1,16 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { services } from '../../data/services';
+import { localizeService } from '../../i18n/serviceI18n';
 
 const ServicesPreview = () => {
+  const { t, i18n } = useTranslation();
+  const localizedServices = services.map((service) => localizeService(t, service, i18n.language));
+
   return (
     <section className="relative bg-gradient-to-b from-slate-50 to-white py-28 md:py-36 overflow-hidden">
-      {/* Fondo sutil */}
       <div className="absolute top-20 left-0 w-[400px] h-[400px] bg-primary-50/30 rounded-full blur-[120px] pointer-events-none" />
 
       <Container className="relative">
@@ -18,25 +22,24 @@ const ServicesPreview = () => {
           className="max-w-3xl mb-14 md:mb-16"
         >
           <p className="text-primary-600 text-xs font-semibold tracking-[0.25em] uppercase mb-6">
-            Servicios
+            {t('servicesPreview.badge')}
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.08] tracking-tight mb-5">
-            <span className="text-slate-900">Soluciones técnicas </span>
+            <span className="text-slate-900">{t('servicesPreview.titleMain')} </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-500">
-              para cada etapa
+              {t('servicesPreview.titleAccent')}
             </span>
           </h2>
 
-          {/* Línea decorativa */}
           <div className="w-16 h-1 bg-gradient-to-r from-primary-500 to-primary-400 rounded-full mb-6" />
 
           <p className="text-lg text-slate-600 leading-relaxed">
-            Integramos diseño, planeación y optimización operativa para mejorar el valor económico de cada operación.
+            {t('servicesPreview.description')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7">
-          {services.map((service, index) => (
+          {localizedServices.map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 24 }}
@@ -69,7 +72,7 @@ const ServicesPreview = () => {
                     variant="secondary"
                     className="w-full justify-center rounded-xl border-slate-300 hover:border-slate-900 hover:bg-slate-900 hover:text-white"
                   >
-                    Ver servicio
+                    {t('common.viewServices')}
                   </Button>
                 </div>
               </article>
