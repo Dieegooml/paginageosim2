@@ -198,6 +198,24 @@
                 "feature2": "Integrated short-, medium-, and long-term planning",
                 "feature3": "Designed and detailed mine plan development",
                 "feature4": "Mining asset value optimization and cut-off grade strategy"
+            },
+            "metallurgicalProcesses": {
+                "title": "Metallurgical Processes",
+                "shortDescription": "Recovery and cost optimization in process plants with measurable economic impact.",
+                "description": "We maximize recovery and reduce costs through rapid diagnostics, independent audits, and circuit optimization with measurable economic impact. We support strategic decisions (CAPEX/OPEX) and continuous improvement in gold, copper, and flotation operations.",
+                "feature1": "Rapid diagnostics and independent plant audits",
+                "feature2": "Metallurgical circuit and recovery optimization",
+                "feature3": "Strategic CAPEX/OPEX analysis in process plants",
+                "feature4": "Continuous improvement in gold, copper, and flotation operations"
+            },
+            "hydrogeologyWaterManagement": {
+                "title": "Applied Hydrogeology and Mine Water Management",
+                "shortDescription": "Groundwater management with hydrogeological modeling and environmental compliance.",
+                "description": "We manage groundwater in mining operations through aquifer characterization, pump tests, hydrogeological modeling and water balances. We reduce operational risks, optimize water resources and ensure environmental compliance with solutions tailored to each project.",
+                "feature1": "Aquifer characterization and pump tests",
+                "feature2": "Conceptual and numerical hydrogeological modeling",
+                "feature3": "Water balances and dewatering management",
+                "feature4": "Water quality assessment and environmental compliance"
             }
         },
         "methodology": {
@@ -464,6 +482,72 @@
                 "address": "Calle Privada Jose Maria Morelos y Pavon 1820",
                 "fullAddress": "Chihuahua, Chihuahua 31020, Mexico"
             }
+        }
+    },
+    "terms": {
+        "hero": {
+            "title1": "Terms and",
+            "title2": "Conditions",
+            "subtitle": "By accessing and using this website, you agree to the present terms and conditions of use of Lean Mining Consulting."
+        },
+        "sections": [
+            {
+                "id": "01",
+                "title": "Site Usage",
+                "content": "The content published on this site is informational and corporate in nature. Misuse of information, branding, design, or graphic elements is not permitted."
+            },
+            {
+                "id": "02",
+                "title": "Intellectual Property",
+                "content": "All texts, images, logos, and materials on this site are the property of Lean Mining Consulting or are used with authorization."
+            },
+            {
+                "id": "03",
+                "title": "Limitation of Liability",
+                "content": "Lean Mining Consulting does not guarantee that the site is free from errors or interruptions, and assumes no liability for damages resulting from the use of this website."
+            },
+            {
+                "id": "04",
+                "title": "Modifications",
+                "content": "We reserve the right to update these terms at any time to keep the information aligned with our operations."
+            }
+        ],
+        "footer": {
+            "rights": "All rights reserved.",
+            "location": "Arequipa, Peru"
+        }
+    },
+    "privacy": {
+        "hero": {
+            "title1": "Privacy",
+            "title2": "Policy",
+            "subtitle": "At Lean Mining Consulting we protect the privacy of the data you share through our forms and contact channels."
+        },
+        "sections": [
+            {
+                "id": "01",
+                "title": "Data We Collect",
+                "content": "We may collect your name, corporate email, company, phone number, and message content when you submit an inquiry through the site."
+            },
+            {
+                "id": "02",
+                "title": "Use of Information",
+                "content": "We use this data exclusively to respond to inquiries, coordinate commercial contact, and improve customer service."
+            },
+            {
+                "id": "03",
+                "title": "Security",
+                "content": "We apply reasonable measures to protect information against unauthorized access, loss, or misuse."
+            },
+            {
+                "id": "04",
+                "title": "User Rights",
+                "content": "You may request the update or deletion of your data by contacting us through our official communication channels."
+            }
+        ],
+        "footer": {
+            "rights": "All rights reserved.",
+            "location": "Arequipa, Peru"
         }
     },
     "contentCenter": {

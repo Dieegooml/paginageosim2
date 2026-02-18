@@ -466,6 +466,72 @@
             }
         }
     },
+    "terms": {
+        "hero": {
+            "title1": "Términos y",
+            "title2": "Condiciones",
+            "subtitle": "Al acceder y utilizar este sitio web, aceptas los presentes términos y condiciones de uso de Lean Mining Consulting."
+        },
+        "sections": [
+            {
+                "id": "01",
+                "title": "Uso del sitio",
+                "content": "El contenido publicado en este sitio es de carácter informativo y corporativo. No está permitido el uso indebido de la información, marca, diseño o elementos gráficos."
+            },
+            {
+                "id": "02",
+                "title": "Propiedad intelectual",
+                "content": "Todos los textos, imágenes, logotipos y materiales del sitio son propiedad de Lean Mining Consulting o se usan con autorización."
+            },
+            {
+                "id": "03",
+                "title": "Limitación de responsabilidad",
+                "content": "Lean Mining Consulting no garantiza que el sitio esté libre de errores o interrupciones, y no asume responsabilidad por daños derivados del uso de esta web."
+            },
+            {
+                "id": "04",
+                "title": "Modificaciones",
+                "content": "Nos reservamos el derecho de actualizar estos términos en cualquier momento para mantener la información alineada a nuestras operaciones."
+            }
+        ],
+        "footer": {
+            "rights": "Todos los derechos reservados.",
+            "location": "Arequipa, Perú"
+        }
+    },
+    "privacy": {
+        "hero": {
+            "title1": "Política de",
+            "title2": "Privacidad",
+            "subtitle": "En Lean Mining Consulting protegemos la privacidad de los datos que compartes a través de nuestros formularios y canales de contacto."
+        },
+        "sections": [
+            {
+                "id": "01",
+                "title": "Datos que recopilamos",
+                "content": "Podemos recopilar nombre, correo corporativo, empresa, teléfono y contenido del mensaje cuando envías una consulta desde el sitio."
+            },
+            {
+                "id": "02",
+                "title": "Uso de la información",
+                "content": "Utilizamos estos datos exclusivamente para responder consultas, coordinar contacto comercial y mejorar la atención a clientes."
+            },
+            {
+                "id": "03",
+                "title": "Seguridad",
+                "content": "Aplicamos medidas razonables para proteger la información frente a accesos no autorizados, pérdida o uso indebido."
+            },
+            {
+                "id": "04",
+                "title": "Derechos del usuario",
+                "content": "Puedes solicitar la actualización o eliminación de tus datos escribiéndonos por nuestros canales oficiales de contacto."
+            }
+        ],
+        "footer": {
+            "rights": "Todos los derechos reservados.",
+            "location": "Arequipa, Perú"
+        }
+    },
     "contentCenter": {
         "hero": {
             "eyebrow": "Centro de Contenido",

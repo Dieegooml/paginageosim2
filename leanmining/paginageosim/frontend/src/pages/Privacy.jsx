@@ -1,34 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../components/ui/Container';
 
-const sections = [
-  {
-    id: '01',
-    title: 'Datos que recopilamos',
-    content:
-      'Podemos recopilar nombre, correo corporativo, empresa, teléfono y contenido del mensaje cuando envías una consulta desde el sitio.',
-  },
-  {
-    id: '02',
-    title: 'Uso de la información',
-    content:
-      'Utilizamos estos datos exclusivamente para responder consultas, coordinar contacto comercial y mejorar la atención a clientes.',
-  },
-  {
-    id: '03',
-    title: 'Seguridad',
-    content:
-      'Aplicamos medidas razonables para proteger la información frente a accesos no autorizados, pérdida o uso indebido.',
-  },
-  {
-    id: '04',
-    title: 'Derechos del usuario',
-    content:
-      'Puedes solicitar la actualización o eliminación de tus datos escribiéndonos por nuestros canales oficiales de contacto.',
-  },
-];
-
 const Privacy = () => {
+  const { t } = useTranslation();
+  const sections = t('privacy.sections', { returnObjects: true });
+
   return (
     <>
       {/* Hero */}
@@ -54,15 +31,14 @@ const Privacy = () => {
             </div>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-              Política de{' '}
+              {t('privacy.hero.title1')}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">
-                Privacidad
+                {t('privacy.hero.title2')}
               </span>
             </h1>
 
             <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
-              En Lean Mining Consulting protegemos la privacidad de los datos que
-              compartes a través de nuestros formularios y canales de contacto.
+              {t('privacy.hero.subtitle')}
             </p>
           </motion.div>
         </Container>
@@ -82,7 +58,6 @@ const Privacy = () => {
                 className="group bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 p-8 md:p-10"
               >
                 <div className="flex items-start gap-6">
-                  {/* Número de sección */}
                   <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center text-xs font-bold text-primary-600 tracking-widest mt-0.5">
                     {section.id}
                   </span>
@@ -101,7 +76,6 @@ const Privacy = () => {
             ))}
           </div>
 
-          {/* Pie de página legal */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -110,10 +84,10 @@ const Privacy = () => {
             className="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
           >
             <p className="text-sm text-slate-400">
-              © {new Date().getFullYear()} Lean Mining Consulting. Todos los derechos reservados.
+              © {new Date().getFullYear()} Lean Mining Consulting. {t('privacy.footer.rights')}
             </p>
             <p className="text-sm text-slate-400">
-              Arequipa, Perú
+              {t('privacy.footer.location')}
             </p>
           </motion.div>
         </Container>

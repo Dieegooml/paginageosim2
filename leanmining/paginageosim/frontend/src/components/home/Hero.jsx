@@ -1,27 +1,77 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { premiumHeroOverlayStyle } from '../ui/heroOverlay';
 
+/* ─────────────────────────────────────────────────────────────
+   IMÁGENES DEL CARRUSEL
+   Colocar en: /public/images/home/
+   ─────────────────────────────────────────────────────────────
+   hero-main.jpg   ← imagen 1 (ya existe)
+   hero-2.jpg      ← imagen 2 (agregar)
+   hero-3.jpg      ← imagen 3 (agregar)
+   hero-4.jpg      ← imagen 4 (agregar)
+
+   Formato recomendado: JPG, min 1920×1080px, calidad 85%
+   ───────────────────────────────────────────────────────────── */
+const SLIDES = [
+  '/images/home/hero-main.jpg',
+  '/images/home/hero-2.jpg',
+  '/images/home/hero-3.jpg',
+  '/images/home/hero-4.jpg',
+];
+
+const INTERVAL_MS = 7000; // 7 segundos por slide
+
 const Hero = () => {
   const { t } = useTranslation();
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((current) => (current + 1) % SLIDES.length);
+    }, INTERVAL_MS);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goTo = (index) => {
+    if (index === active) return;
+    setActive(index);
+  };
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src="/images/home/hero-main.jpg"
-          alt={t('hero.imageAlt', { defaultValue: 'Mining operation' })}
-          className="w-full h-full object-cover scale-105"
-        />
-      </div>
 
-      <div className="absolute inset-0" style={premiumHeroOverlayStyle} />
+      {/* ── Carrusel de fondo ── */}
+      {SLIDES.map((src, i) => (
+        <div
+          key={src}
+          aria-hidden={i !== active}
+          className={`absolute inset-0 transition-opacity duration-[1800ms] ease-in-out ${
+            i === active ? 'opacity-100 z-10' : 'opacity-0 z-0'
+          }`}
+        >
+          <img
+            src={src}
+            alt=""
+            loading={i === 0 ? 'eager' : 'lazy'}
+            className={`w-full h-full object-cover ${
+              i === active ? 'hero-kenburns' : ''
+            }`}
+          />
+        </div>
+      ))}
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent" />
+      {/* ── Overlay premium ── */}
+      <div className="absolute inset-0 z-20" style={premiumHeroOverlayStyle} />
 
-      <Container className="relative min-h-screen flex items-center">
+      {/* Línea inferior */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/35 to-transparent z-30" />
+
+      {/* ── Contenido ── */}
+      <Container className="relative z-30 min-h-screen flex items-center">
         <div className="max-w-4xl py-24 md:py-28">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -83,11 +133,33 @@ const Hero = () => {
         </div>
       </Container>
 
+      {/* ── Indicadores de slide ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3"
+      >
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            aria-label={`Slide ${i + 1}`}
+            className={`transition-all duration-500 ease-out rounded-full ${
+              i === active
+                ? 'w-8 h-1.5 bg-white'
+                : 'w-1.5 h-1.5 bg-white/35 hover:bg-white/60'
+            }`}
+          />
+        ))}
+      </motion.div>
+
+      {/* ── Scroll indicator ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-10 right-8 md:right-12 z-30"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

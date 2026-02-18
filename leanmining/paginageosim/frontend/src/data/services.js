@@ -61,6 +61,36 @@ export const services = [
       'Optimización del valor del activo minero y leyes de corte',
     ],
   },
+  {
+    id: 'metallurgical-processes',
+    title: 'Procesos Metalúrgicos',
+    shortDescription: 'Optimización de recuperación y costos en planta de procesos con impacto económico medible.',
+    description:
+      'Maximizamos recuperación y reducimos costos mediante diagnósticos rápidos, auditorías independientes y optimización de circuitos con impacto económico medible. Soportamos decisiones estratégicas (CAPEX/OPEX) y mejora continua en operaciones de oro, cobre y flotación.',
+    icon: 'cost',
+    image: '/images/about/enfoque-4.jpg',
+    features: [
+      'Diagnósticos rápidos y auditorías independientes de planta',
+      'Optimización de circuitos metalúrgicos y recuperación',
+      'Análisis estratégico de CAPEX/OPEX en planta de procesos',
+      'Mejora continua en operaciones de oro, cobre y flotación',
+    ],
+  },
+  {
+    id: 'hydrogeology-water-management',
+    title: 'Hidrogeología Aplicada y Gestión Hídrica Minera',
+    shortDescription: 'Gestión del agua subterránea con modelamiento hidrogeológico y cumplimiento ambiental.',
+    description:
+      'Gestionamos el agua subterránea en operaciones mineras mediante caracterización de acuíferos, pruebas de bombeo, modelamiento hidrogeológico y balances hídricos. Reducimos riesgos operativos, optimizamos el recurso hídrico y garantizamos cumplimiento ambiental con soluciones adaptadas a cada proyecto.',
+    icon: 'planning',
+    image: '/images/about/enfoque-5.jpg',
+    features: [
+      'Caracterización de acuíferos y pruebas de bombeo',
+      'Modelamiento hidrogeológico conceptual y numérico',
+      'Balances hídricos y gestión de dewatering',
+      'Evaluación de calidad de agua y cumplimiento ambiental',
+    ],
+  },
 ];
 
 export const processSteps = [

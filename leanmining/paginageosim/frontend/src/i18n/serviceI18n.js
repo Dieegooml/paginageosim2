@@ -3,6 +3,8 @@ export const SERVICE_I18N_KEY_BY_ID = {
   'cost-analysis': 'costAnalysis',
   'kpi-implementation': 'kpiImplementation',
   'mine-planning': 'minePlanning',
+  'metallurgical-processes': 'metallurgicalProcesses',
+  'hydrogeology-water-management': 'hydrogeologyWaterManagement',
 };
 
 export const getServiceTranslationKey = (serviceId) => SERVICE_I18N_KEY_BY_ID[serviceId];

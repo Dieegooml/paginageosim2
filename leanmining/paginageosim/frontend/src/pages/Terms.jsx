@@ -1,34 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../components/ui/Container';
 
-const sections = [
-  {
-    id: '01',
-    title: 'Uso del sitio',
-    content:
-      'El contenido publicado en este sitio es de carácter informativo y corporativo. No está permitido el uso indebido de la información, marca, diseño o elementos gráficos.',
-  },
-  {
-    id: '02',
-    title: 'Propiedad intelectual',
-    content:
-      'Todos los textos, imágenes, logotipos y materiales del sitio son propiedad de Lean Mining Consulting o se usan con autorización.',
-  },
-  {
-    id: '03',
-    title: 'Limitación de responsabilidad',
-    content:
-      'Lean Mining Consulting no garantiza que el sitio esté libre de errores o interrupciones, y no asume responsabilidad por daños derivados del uso de esta web.',
-  },
-  {
-    id: '04',
-    title: 'Modificaciones',
-    content:
-      'Nos reservamos el derecho de actualizar estos términos en cualquier momento para mantener la información alineada a nuestras operaciones.',
-  },
-];
-
 const Terms = () => {
+  const { t } = useTranslation();
+  const sections = t('terms.sections', { returnObjects: true });
+
   return (
     <>
       {/* Hero */}
@@ -54,15 +31,14 @@ const Terms = () => {
             </div>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-              Términos y{' '}
+              {t('terms.hero.title1')}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">
-                Condiciones
+                {t('terms.hero.title2')}
               </span>
             </h1>
 
             <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
-              Al acceder y utilizar este sitio web, aceptas los presentes términos y
-              condiciones de uso de Lean Mining Consulting.
+              {t('terms.hero.subtitle')}
             </p>
           </motion.div>
         </Container>
@@ -82,7 +58,6 @@ const Terms = () => {
                 className="group bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 p-8 md:p-10"
               >
                 <div className="flex items-start gap-6">
-                  {/* Número de sección */}
                   <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center text-xs font-bold text-primary-600 tracking-widest mt-0.5">
                     {section.id}
                   </span>
@@ -101,7 +76,6 @@ const Terms = () => {
             ))}
           </div>
 
-          {/* Pie de página legal */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -110,10 +84,10 @@ const Terms = () => {
             className="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
           >
             <p className="text-sm text-slate-400">
-              © {new Date().getFullYear()} Lean Mining Consulting. Todos los derechos reservados.
+              © {new Date().getFullYear()} Lean Mining Consulting. {t('terms.footer.rights')}
             </p>
             <p className="text-sm text-slate-400">
-              Arequipa, Perú
+              {t('terms.footer.location')}
             </p>
           </motion.div>
         </Container>

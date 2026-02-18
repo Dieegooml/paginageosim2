@@ -6,31 +6,40 @@
   /* Tipografía global */
   html {
     @apply antialiased;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply font-sans text-slate-700 bg-white;
+    line-height: 1.7;
   }
 
   /* Títulos con fuente serif elegante */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display text-slate-900;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05];
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-bold tracking-tight;
+    @apply text-3xl md:text-4xl font-bold leading-[1.1];
   }
 
   h3 {
-    @apply text-2xl md:text-3xl font-semibold;
+    @apply text-2xl md:text-3xl font-semibold leading-snug;
+    letter-spacing: -0.015em;
   }
 
   h4 {
     @apply text-xl md:text-2xl font-semibold;
+    letter-spacing: -0.01em;
   }
 
   h5 {
@@ -41,20 +50,51 @@
     @apply text-base font-semibold;
   }
 
-  /* Links base */
-  a {
-    @apply transition-colors;
+  p {
+    line-height: 1.75;
   }
 
-  /* Smooth scroll */
-  html {
-    scroll-behavior: smooth;
+  /* Links base */
+  a {
+    @apply transition-all duration-200 ease-out;
   }
 }
 
 @layer components {
+  /* Sombra premium multicapa — reemplaza box-shadow genérico */
+  .shadow-premium {
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 4px 12px rgba(15, 23, 42, 0.06),
+      0 16px 40px rgba(15, 23, 42, 0.08);
+  }
+
+  .shadow-premium-hover {
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.05),
+      0 8px 24px rgba(15, 23, 42, 0.10),
+      0 24px 56px rgba(15, 23, 42, 0.12);
+  }
+
+  /* Card base con hover premium */
+  .card-premium {
+    @apply bg-white rounded-2xl border border-slate-200/80 transition-all duration-300 ease-out;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 4px 12px rgba(15, 23, 42, 0.05);
+  }
+
+  .card-premium:hover {
+    @apply border-slate-200 -translate-y-1;
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.05),
+      0 12px 32px rgba(15, 23, 42, 0.10),
+      0 24px 56px rgba(15, 23, 42, 0.08);
+  }
+
   .hero-title-main {
-    @apply text-white drop-shadow-sm;
+    @apply text-white;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.3);
   }
 
   .hero-title-accent {
@@ -81,9 +121,58 @@
   }
 }
 
+@keyframes kenburns {
+  0%   { transform: scale(1.05) translate(0, 0); }
+  100% { transform: scale(1.15) translate(-1.5%, -1%); }
+}
+
+.hero-kenburns {
+  animation: kenburns 8s ease-out forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-title-accent {
     animation: none;
     background-position: 0% 50%;
   }
+
+  .hero-kenburns {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  /* Fade-in suave al cargar — para usar sin Framer Motion */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out both;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.7s ease-out both;
+  }
+
+  /* Hover lift consistente para cualquier elemento */
+  .hover-lift {
+    @apply transition-transform duration-200 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-0.5;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

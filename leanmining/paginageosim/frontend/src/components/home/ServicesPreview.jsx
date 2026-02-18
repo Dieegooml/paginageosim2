@@ -38,7 +38,7 @@ const ServicesPreview = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {localizedServices.map((service, index) => (
             <motion.div
               key={service.id}
