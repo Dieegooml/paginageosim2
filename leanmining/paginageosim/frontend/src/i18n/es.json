@@ -341,13 +341,18 @@
         "experience": {
             "badge": "Nuestra experiencia",
             "title": "Transformamos la eficiencia de tu operación minera",
-            "description": "Con más de 15 años de experiencia, nuestro equipo de consultores especializados está listo para llevar tu proyecto al siguiente nivel.",
+            "description": "Con más de 20 años de experiencia, nuestro equipo de consultores especializados está listo para llevar tu proyecto al siguiente nivel.",
             "stat1Value": "7 países",
             "stat1Label": "de operación",
-            "stat2Value": "+50 proyectos",
+            "stat2Value": "+30 proyectos",
             "stat2Label": "completados",
-            "stat3Value": "20 años",
-            "stat3Label": "experiencia combinada"
+            "stat3Value": "+20 años",
+            "stat3Label": "de experiencia"
+        },
+        "cta": {
+            "title": "Explora nuestro conocimiento aplicado en proyectos reales",
+            "description": "Descubre contenido técnico, colaboraciones estratégicas y experiencias compartidas con empresas que forman parte de nuestro ecosistema minero y de innovación.",
+            "button": "Ir al Centro de Contenido"
         },
         "form": {
             "title": "Envíanos un mensaje",
@@ -552,6 +557,10 @@
             "zoluzion": {
                 "tagline": "Soluciones digitales para la minería",
                 "description": "Empresa tecnológica enfocada en soluciones digitales e innovación para el sector minero y empresarial. Desarrolla herramientas que optimizan procesos operativos y facilitan la toma de decisiones basada en datos."
+            },
+            "sainpro": {
+                "tagline": "Ingeniería y soluciones industriales",
+                "description": "Empresa especializada en ingeniería y soluciones industriales para el sector minero y de infraestructura. Ofrece servicios técnicos especializados que complementan nuestras capacidades en proyectos de alto impacto."
             }
         }
     }

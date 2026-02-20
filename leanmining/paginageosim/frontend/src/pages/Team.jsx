@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Container from '../components/ui/Container';
 import TeamHero from '../components/team/TeamHero';
+import TeamExperience from '../components/team/TeamExperience';
 import TeamGrid from '../components/team/TeamGrid';
 import ConsultantModal from '../components/team/ConsultantModal';
 import { team } from '../data/team';
@@ -31,6 +32,8 @@ const Team = () => {
   return (
     <>
       <TeamHero />
+
+      <TeamExperience />
 
       <section className="py-20 md:py-28 bg-white">
         <Container>

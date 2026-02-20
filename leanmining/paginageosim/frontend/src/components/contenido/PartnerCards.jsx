@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
  * Colocar los archivos en:
  *   /public/images/socios/ebogeotech.png   ← EboGeotech
  *   /public/images/socios/zoluzion.png     ← Zoluzion
+ *   /public/images/socios/sainpro.png      ← SainPro
  *
  * Formatos recomendados: PNG con fondo transparente, o SVG.
  * Tamaño sugerido: min 400 × 160 px para buena resolución.
@@ -22,6 +23,12 @@ const PARTNERS = [
     name: 'Zoluzion',
     url: 'https://zoluzion.com/',
     logo: '/images/socios/zoluzion.png',
+  },
+  {
+    id: 'sainpro',
+    name: 'SainPro',
+    url: 'https://sainpro.com.co/',
+    logo: '/images/socios/sainpro.png',
   },
 ];
 

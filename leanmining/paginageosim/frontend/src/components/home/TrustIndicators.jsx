@@ -6,7 +6,7 @@ const TrustIndicators = () => {
   const { t } = useTranslation();
   const trustStats = [
     { value: '+20', label: t('trustIndicators.yearsExperience') },
-    { value: '+32', label: t('trustIndicators.projectsCompleted') },
+    { value: '+30', label: t('trustIndicators.projectsCompleted') },
     { value: t('trustIndicators.globalValue', { defaultValue: 'Global' }), label: t('trustIndicators.globalPresence', { defaultValue: 'International presence' }) },
     { value: t('trustIndicators.specializedValue', { defaultValue: 'Consulting' }), label: t('trustIndicators.specializedLabel', { defaultValue: 'specialized' }) },
   ];

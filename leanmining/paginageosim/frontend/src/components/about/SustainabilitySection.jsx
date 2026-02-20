@@ -37,8 +37,8 @@ const SustainabilitySection = () => {
             transition={{ duration: 0.6 }}
             className="h-full"
           >
-            <div className="h-full rounded-3xl border border-slate-200/80 bg-white/90 overflow-hidden shadow-sm flex flex-col">
-              <div className="relative flex-1 min-h-[360px]">
+            <div className="h-full rounded-3xl border border-slate-200/80 bg-white/90 overflow-hidden shadow-sm">
+              <div className="relative h-full min-h-[360px]">
                 <img
                   src="/images/about/sustainability.jpg"
                   alt={t('aboutPage.sustainability.imageAlt', { defaultValue: 'Sustainable mining' })}
@@ -54,20 +54,6 @@ const SustainabilitySection = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
-              </div>
-
-              <div className="p-7 lg:p-8 border-t border-slate-200/70">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900">{t('aboutPage.sustainability.commitment')}</p>
-                    <p className="text-sm text-slate-600">{t('aboutPage.sustainability.responsibleOps')}</p>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>

@@ -359,13 +359,18 @@
         "experience": {
             "badge": "Our experience",
             "title": "We transform the efficiency of your mining operation",
-            "description": "With over 15 years of experience, our team of specialized consultants is ready to take your project to the next level.",
+            "description": "With over 20 years of experience, our team of specialized consultants is ready to take your project to the next level.",
             "stat1Value": "7 countries",
             "stat1Label": "of operation",
-            "stat2Value": "+50 projects",
+            "stat2Value": "+30 projects",
             "stat2Label": "completed",
-            "stat3Value": "20 years",
-            "stat3Label": "combined experience"
+            "stat3Value": "+20 years",
+            "stat3Label": "of experience"
+        },
+        "cta": {
+            "title": "Explore our knowledge applied in real projects",
+            "description": "Discover technical content, strategic collaborations and shared experiences with companies that are part of our mining and innovation ecosystem.",
+            "button": "Go to Content Hub"
         },
         "form": {
             "title": "Send us a message",
@@ -570,6 +575,10 @@
             "zoluzion": {
                 "tagline": "Digital solutions for mining",
                 "description": "Technology company focused on digital solutions and innovation for the mining and business sector. Develops tools that optimize operational processes and facilitate data-driven decision making."
+            },
+            "sainpro": {
+                "tagline": "Engineering and industrial solutions",
+                "description": "Company specialized in engineering and industrial solutions for the mining and infrastructure sector. Provides specialized technical services that complement our capabilities in high-impact projects."
             }
         }
     }
