@@ -30,6 +30,12 @@ const PARTNERS = [
     url: 'https://sainpro.com.co/',
     logo: '/images/socios/sainpro.png',
   },
+  {
+    id: 'bullminer',
+    name: 'BullMiner',
+    url: 'https://bullminer-platform-anga.vercel.app/',
+    logo: '/images/socios/bullminer.png',
+  },
 ];
 
 const Card = ({ partner, index }) => {

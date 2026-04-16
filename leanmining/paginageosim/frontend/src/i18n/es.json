@@ -118,7 +118,7 @@
     "companies": {
         "badge": "Trayectoria Comprobada",
         "title": "Respaldados por la Experiencia",
-        "subtitle": "Nuestros consultores han trabajado en las operaciones mineras más importantes de America",
+        "subtitle": "Nuestros consultores han trabajado en las operaciones mineras más importantes de América",
         "bottomNote": "<strong>20 años</strong> de experiencia combinada en operaciones mineras de clase mundial",
         "openSite": "Abrir sitio de {{company}}",
         "logoAlt": "Logo de {{company}}"
@@ -415,7 +415,7 @@
             "title": "Consultores Especializados",
             "titleMain": "Consultores",
             "titleAccent": "Especializados",
-            "description": "Un equipo multidisciplinario con experiencia comprobada en las principales operaciones mineras de America."
+            "description": "Un equipo multidisciplinario con experiencia comprobada en las principales operaciones mineras de América."
         },
         "cta": {
             "title": "¿Necesita asesoría especializada?",
@@ -561,6 +561,10 @@
             "sainpro": {
                 "tagline": "Ingeniería y soluciones industriales",
                 "description": "Empresa especializada en ingeniería y soluciones industriales para el sector minero y de infraestructura. Ofrece servicios técnicos especializados que complementan nuestras capacidades en proyectos de alto impacto."
+            },
+            "bullminer": {
+                "tagline": "Plataforma digital para la minería",
+                "description": "Plataforma tecnológica orientada a la gestión y optimización de operaciones mineras. Ofrece herramientas digitales que facilitan el monitoreo, análisis y toma de decisiones en proyectos del sector minero."
             }
         }
     }

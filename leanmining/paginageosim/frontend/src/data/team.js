@@ -8,7 +8,7 @@ export const team = [
     name: 'Luis Enrique Zevallos Paredes',
     role: 'Director',
     position: 'Director de Operaciones y Planeamiento Minero',
-    location: 'Arequipa, Perú',
+    location: 'Chihuahua, México',
     yearsExperience: 25,
 
     // Biografías
@@ -93,7 +93,7 @@ export const team = [
     name: 'Antonio González Reyes',
     role: 'Consultor Senior',
     position: 'Especialista en Planeamiento y Servicios Técnicos',
-    location: 'Arequipa, Perú',
+    location: 'Pachuca, México',
     yearsExperience: 12,
 
     // Biografías
@@ -135,7 +135,7 @@ export const team = [
     name: 'Luis Felipe Talaverano Cárdenas',
     role: 'Consultor Senior',
     position: 'Especialista en Metalurgia y Procesos',
-    location: 'Arequipa, Perú',
+    location: 'Trujillo, Perú',
     yearsExperience: 15,
 
     // Biografías

@@ -2,7 +2,7 @@ export const teamEnById = {
   'luis-zevallos': {
     role: 'Director',
     position: 'Director of Mining Operations and Planning',
-    location: 'Arequipa, Peru',
+    location: 'Chihuahua, Mexico',
     shortBio:
       'Geological Engineer with an MBA and more than 25 years of experience leading mining operations in Peru, Mexico, and Bolivia.',
     bio:
@@ -65,7 +65,7 @@ export const teamEnById = {
   'antonio-gonzalez': {
     role: 'Senior Consultant',
     position: 'Planning and Technical Services Specialist',
-    location: 'Arequipa, Peru',
+    location: 'Pachuca, Mexico',
     shortBio:
       'Mining and Metallurgical Engineer with more than 12 years of experience in planning, operations, and technical services in open-pit and underground mines.',
     bio:
@@ -96,7 +96,7 @@ export const teamEnById = {
   'luis-talaverano': {
     role: 'Senior Consultant',
     position: 'Metallurgy and Process Specialist',
-    location: 'Arequipa, Peru',
+    location: 'Trujillo, Peru',
     shortBio:
       'Metallurgical Engineer with more than 15 years of experience in mineral processing plants for gold, copper, and polymetallic ores.',
     bio:

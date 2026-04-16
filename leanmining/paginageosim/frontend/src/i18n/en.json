@@ -579,6 +579,10 @@
             "sainpro": {
                 "tagline": "Engineering and industrial solutions",
                 "description": "Company specialized in engineering and industrial solutions for the mining and infrastructure sector. Provides specialized technical services that complement our capabilities in high-impact projects."
+            },
+            "bullminer": {
+                "tagline": "Digital platform for mining",
+                "description": "Technology platform focused on the management and optimization of mining operations. Provides digital tools that facilitate monitoring, analysis and decision-making in mining sector projects."
             }
         }
     }
