@@ -19,6 +19,12 @@ const PARTNERS = [
     logo: '/images/socios/ebogeotech.png',
   },
   {
+    id: 'idimineria',
+    name: 'IDI Minería',
+    url: 'https://www.idimineria.cl',
+    logo: '/images/socios/idimineria.png',
+  },
+  {
     id: 'zoluzion',
     name: 'Zoluzion',
     url: 'https://zoluzion.com/',
