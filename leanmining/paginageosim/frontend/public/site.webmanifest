@@ -1,0 +1,22 @@
+{
+  "name": "Lean Mining Consulting",
+  "short_name": "Lean Mining",
+  "description": "Consultoria minera especializada en planeacion, geologia, metalurgia e hidrogeologia",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#0a3a68",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

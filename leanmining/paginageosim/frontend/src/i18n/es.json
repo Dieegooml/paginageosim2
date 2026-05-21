@@ -556,7 +556,11 @@
             },
             "idimineria": {
                 "tagline": "Ingeniería y desarrollo para minería",
-                "description": "Empresa especializada en soluciones, servicios e innovación para la industria minera. Aporta capacidades técnicas y contenido aplicado que complementan nuestro ecosistema de colaboración y desarrollo sectorial."
+                "description": "Empresa especializada en soluciones, servicios e innovación para la industria minera. Aporta capacidades técnicas y contenido aplicado que complementan nuestro ecosistema de colaboración y desarrollo sectorial.",
+                "videoBadge": "Nuevo 2026 · 1:22 min",
+                "videoTitle": "Video institucional de IDIMINERIA",
+                "videoHint": "Reproducir sin salir de la página",
+                "playVideo": "Reproducir video de IDIMINERIA"
             },
             "zoluzion": {
                 "tagline": "Soluciones digitales para la minería",

@@ -1,5 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+
+const IDIMINERIA_VIDEO_ID = 'q4EfeWN8TbI';
+const IDIMINERIA_VIDEO_URL = `https://www.youtube-nocookie.com/embed/${IDIMINERIA_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+const IDIMINERIA_THUMBNAIL = `https://img.youtube.com/vi/${IDIMINERIA_VIDEO_ID}/maxresdefault.jpg`;
 
 /**
  * LOGOS
@@ -46,6 +51,8 @@ const PARTNERS = [
 
 const Card = ({ partner, index }) => {
   const { t } = useTranslation();
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const hasVideo = partner.id === 'idimineria';
 
   return (
     <motion.article
@@ -97,6 +104,59 @@ const Card = ({ partner, index }) => {
           <p className="text-[15px] text-slate-500 leading-relaxed max-w-xl">
             {t(`contentCenter.partners.${partner.id}.description`)}
           </p>
+
+          {hasVideo && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.48, delay: 0.12 }}
+              className="mt-7 overflow-hidden rounded-xl border border-primary-100 bg-slate-950 shadow-premium"
+            >
+              <div className="relative aspect-video">
+                {isVideoOpen ? (
+                  <iframe
+                    className="h-full w-full"
+                    src={IDIMINERIA_VIDEO_URL}
+                    title={t('contentCenter.partners.idimineria.videoTitle')}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setIsVideoOpen(true)}
+                    className="group/video relative h-full w-full overflow-hidden text-left"
+                    aria-label={t('contentCenter.partners.idimineria.playVideo')}
+                  >
+                    <img
+                      src={IDIMINERIA_THUMBNAIL}
+                      alt=""
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover/video:scale-[1.03]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/80 via-slate-950/20 to-primary-600/20" />
+                    <div className="absolute left-4 top-4 rounded-full border border-white/25 bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md">
+                      {t('contentCenter.partners.idimineria.videoBadge')}
+                    </div>
+                    <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-primary-700 shadow-xl transition-transform duration-300 group-hover/video:scale-105">
+                      <svg className="ml-1 h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-sm font-semibold text-white">
+                        {t('contentCenter.partners.idimineria.videoTitle')}
+                      </p>
+                      <p className="mt-1 text-xs text-slate-200">
+                        {t('contentCenter.partners.idimineria.videoHint')}
+                      </p>
+                    </div>
+                  </button>
+                )}
+              </div>
+            </motion.div>
+          )}
         </div>
 
         <div className="mt-8 flex items-center gap-4">
