@@ -115,6 +115,18 @@
         "step4": "Desarrollo de plan minero optimizado",
         "step5": "Implementación y seguimiento continuo"
     },
+    "whyUsCards": {
+        "badge": "Diferencial",
+        "title": "¿Por qué elegirnos?",
+        "reason1Title": "Experiencia internacional comprobada",
+        "reason1Desc": "Proyectos ejecutados en más de 20 países a lo largo de 5 continentes, con estándares internacionales.",
+        "reason2Title": "Enfoque técnico y estratégico",
+        "reason2Desc": "Combinamos rigor técnico con visión estratégica para generar soluciones que impactan en el resultado del proyecto.",
+        "reason3Title": "Optimización de costos y procesos",
+        "reason3Desc": "Identificamos oportunidades de mejora operativa y reducción de costos con metodologías probadas.",
+        "reason4Title": "Decisiones basadas en datos",
+        "reason4Desc": "Utilizamos análisis cuantitativos, modelamiento y metodología rigurosa para respaldar cada recomendación."
+    },
     "companies": {
         "badge": "Trayectoria Comprobada",
         "title": "Respaldados por la Experiencia",
@@ -198,6 +210,24 @@
                 "feature2": "Planificación de corto, mediano y largo plazo integrada",
                 "feature3": "Desarrollo del plan minero diseñado y detallado",
                 "feature4": "Optimización del valor del activo minero y leyes de corte"
+            },
+            "metallurgicalProcesses": {
+                "title": "Procesos Metalúrgicos",
+                "shortDescription": "Optimización de recuperación y costos en plantas de procesamiento con impacto económico medible.",
+                "description": "Maximizamos la recuperación y reducimos costos mediante diagnósticos rápidos, auditorías independientes y optimización de circuitos con impacto económico medible. Apoyamos decisiones estratégicas (CAPEX/OPEX) y mejora continua en operaciones de oro, cobre y flotación.",
+                "feature1": "Diagnósticos rápidos y auditorías independientes de planta",
+                "feature2": "Optimización de circuitos metalúrgicos y recuperación",
+                "feature3": "Análisis estratégico CAPEX/OPEX en plantas de procesamiento",
+                "feature4": "Mejora continua en operaciones de oro, cobre y flotación"
+            },
+            "hydrogeologyWaterManagement": {
+                "title": "Hidrogeología Aplicada y Gestión de Aguas Mineras",
+                "shortDescription": "Gestión de aguas subterráneas con modelamiento hidrogeológico y cumplimiento ambiental.",
+                "description": "Gestionamos las aguas subterráneas en operaciones mineras mediante caracterización de acuíferos, pruebas de bombeo, modelamiento hidrogeológico y balances hídricos. Reducimos riesgos operativos, optimizamos el recurso hídrico y aseguramos el cumplimiento ambiental con soluciones adaptadas a cada proyecto.",
+                "feature1": "Caracterización de acuíferos y pruebas de bombeo",
+                "feature2": "Modelamiento hidrogeológico conceptual y numérico",
+                "feature3": "Balances hídricos y gestión de desagüe",
+                "feature4": "Evaluación de calidad de agua y cumplimiento ambiental"
             }
         },
         "methodology": {
@@ -299,6 +329,18 @@
             "area4Desc": "Optimizamos procesos metalúrgicos para maximizar el valor por tonelada tratada. Aplicamos diagnósticos rápidos y análisis técnico para identificar brechas, mejorar recuperaciones y reducir costos mediante soluciones accionables con impacto financiero medible.",
             "area5Title": "Hidrogeología Aplicada y Gestión Hídrica Minera",
             "area5Desc": "Desarrollamos soluciones en hidrogeología aplicada para proyectos mineros, de infraestructura y energía. Integramos estudios, modelamiento y sistemas de dewatering para gestionar riesgos hídricos, optimizar el recurso y respaldar decisiones operativas con base técnica sólida y cumplimiento regulatorio."
+        },
+        "philosophy": {
+            "badge": "NUESTRA FILOSOFÍA",
+            "title": "Filosofía",
+            "titleAccent": "Corporativa",
+            "description": "El propósito que guía cada decisión, cada diseño y cada relación con nuestros clientes.",
+            "missionLabel": "Misión",
+            "visionLabel": "Visión",
+            "missionTag": "Propósito",
+            "visionTag": "Aspiración",
+            "missionText": "Maximizar de manera integral el beneficio económico y operativo de los proyectos mineros de nuestros clientes mediante la eliminación sistemática de desperdicios en los procesos de diseño, la aplicación rigurosa de conocimiento geológico-geomecánico y la integración de metodologías de vanguardia que garanticen una planeación minera predecible, altamente rentable y con un óptimo costo de explotación.",
+            "visionText": "Ser reconocidos globalmente al año 2032 como la firma consultora líder en la innovación de la planeación minera, destacando por la integración de tecnologías avanzadas y metodologías ágiles que transformen la industria extractiva hacia un modelo de máxima eficiencia de capital, resiliencia ante la volatilidad de los mercados y un equilibrio impecable con el entorno socioambiental."
         },
         "cta": {
             "badge": "Comienza hoy",
@@ -434,6 +476,25 @@
             "Proyectos en América del Sur y América del Norte"
         ]
     },
+    "featuredContent": {
+        "badge": "Recursos",
+        "title": "Contenido Destacado",
+        "description": "Conocimientos y recursos sobre metodología Lean aplicada a la industria minera",
+        "readMore": "Leer más",
+        "readTime": "{{time}} de lectura",
+        "art1Title": "Metodología Lean aplicada a la minería",
+        "art1Excerpt": "Descubre cómo los principios Lean transforman la eficiencia operacional en proyectos mineros subterráneos, reduciendo desperdicios y maximizando valor.",
+        "art1Category": "Metodología",
+        "art1Time": "5 min",
+        "art2Title": "Selección óptima de métodos de explotación",
+        "art2Excerpt": "Una guía sobre cómo elegir el método de explotación adecuado basándose en las características del yacimiento y objetivos económicos.",
+        "art2Category": "Técnico",
+        "art2Time": "8 min",
+        "art3Title": "El futuro de la minería subterránea",
+        "art3Excerpt": "Tendencias en automatización, mecanización y tecnología que están redefiniendo la industria minera a nivel global.",
+        "art3Category": "Industria",
+        "art3Time": "6 min"
+    },
     "contentHub": {
         "badge": "Centro de Contenido",
         "titleMain": "Publicaciones y",
@@ -536,6 +597,20 @@
             "rights": "Todos los derechos reservados.",
             "location": "Arequipa, Perú"
         }
+    },
+    "sociosPage": {
+        "hero": {
+            "eyebrow": "Alianzas Tecnológicas",
+            "title": "Empresas que impulsan nuestro ecosistema",
+            "description": "Colaboramos con empresas especializadas que fortalecen nuestras capacidades técnicas y tecnológicas, aportando soluciones innovadoras que complementan nuestros servicios de consultoría."
+        },
+        "ebogeotech": {
+            "description": "Empresa especializada en geotecnia y servicios de ingeniería aplicada a proyectos de minería e infraestructura. Aporta capacidades técnicas en estabilidad de terrenos, monitoreo geotécnico y soluciones de campo."
+        },
+        "zoluzion": {
+            "description": "Empresa tecnológica enfocada en soluciones digitales e innovación para el sector minero y empresarial. Desarrolla herramientas que optimizan procesos operativos y facilitan la toma de decisiones basada en datos."
+        },
+        "visitSite": "Visitar sitio"
     },
     "contentCenter": {
         "hero": {

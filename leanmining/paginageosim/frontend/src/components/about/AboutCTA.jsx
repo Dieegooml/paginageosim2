@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
+import MagneticButton from '../ui/MagneticButton';
 
 const ABOUT_CTA_BG = '/images/cta/about-cta-bg.jpg';
 
@@ -53,6 +54,7 @@ const AboutCTA = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex justify-center"
             >
+              <MagneticButton strength={0.2}>
               <Link
                 to="/servicios"
                 className="group inline-flex items-center rounded-xl bg-[#123B70] px-10 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-[#123B70]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
@@ -62,6 +64,7 @@ const AboutCTA = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
+            </MagneticButton>
             </motion.div>
           </div>
         </motion.div>

@@ -13,7 +13,7 @@
     "language": {
         "es": "ES",
         "en": "EN",
-        "spanish": "Espa?ol",
+        "spanish": "Spanish",
         "english": "English"
     },
     "common": {
@@ -114,6 +114,18 @@
         "step3": "Rigorous exploitation method selection",
         "step4": "Optimized mine plan development",
         "step5": "Implementation and continuous monitoring"
+    },
+    "whyUsCards": {
+        "badge": "Differentiator",
+        "title": "Why choose us?",
+        "reason1Title": "Proven international experience",
+        "reason1Desc": "Projects executed in more than 20 countries across 5 continents, with international standards.",
+        "reason2Title": "Technical and strategic focus",
+        "reason2Desc": "We combine technical rigor with strategic vision to generate solutions that impact project outcomes.",
+        "reason3Title": "Cost and process optimization",
+        "reason3Desc": "We identify opportunities for operational improvement and cost reduction using proven methodologies.",
+        "reason4Title": "Data-driven decisions",
+        "reason4Desc": "We use quantitative analysis, modeling, and rigorous methodology to support every recommendation."
     },
     "companies": {
         "badge": "Proven Track Record",
@@ -318,6 +330,18 @@
             "area5Title": "Applied Hydrogeology and Mine Water Management",
             "area5Desc": "We develop applied hydrogeology solutions for mining, infrastructure, and energy projects. We integrate studies, modeling, and dewatering systems to manage water risks, optimize water resources, and support operational decisions with strong technical foundations and regulatory compliance."
         },
+        "philosophy": {
+            "badge": "OUR PHILOSOPHY",
+            "title": "Corporate",
+            "titleAccent": "Philosophy",
+            "description": "The purpose that guides every decision, every design, and every relationship with our clients.",
+            "missionLabel": "Mission",
+            "visionLabel": "Vision",
+            "missionTag": "Purpose",
+            "visionTag": "Aspiration",
+            "missionText": "To comprehensively maximize the economic and operational benefit of our clients' mining projects through the systematic elimination of waste in design processes, the rigorous application of geological-geomechanical knowledge, and the integration of cutting-edge methodologies that guarantee predictable, highly profitable mine planning with optimal extraction costs.",
+            "visionText": "To be recognized globally by 2032 as the leading consulting firm in mine planning innovation, distinguished by the integration of advanced technologies and agile methodologies that transform the extractive industry toward a model of maximum capital efficiency, resilience to market volatility, and an impeccable balance with the socio-environmental context."
+        },
         "cta": {
             "badge": "Start today",
             "titlePart1": "Ready to optimize your",
@@ -452,6 +476,25 @@
             "Projects in South and North America"
         ]
     },
+    "featuredContent": {
+        "badge": "Resources",
+        "title": "Featured Content",
+        "description": "Knowledge and resources on Lean methodology applied to the mining industry",
+        "readMore": "Read more",
+        "readTime": "{{time}} read",
+        "art1Title": "Lean methodology applied to mining",
+        "art1Excerpt": "Discover how Lean principles transform operational efficiency in underground mining projects, reducing waste and maximizing value.",
+        "art1Category": "Methodology",
+        "art1Time": "5 min",
+        "art2Title": "Optimal selection of mining methods",
+        "art2Excerpt": "A guide on how to choose the right mining method based on deposit characteristics and economic objectives.",
+        "art2Category": "Technical",
+        "art2Time": "8 min",
+        "art3Title": "The future of underground mining",
+        "art3Excerpt": "Trends in automation, mechanization and technology that are redefining the mining industry globally.",
+        "art3Category": "Industry",
+        "art3Time": "6 min"
+    },
     "contentHub": {
         "badge": "Content Hub",
         "titleMain": "Publications and",
@@ -554,6 +597,20 @@
             "rights": "All rights reserved.",
             "location": "Arequipa, Peru"
         }
+    },
+    "sociosPage": {
+        "hero": {
+            "eyebrow": "Strategic Alliances",
+            "title": "Companies driving our ecosystem",
+            "description": "We collaborate with specialized companies that strengthen our technical and technological capabilities, providing innovative solutions that complement our consulting services."
+        },
+        "ebogeotech": {
+            "description": "Company specialized in geotechnics and applied engineering services for mining and infrastructure projects. Provides technical expertise in ground stability, geotechnical monitoring and field solutions."
+        },
+        "zoluzion": {
+            "description": "Technology company focused on digital solutions and innovation for the mining and business sector. Develops tools that optimize operational processes and facilitate data-driven decision making."
+        },
+        "visitSite": "Visit site"
     },
     "contentCenter": {
         "hero": {

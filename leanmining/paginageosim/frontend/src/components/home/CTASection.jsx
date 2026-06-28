@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
+import MagneticButton from '../ui/MagneticButton';
 
 const CTASection = () => {
   const { t } = useTranslation();
@@ -37,24 +38,28 @@ const CTASection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-wrap justify-center gap-4"
           >
-            <Button
-              to="/contacto"
-              size="large"
-              className="bg-primary-500 text-white hover:bg-primary-600 border-0 shadow-lg shadow-primary-500/25 transition-all px-8"
-            >
-              {t('common.requestConsultation')}
-              <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Button>
-            <Button
-              to="/nosotros"
-              variant="ghost"
-              size="large"
-              className="text-white border-white/20 hover:bg-white/10 hover:border-white/40 transition-all"
-            >
-              {t('common.learnMore')}
-            </Button>
+            <MagneticButton strength={0.2}>
+              <Button
+                to="/contacto"
+                size="large"
+                className="bg-primary-500 text-white hover:bg-primary-600 border-0 shadow-lg shadow-primary-500/25 transition-all px-8"
+              >
+                {t('common.requestConsultation')}
+                <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Button>
+            </MagneticButton>
+            <MagneticButton strength={0.2}>
+              <Button
+                to="/nosotros"
+                variant="ghost"
+                size="large"
+                className="text-white border-white/20 hover:bg-white/10 hover:border-white/40 transition-all"
+              >
+                {t('common.learnMore')}
+              </Button>
+            </MagneticButton>
           </motion.div>
         </motion.div>
       </Container>

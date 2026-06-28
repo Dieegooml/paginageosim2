@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
+import MagneticButton from '../ui/MagneticButton';
 import { premiumHeroOverlayStyle } from '../ui/heroOverlay';
 
 /* ─────────────────────────────────────────────────────────────
@@ -119,16 +120,18 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
             className="mt-12"
           >
-            <Button
-              to="/nosotros"
-              size="large"
-              className="group bg-gradient-to-r from-[#1E40AF] to-[#2563EB] text-white border-0 px-12 py-5 text-sm font-semibold uppercase tracking-widest rounded-xl shadow-lg shadow-blue-900/30 hover:shadow-2xl hover:shadow-blue-700/25 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300"
-            >
-              {t('common.learnMore')}
-              <svg className="w-4 h-4 ml-3 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Button>
+            <MagneticButton strength={0.2}>
+              <Button
+                to="/nosotros"
+                size="large"
+                className="group bg-gradient-to-r from-[#1E40AF] to-[#2563EB] text-white border-0 px-12 py-5 text-sm font-semibold uppercase tracking-widest rounded-xl shadow-lg shadow-blue-900/30 hover:shadow-2xl hover:shadow-blue-700/25 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300"
+              >
+                {t('common.learnMore')}
+                <svg className="w-4 h-4 ml-3 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Button>
+            </MagneticButton>
           </motion.div>
         </div>
       </Container>

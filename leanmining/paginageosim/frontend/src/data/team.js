@@ -127,7 +127,7 @@ export const team = [
 
     // Contacto y redes
     linkedin: null,
-    email: 'antonio.gonzales@leanmining.com',
+    email: 'antonio.gonzalez@leanmining-consulting.com',
     image: '/images/team/antonio-gonzalez.jpg',
   },
   {
